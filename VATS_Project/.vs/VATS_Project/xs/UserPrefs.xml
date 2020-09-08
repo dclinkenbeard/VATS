@@ -1,17 +1,14 @@
 ﻿<Properties StartupConfiguration="{88F49752-B758-FBB6-69C9-B2B04536FB0E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/Wavy.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviors/AvoidanceBehavior.cs">
     <Files>
       <File FileName="Assets/Scripts/FlockAgent.cs" Line="12" Column="6" />
       <File FileName="Assets/Scripts/FlockBehavior.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/Flock.cs" Line="59" Column="1" />
-      <File FileName="Assets/Scripts/CohesionBehavior.cs" />
-      <File FileName="Assets/Scripts/AlignmentBehavior.cs" />
-      <File FileName="Assets/Scripts/AvoidanceBehavior.cs" />
-      <File FileName="Assets/Scripts/CompositeBehavior.cs" />
-      <File FileName="Assets/Scripts/SteeredCohesionBehavior.cs" />
-      <File FileName="Assets/Scripts/StayInRadiusBehavior.cs" Line="10" Column="28" />
+      <File FileName="Assets/Scripts/Flock.cs" />
       <File FileName="Assets/Shaders/Wavy.shader" Line="11" Column="43" />
-      <File FileName="Assets/Scripts/FishMotion.cs" Line="11" Column="73" />
+      <File FileName="Assets/Scripts/FishMotion.cs" />
+      <File FileName="Assets/Scripts/Behaviors/CompositeBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Behaviors/AlignmentBehavior.cs" Line="23" Column="69" />
+      <File FileName="Assets/Scripts/Behaviors/AvoidanceBehavior.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,11 +16,11 @@
           <Node name="VATS_Project" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Behaviors" expanded="True" />
+                <Node name="Behaviors" expanded="True">
+                  <Node name="AvoidanceBehavior.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Shaders" expanded="True">
-                <Node name="Wavy.shader" selected="True" />
-              </Node>
+              <Node name="Shaders" expanded="True" />
             </Node>
           </Node>
         </State>
