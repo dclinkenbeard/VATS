@@ -19,6 +19,7 @@ public class AlignmentBehavior : FlockBehavior
         }
 
         alignmentMove /= context.Count;
+
         return alignmentMove;
     }
 }
