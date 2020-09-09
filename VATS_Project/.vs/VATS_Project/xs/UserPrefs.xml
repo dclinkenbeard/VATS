@@ -1,14 +1,19 @@
 ﻿<Properties StartupConfiguration="{88F49752-B758-FBB6-69C9-B2B04536FB0E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviors/AvoidanceBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviors/StrictAvoidanceBehavior1.cs">
     <Files>
-      <File FileName="Assets/Scripts/FlockAgent.cs" Line="12" Column="6" />
-      <File FileName="Assets/Scripts/FlockBehavior.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/Flock.cs" />
-      <File FileName="Assets/Shaders/Wavy.shader" Line="11" Column="43" />
-      <File FileName="Assets/Scripts/FishMotion.cs" />
-      <File FileName="Assets/Scripts/Behaviors/CompositeBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Behaviors/AlignmentBehavior.cs" Line="23" Column="69" />
-      <File FileName="Assets/Scripts/Behaviors/AvoidanceBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Behaviors/AvoidanceBehavior.cs" Line="22" Column="71" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" />
+      <File FileName="Assets/Scripts/FreeFlyCamera.cs" />
+      <File FileName="Assets/Scripts/FlockScripts/FlockAgent.cs" Line="36" Column="9" />
+      <File FileName="Assets/Scripts/FlockScripts/Flock.cs" Line="74" Column="44" />
+      <File FileName="Assets/Scripts/ContextFilter.cs" />
+      <File FileName="Assets/Scripts/SameFlockFilter.cs" Line="11" Column="47" />
+      <File FileName="Assets/Scripts/Behaviors/FilteredFlockBehavior.cs" />
+      <File FileName="Assets/Scripts/Behaviors/CohesionBehavior.cs" />
+      <File FileName="Assets/Scripts/Behaviors/SteeredCohesionBehavior.cs" Line="17" Column="47" />
+      <File FileName="Assets/Scripts/PhysicsLayerFilter.cs" />
+      <File FileName="Assets/Scripts/Behaviors/CompositeBehavior.cs" />
+      <File FileName="Assets/Scripts/Behaviors/StrictAvoidanceBehavior1.cs" Line="7" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,8 +22,9 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Behaviors" expanded="True">
-                  <Node name="AvoidanceBehavior.cs" selected="True" />
+                  <Node name="StrictAvoidanceBehavior1.cs" selected="True" />
                 </Node>
+                <Node name="FlockScripts" expanded="True" />
               </Node>
               <Node name="Shaders" expanded="True" />
             </Node>

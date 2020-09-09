@@ -63,16 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Behaviors\AlignmentBehavior.cs" />
-    <Compile Include="Assets\Scripts\Behaviors\AvoidanceBehavior.cs" />
-    <Compile Include="Assets\Scripts\Behaviors\CohesionBehavior.cs" />
-    <Compile Include="Assets\Scripts\Behaviors\CompositeBehavior.cs" />
-    <Compile Include="Assets\Scripts\Behaviors\StayInRadiusBehavior.cs" />
-    <Compile Include="Assets\Scripts\Behaviors\SteeredCohesionBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AlignmentBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AvoidanceBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CohesionBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CompositeBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\FilteredFlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StayInRadiusBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\SteeredCohesionBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StrictAvoidanceBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\FilterScripts\ContextFilter.cs" />
+    <Compile Include="Assets\Scripts\Boids\FilterScripts\PhysicsLayerFilter.cs" />
+    <Compile Include="Assets\Scripts\Boids\FilterScripts\SameFlockFilter.cs" />
+    <Compile Include="Assets\Scripts\Boids\FlockScripts\Flock.cs" />
+    <Compile Include="Assets\Scripts\Boids\FlockScripts\FlockAgent.cs" />
+    <Compile Include="Assets\Scripts\Boids\FlockScripts\FlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\FishMotion.cs" />
-    <Compile Include="Assets\Scripts\Flock.cs" />
-    <Compile Include="Assets\Scripts\FlockAgent.cs" />
-    <Compile Include="Assets\Scripts\FlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
     <None Include="Assets\Shaders\Wavy.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/isaactorres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
