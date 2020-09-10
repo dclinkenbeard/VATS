@@ -17,10 +17,6 @@ public class PhysicsLayerFilter : ContextFilter
                 filtered.Add(item);
             }
         }
-        foreach (Transform item in filtered) {
-            Debug.Log(item.gameObject);
-            Debug.Log(item.gameObject.name + "/n");
-        }
 
         return filtered;
     }

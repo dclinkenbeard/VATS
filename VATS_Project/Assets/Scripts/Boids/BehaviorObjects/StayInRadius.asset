@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68472a8cf55774d61a8a4caa729809a5, type: 3}
   m_Name: StayInRadius
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
+  center: {x: 0, y: 35, z: 0}
   radius: 25

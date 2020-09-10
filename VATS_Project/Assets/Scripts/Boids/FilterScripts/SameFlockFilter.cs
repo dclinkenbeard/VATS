@@ -9,6 +9,9 @@ public class SameFlockFilter : ContextFilter
     {
         List<Transform> filtered = new List<Transform>();
         foreach (Transform item in original) {
+            if (item.gameObject.tag != "fish") {
+                continue;
+            }
             FlockAgent itemAgent = item.gameObject.GetComponent<FlockAgent>();
             if (itemAgent != null && itemAgent.AgentFlock == agent.AgentFlock) {
                 filtered.Add(item);

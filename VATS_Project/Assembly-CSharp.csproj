@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CohesionBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CompositeBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\FilteredFlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\RaycastAvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StayInRadiusBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\SteeredCohesionBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StrictAvoidanceBehavior.cs" />
@@ -77,10 +78,15 @@
     <Compile Include="Assets\Scripts\Boids\FlockScripts\Flock.cs" />
     <Compile Include="Assets\Scripts\Boids\FlockScripts\FlockAgent.cs" />
     <Compile Include="Assets\Scripts\Boids\FlockScripts\FlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\GenerateSphereDirection.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\FishMotion.cs" />
     <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
+    <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <None Include="Assets\Shaders\Wavy.shader" />
+    <None Include="Assets\Shaders\NoiseGround.shader" />
+    <None Include="Assets\Shaders\UnderwaterImageEffect.shader" />
+    <None Include="Assets\Shaders\noiseSimplex.cginc" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/isaactorres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
