@@ -86,6 +86,7 @@
     <None Include="Assets\Shaders\Wavy.shader" />
     <None Include="Assets\Shaders\NoiseGround.shader" />
     <None Include="Assets\Shaders\UnderwaterImageEffect.shader" />
+    <None Include="Assets\Models\Sardine\ReadMe.txt" />
     <None Include="Assets\Shaders\noiseSimplex.cginc" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/isaactorres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

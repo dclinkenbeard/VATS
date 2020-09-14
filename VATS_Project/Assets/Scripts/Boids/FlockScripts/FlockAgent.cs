@@ -31,8 +31,8 @@ public class FlockAgent : MonoBehaviour
             lerpTo = velocity;
             //transform.forward = velocity;
         }
-
-        transform.position += velocity * Time.deltaTime;
+        transform.position = Vector3.Lerp(transform.position, transform.position + velocity * Time.deltaTime, 0.5f);
+        //transform.position += velocity * Time.deltaTime;
     }
 
     // Update is called once per frame
