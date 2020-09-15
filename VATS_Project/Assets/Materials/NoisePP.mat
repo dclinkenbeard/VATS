@@ -25,9 +25,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DepthDistance: 1000
-    - _DepthStart: 0
-    - _NoiseFrequency: 4
-    - _NoiseScale: 3
-    - _NoiseSpeed: 6
-    - _PixelOffset: 0.001
+    - _DepthStart: 1
+    - _NoiseFrequency: 5
+    - _NoiseScale: 2
+    - _NoiseSpeed: 2
+    - _PixelOffset: 0.005
     m_Colors: []

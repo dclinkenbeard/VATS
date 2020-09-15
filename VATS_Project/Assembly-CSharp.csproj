@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CohesionBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CompositeBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\FilteredFlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\PulledTowardsCenterBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\RaycastAvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StayInRadiusBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\SteeredCohesionBehavior.cs" />

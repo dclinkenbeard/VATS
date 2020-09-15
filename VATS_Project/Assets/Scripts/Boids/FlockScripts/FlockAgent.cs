@@ -45,8 +45,9 @@ public class FlockAgent : MonoBehaviour
                 lerping = false;
             }
             else {
-                transform.forward = Vector3.Lerp(transform.forward, lerpTo, 0.01f);
+                transform.forward = Vector3.Lerp(transform.forward, lerpTo, 0.01f/transform.localScale.x);
             }
+
         }
     }
 }

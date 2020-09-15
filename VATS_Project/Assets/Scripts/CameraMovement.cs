@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
 
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
-    private float boostedSpeed = 50f;
+    public float boostedSpeed = 50f;
 
 
     // Start is called before the first frame update
