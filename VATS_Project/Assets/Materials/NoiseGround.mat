@@ -67,10 +67,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.11
     - _GlossyReflections: 1
-    - _Metallic: 0.424
+    - _Metallic: 0.486
     - _Mode: 0
     - _NoiseFrequency: -1.1
-    - _NoiseScale: 5.01
+    - _NoiseScale: 7
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0

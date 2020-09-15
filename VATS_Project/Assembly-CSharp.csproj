@@ -81,8 +81,11 @@
     <Compile Include="Assets\Scripts\Boids\GenerateSphereDirection.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\FishMotion.cs" />
+    <Compile Include="Assets\Scripts\FogEffect.cs" />
     <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
+    <Compile Include="Assets\Scripts\WaterWave.cs" />
+    <None Include="Assets\Shaders\FogShader.shader" />
     <None Include="Assets\Shaders\Wavy.shader" />
     <None Include="Assets\Shaders\NoiseGround.shader" />
     <None Include="Assets\Shaders\UnderwaterImageEffect.shader" />
