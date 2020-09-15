@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{88F49752-B758-FBB6-69C9-B2B04536FB0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crest", "Crest.csproj", "{B79FE6FC-7EFD-45CA-229D-CC25C3269DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crest.Examples", "Crest.Examples.csproj", "{8ADCF126-0A3F-A0DC-CE48-E7D92A565976}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{88F49752-B758-FBB6-69C9-B2B04536FB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F49752-B758-FBB6-69C9-B2B04536FB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F49752-B758-FBB6-69C9-B2B04536FB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79FE6FC-7EFD-45CA-229D-CC25C3269DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79FE6FC-7EFD-45CA-229D-CC25C3269DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79FE6FC-7EFD-45CA-229D-CC25C3269DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79FE6FC-7EFD-45CA-229D-CC25C3269DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADCF126-0A3F-A0DC-CE48-E7D92A565976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADCF126-0A3F-A0DC-CE48-E7D92A565976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADCF126-0A3F-A0DC-CE48-E7D92A565976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADCF126-0A3F-A0DC-CE48-E7D92A565976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
