@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6679389a7e1ba574e839939948a2141c, type: 3}
   m_Name: PulledTowardsCenter
   m_EditorClassIdentifier: 
-  center: {x: 0, y: -50, z: 0}
+  center: {x: 0, y: -25, z: 0}

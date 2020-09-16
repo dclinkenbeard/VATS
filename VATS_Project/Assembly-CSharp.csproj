@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BoidAgent.cs" />
+    <Compile Include="Assets\Scripts\BoidSpawner.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CohesionBehavior.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\FilteredFlockBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\PulledTowardsCenterBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\RaycastAvoidanceBehavior.cs" />
+    <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StayInAreaBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StayInRadiusBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\SteeredCohesionBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\StrictAvoidanceBehavior.cs" />
