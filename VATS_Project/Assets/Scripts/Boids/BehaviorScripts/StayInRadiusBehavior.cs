@@ -18,6 +18,8 @@ public class StayInRadiusBehavior : FlockBehavior
             return Vector3.zero;
         }
 
+        //return agent.transform.position - (agent.transform.forward * 5);
+        //return center;
         return centerOffset * t * t;
     }
 }

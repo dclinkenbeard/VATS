@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
 
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
-    private float boostedSpeed = 50f;
+    public float boostedSpeed = 50f;
 
 
     // Start is called before the first frame update
@@ -27,10 +27,13 @@ public class CameraMovement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1000)) {
-                trackingTarget = hit.transform;
-                trackingLerp = 0.01f;
-                state = 1;
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                if (hit.transform.gameObject.tag == "Fish") { 
+                    trackingTarget = hit.transform;
+                    trackingLerp = 0.005f;
+                    state = 1;
+                }
             }
         }
 
@@ -103,22 +106,32 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Vector3 targetPos = trackingTarget.position + (trackingTarget.right * 1f);
+        Vector3 targetPos = trackingTarget.position + (trackingTarget.right * trackingTarget.localScale.x) + (trackingTarget.forward);
+        Vector3 targetAngle = trackingTarget.rotation.eulerAngles;
+        targetAngle.x = 0;
+        targetAngle.z = 0;
+        targetAngle.y -= 90;
 
         Vector3 fishRot = trackingTarget.rotation.eulerAngles;
         //Quaternion targetRot = Quaternion.Euler(fishRot.x, fishRot.y - 90f, fishRot.z);
 
-        if (Vector3.Distance(transform.position, targetPos) > 0.1f)
+        if (Vector3.Distance(transform.position, targetPos) > 0.01f)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPos, trackingLerp);
-            trackingLerp *= 1.15f;
-            transform.LookAt(trackingTarget.position);
+            trackingLerp = 0.1f;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
+            //trackingLerp *= 1.1f;
+            //transform.LookAt(trackingTarget.position);
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
         }
         else
         {
-            transform.parent = trackingTarget;
-            transform.localPosition = new Vector3(1f,0,0);
-            transform.localRotation = Quaternion.Euler(0,-90f,0);
+            //transform.position = targetPos;
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
+            //transform.parent = trackingTarget;
+            //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);
+            //transform.LookAt(trackingTarget.position);
+            //transform.localRotation = Quaternion.Euler(0,-90f,0);
         }
 
 
