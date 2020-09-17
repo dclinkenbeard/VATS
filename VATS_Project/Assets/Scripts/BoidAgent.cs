@@ -5,14 +5,14 @@ using UnityEngine;
 public class BoidAgent : MonoBehaviour
 {
     public float neighborRadius = 5f;
-    public float avoidRadius = 2f;
+    public float avoidRadius = 1f;
     List<Vector3> spherePoints;
 
     public LayerMask obstacleMask;
     public Vector3 velocity;
 
-    float avoidanceWeight = 3.5f;
-    float alignmentWeight = 3f;
+    float avoidanceWeight = 2.5f;
+    float alignmentWeight = 2f;
     float cohesionWeight = 1f;
 
 
