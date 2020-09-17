@@ -115,33 +115,37 @@ public class CameraMovement : MonoBehaviour
 
     public void Track()
     {
-        if (transform.parent == trackingTarget) {
+
+        Transform trackingModel = trackingTarget.GetChild(0);
+        if (transform.parent == trackingModel) {
             //transform.localPosition = new Vector3(1f, 0, 0);
             //transform.localRotation = Quaternion.Euler(0, -90f, 0);
             return;
         }
 
-        Vector3 targetPos = trackingTarget.position + (trackingTarget.right * 2 * trackingTarget.localScale.x); //(trackingTarget.forward);
-        Vector3 targetAngle = trackingTarget.rotation.eulerAngles;
+        Vector3 targetPos = trackingModel.position + (trackingModel.right * 2 * trackingTarget.localScale.x); //(trackingTarget.forward);
+        Vector3 targetAngle = trackingModel.rotation.eulerAngles;
         targetAngle.x = 0;
         targetAngle.z = 0;
         targetAngle.y -= 90;
 
-        Vector3 fishRot = trackingTarget.rotation.eulerAngles;
+        //Vector3 fishRot = trackingTarget.rotation.eulerAngles;
         //Quaternion targetRot = Quaternion.Euler(fishRot.x, fishRot.y - 90f, fishRot.z);
 
-        if (Vector3.Distance(transform.position, targetPos) > 0.01f)
+        if (Vector3.Distance(transform.position, targetPos) > 1f)
         {
-            trackingLerp = 0.1f;
-            transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
+            //trackingLerp = 0.1f;
+            transform.position = Vector3.Lerp(transform.position, targetPos, trackingLerp);
             trackingLerp *= 1.1f;
-            transform.LookAt(trackingTarget.position);
-
+            transform.LookAt(trackingModel.position);
+            Debug.Log("Tracking");
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.1f);
         }
         else
         {
             transform.position = targetPos;
+            transform.LookAt(trackingModel.position);
+            Debug.Log("Tracked");
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
             //transform.parent = trackingTarget;
             //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);
