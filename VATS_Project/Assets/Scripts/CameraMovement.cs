@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,14 +23,23 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (Cursor.lockState == CursorLockMode.Locked) {
+                Cursor.lockState = CursorLockMode.None;
+            }else if (Cursor.lockState == CursorLockMode.None){
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                if (hit.transform.gameObject.tag == "Fish") { 
+                if (hit.transform.gameObject.tag == "Fish")
+                {
                     trackingTarget = hit.transform;
                     trackingLerp = 0.005f;
                     state = 1;
@@ -37,12 +47,14 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             transform.parent = null;
             state = 0;
         }
 
-        switch (state) {
+        switch (state)
+        {
             case 0:
                 FreeFly();
                 break;
@@ -50,11 +62,14 @@ public class CameraMovement : MonoBehaviour
                 Track();
                 break;
         }
-
     }
 
     public void FreeFly()
     {
+        if (Cursor.lockState != CursorLockMode.Locked) {
+            return;
+        }
+
         //movement
             Vector3 deltaPosition = Vector3.zero;
             float currentSpeed = movementSpeed;
@@ -106,7 +121,7 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Vector3 targetPos = trackingTarget.position + (trackingTarget.right * trackingTarget.localScale.x) + (trackingTarget.forward);
+        Vector3 targetPos = trackingTarget.position + (trackingTarget.right * 2 * trackingTarget.localScale.x); //(trackingTarget.forward);
         Vector3 targetAngle = trackingTarget.rotation.eulerAngles;
         targetAngle.x = 0;
         targetAngle.z = 0;
@@ -119,14 +134,14 @@ public class CameraMovement : MonoBehaviour
         {
             trackingLerp = 0.1f;
             transform.position = Vector3.Lerp(transform.position, targetPos, 0.1f);
-            //trackingLerp *= 1.1f;
-            //transform.LookAt(trackingTarget.position);
+            trackingLerp *= 1.1f;
+            transform.LookAt(trackingTarget.position);
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.1f);
         }
         else
         {
-            //transform.position = targetPos;
+            transform.position = targetPos;
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
             //transform.parent = trackingTarget;
             //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);

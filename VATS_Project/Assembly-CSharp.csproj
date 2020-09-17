@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_10;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_10;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -91,70 +91,70 @@
     <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\WaterWave.cs" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\UpdateDynWaves.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\SdfApply.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\UpdateDynWaves.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\SdfApply.compute" />
     <None Include="Assets\Shaders\FogShader.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesAddHeightFromGeometry.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\GerstnerShared.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\FoamAddFromVertCol.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesAddHeightFromGeometry.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\GerstnerShared.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\FoamAddFromVertCol.shader" />
     <None Include="Assets\Shaders\Wavy.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Misc\OceanProxy.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesAddFromTex.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\FoamAddFromTex.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\SdfJumpFlood.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanFoam.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\DynWavesSphereWaterInteraction.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesSetHeightToGeometry.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\FlowAddFlowMap.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\FullScreenTriangle.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\ShadowOverride.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanHelpersNew.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Underwater\UnderwaterCurtain.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\UpdateShadow.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\Misc\OceanProxy.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesAddFromTex.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\FoamAddFromTex.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\SdfJumpFlood.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanFoam.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\DynWavesSphereWaterInteraction.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesSetHeightToGeometry.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\FlowAddFlowMap.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\FullScreenTriangle.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ShadowOverride.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanHelpersNew.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\Underwater\UnderwaterCurtain.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\UpdateShadow.compute" />
     <None Include="Assets\Shaders\NoiseGround.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Textures\Caustics\SOURCE.txt" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\DynWavesObjectInteraction.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\InjectorSignedDistanceField.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\FlowFixedDirection.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Ocean.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\OceanDepths.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesGerstnerBatchGeometry.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\SdfInitJumpFlood.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Underwater\UnderwaterShared.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanNormalMapping.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceIncludeArea.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\AnimWavesGerstnerBatch.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanReflection.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\Debug\TextureArray.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveArea.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\OceanDepthsCache.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanVertHelpers.hlsl" />
+    <None Include="Assets\Crest\Crest\Textures\Caustics\SOURCE.txt" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\DynWavesObjectInteraction.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\InjectorSignedDistanceField.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\FlowFixedDirection.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Ocean.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\OceanDepths.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesGerstnerBatchGeometry.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\SdfInitJumpFlood.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\Underwater\UnderwaterShared.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanNormalMapping.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceIncludeArea.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\AnimWavesGerstnerBatch.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanReflection.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\Debug\TextureArray.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveArea.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\OceanDepthsCache.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanVertHelpers.hlsl" />
     <None Include="Assets\Shaders\UnderwaterImageEffect.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\ShapeCombine.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveAreaTexture.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\QueryDisplacements.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanGlobals.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanHelpersDriven.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesWaveParticle.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\GPUNoise\SOURCE.txt" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\QueryFlow.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\GPUNoise\GPUNoise.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\ShapeCombine.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceConvexHull.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanHelpers.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Underwater\UnderwaterMeniscus.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanSurfaceAlpha.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\ClearToBlack.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\ShapeCombine.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveAreaTexture.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\QueryDisplacements.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanGlobals.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanHelpersDriven.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesWaveParticle.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\GPUNoise\SOURCE.txt" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\QueryFlow.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\GPUNoise\GPUNoise.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\ShapeCombine.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceConvexHull.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanHelpers.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\Underwater\UnderwaterMeniscus.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanSurfaceAlpha.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\ClearToBlack.compute" />
     <None Include="Assets\Models\Sardine\ReadMe.txt" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanEmission.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanEmission.hlsl" />
     <None Include="Assets\Shaders\noiseSimplex.cginc" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\DynWavesAddBump.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanConstants.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\Resources\DynWavesDampenCircle.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\Resources\UpdateFoam.compute" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesRemoveGeometry.shader" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\OceanInputsDriven.hlsl" />
-    <None Include="Assets\Assets\Crest\Crest\Shaders\SdfShared.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\DynWavesAddBump.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanConstants.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\DynWavesDampenCircle.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\Resources\UpdateFoam.compute" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesRemoveGeometry.shader" />
+    <None Include="Assets\Crest\Crest\Shaders\OceanInputsDriven.hlsl" />
+    <None Include="Assets\Crest\Crest\Shaders\SdfShared.hlsl" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Unity/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -709,6 +709,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
