@@ -7,7 +7,7 @@ public class FishMotion : MonoBehaviour
     private Material fishMaterial;
 	void Start ()
     {
-        fishMaterial = GetComponent<MeshRenderer>().material;
+        fishMaterial = GetComponent<SkinnedMeshRenderer>().material;
         fishMaterial.SetFloat("_MoveOffset", Random.Range(0.0f, 3.14f));
 	}
 }

@@ -11,8 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 668aecf91371c8b4997e42c0c7b19527, type: 3}
   m_ShaderKeywords: _APPLYNORMALMAPPING_ON _CAUSTICS_ON _CLIPSURFACE_ON _COMPUTEDIRECTIONALLIGHT_ON
     _DEBUGMULTIPLYBYLIGHT0COLOR_ON _DIRECTIONALLIGHTVARYROUGHNESS_ON _FOAM3DLIGHTING_ON
-    _FOAM_ON _PROCEDURALSKY_ON _SHADOWS_ON _SUBSURFACEHEIGHTLERP_ON _SUBSURFACESCATTERING_ON
-    _SUBSURFACESHALLOWCOLOUR_ON _TRANSPARENCY_ON _UNDERWATER_ON
+    _FOAM_ON _SHADOWS_ON _SUBSURFACEHEIGHTLERP_ON _SUBSURFACESCATTERING_ON _SUBSURFACESHALLOWCOLOUR_ON
+    _TRANSPARENCY_ON _UNDERWATER_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -105,7 +105,7 @@ Material:
     - _DebugVisualiseFlow: 0
     - _DebugVisualiseShapeSample: 0
     - _DirectionalLightBoost: 7
-    - _DirectionalLightFallOff: 1
+    - _DirectionalLightFallOff: 188
     - _DirectionalLightFallOffFar: 42
     - _DirectionalLightFarDistance: 137
     - _DirectionalLightVaryRoughness: 1
@@ -126,7 +126,7 @@ Material:
     - _PlanarReflectionIntensity: 1
     - _PlanarReflectionNormalsStrength: 1
     - _PlanarReflections: 0
-    - _ProceduralSky: 1
+    - _ProceduralSky: 0
     - _RefractAmt: 0
     - _RefractionStrength: 1
     - _RefractiveIndexOfAir: 1.2
@@ -141,7 +141,7 @@ Material:
     - _StencilFunction: 0
     - _SubSurfaceBase: 1.04
     - _SubSurfaceDepthMax: 9.4
-    - _SubSurfaceDepthPower: 0.01
+    - _SubSurfaceDepthPower: 2.57
     - _SubSurfaceHeightLerp: 1
     - _SubSurfaceHeightMax: 24.9
     - _SubSurfaceHeightPower: 1.68

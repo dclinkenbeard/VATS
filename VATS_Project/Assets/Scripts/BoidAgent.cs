@@ -14,6 +14,7 @@ public class BoidAgent : MonoBehaviour
     float avoidanceWeight = 2.5f;
     float alignmentWeight = 2f;
     float cohesionWeight = 1f;
+    float collisionWeight = 40f;
 
 
     float minSpeed = 5f;
@@ -52,7 +53,7 @@ public class BoidAgent : MonoBehaviour
         if (Physics.SphereCast(transform.position, 1f, transform.forward, out hit, 5f, obstacleMask))
         {
             Vector3 collisionAvoidDir = FindOpenDirection();
-            Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * 30f;
+            Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * collisionWeight;
             acceleration += collisionAvoidForce;
         }
 

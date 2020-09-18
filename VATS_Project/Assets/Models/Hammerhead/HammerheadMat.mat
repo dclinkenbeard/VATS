@@ -60,17 +60,26 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EffectRadius: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _MoveOffset: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StrideSpeed: 1.78
+    - _StrideStrength: 0.05
+    - _Threshold: 14.7
     - _UVSec: 0
+    - _WaveDensity: 0.307
+    - _WaveHeight: 2.6
+    - _WaveSpeed: 4.1
+    - _Yoffset: -0.84
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

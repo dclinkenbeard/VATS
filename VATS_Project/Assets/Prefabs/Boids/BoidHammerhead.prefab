@@ -245,6 +245,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HammerheadModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd84f19d75fb89746ab65fb1cee82c7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: bd84f19d75fb89746ab65fb1cee82c7a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1771216564546194796, guid: bd84f19d75fb89746ab65fb1cee82c7a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd84f19d75fb89746ab65fb1cee82c7a, type: 3}
