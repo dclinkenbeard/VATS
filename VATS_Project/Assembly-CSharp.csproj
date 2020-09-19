@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\FishMotion.cs" />
     <Compile Include="Assets\Scripts\FogEffect.cs" />
     <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
+    <Compile Include="Assets\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
     <Compile Include="Assets\Scripts\WaterWave.cs" />
