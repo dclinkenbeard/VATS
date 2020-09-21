@@ -63,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BoidAgent.cs" />
-    <Compile Include="Assets\Scripts\BoidSpawner.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\AvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\CohesionBehavior.cs" />
@@ -91,6 +89,12 @@
     <Compile Include="Assets\Scripts\FogEffect.cs" />
     <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
     <Compile Include="Assets\Scripts\MeshGenerator.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidAlignmentBehavior.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidAvoidanceBehavior.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidBehavior.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidCohesionBehavior.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BoidAgent.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BoidSpawner.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
     <Compile Include="Assets\Scripts\WaterWave.cs" />
@@ -126,6 +130,7 @@
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesGerstnerBatchGeometry.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\SdfInitJumpFlood.compute" />
     <None Include="Assets\Crest\Crest\Shaders\Underwater\UnderwaterShared.hlsl" />
+    <None Include="Assets\Scripts\New Boids\BoidComputeShader.compute" />
     <None Include="Assets\Crest\Crest\Shaders\OceanNormalMapping.hlsl" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceIncludeArea.shader" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\AnimWavesGerstnerBatch.shader" />

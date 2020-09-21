@@ -6,21 +6,26 @@ public class BoidAgent : MonoBehaviour
 {
     public float neighborRadius = 5f;
     public float avoidRadius = 1f;
-    List<Vector3> spherePoints;
 
-    public LayerMask obstacleMask;
-    public Vector3 velocity;
-
-    float avoidanceWeight = 2.5f;
-    float alignmentWeight = 2f;
-    float cohesionWeight = 1f;
-    float collisionWeight = 40f;
-
-
-    float minSpeed = 5f;
-    float maxSpeed = 10f;
+    public float minSpeed = 5f;
+    public float maxSpeed = 10f;
 
     public float maxTurnSpd = 10f;
+
+    public LayerMask obstacleMask;
+
+    // two lists must be corresponding
+    public List<BoidBehavior> boidBehaviors;
+    public List<float> behaviorWeights;
+
+    //float avoidanceWeight = 2.5f;
+    //float alignmentWeight = 2f;
+    //float cohesionWeight = 1f;
+
+    const float collisionWeight = 40f;
+
+    List<Vector3> spherePoints;
+    Vector3 velocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,14 +43,20 @@ public class BoidAgent : MonoBehaviour
         List<Transform> avoidObjects = GetAvoidObjects();
 
 
-        Vector3 avoidance = SteerTowards(CalculateAvoidance(avoidObjects)) * avoidanceWeight;
-        Vector3 alignment = SteerTowards(CalculateAlignment(nearbyObjects)) * alignmentWeight;
-        Vector3 cohesion = SteerTowards(CalculateCohesion(nearbyObjects)) * cohesionWeight;
+        //Vector3 avoidance = SteerTowards(CalculateAvoidance(avoidObjects)) * avoidanceWeight;
+        //Vector3 alignment = SteerTowards(CalculateAlignment(nearbyObjects)) * alignmentWeight;
+        //Vector3 cohesion = SteerTowards(CalculateCohesion(nearbyObjects)) * cohesionWeight;
         //Vector3 center = SteerTowards(transform.parent.transform.position) * 6f;
 
-        acceleration += avoidance;
-        acceleration += alignment;
-        acceleration += cohesion;
+        for (int i = 0; i < boidBehaviors.Count; i++) {
+            Vector3 behaviorMove = SteerTowards(boidBehaviors[i].CalculateMove(gameObject, nearbyObjects, avoidObjects)) * behaviorWeights[i];
+            acceleration += behaviorMove;
+
+        }
+
+        //acceleration += avoidance;
+        //acceleration += alignment;
+        //acceleration += cohesion;
         //acceleration += center;
         //transform.position += velocity * Time.deltaTime;
 
@@ -70,6 +81,7 @@ public class BoidAgent : MonoBehaviour
     }
     public Vector3 FindOpenDirection()
     {
+        
         for (int i = 0; i < spherePoints.Count; i++)
         {
             Vector3 dir = transform.TransformDirection(spherePoints[i]);
@@ -79,6 +91,7 @@ public class BoidAgent : MonoBehaviour
                 return dir;
             }
         }
+
 
         return transform.forward;
     }
@@ -124,6 +137,7 @@ public class BoidAgent : MonoBehaviour
         }
     }
 
+    /*
     Vector3 CalculateAvoidance(List<Transform> objects) {
         Vector3 avoidance = transform.forward;
         foreach (Transform obj in objects) {
@@ -136,6 +150,9 @@ public class BoidAgent : MonoBehaviour
 
         return avoidance;
     }
+    */
+
+    /*
     Vector3 CalculateAlignment(List<Transform> objects)
     {
         Vector3 alignment = transform.forward;
@@ -151,7 +168,9 @@ public class BoidAgent : MonoBehaviour
 
         return alignment;
     }
+    */
 
+    /*
     Vector3 CalculateCohesion(List<Transform> objects)
     {
         Vector3 cohesion = transform.forward;
@@ -168,7 +187,7 @@ public class BoidAgent : MonoBehaviour
 
         return cohesion;
     }
-
+    */
     List<Transform> GetNearbyObjects()
     {
         List<Transform> context = new List<Transform>();

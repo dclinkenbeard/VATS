@@ -111,8 +111,17 @@ MonoBehaviour:
   avoidRadius: 2
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
-  velocity: {x: 0, y: 0, z: 0}
+    m_Bits: 256
+  boidBehaviors:
+  - {fileID: 11400000, guid: ac7a6a03843a09a46b26c1562c4a6046, type: 2}
+  - {fileID: 11400000, guid: c51687dfdbf249f468e09c87d4566899, type: 2}
+  - {fileID: 11400000, guid: b3175cf4867777b41bb96a27ae4510cd, type: 2}
+  behaviorWeights:
+  - 2.5
+  - 2
+  - 1
+  minSpeed: 5
+  maxSpeed: 10
   maxTurnSpd: 10
 --- !u!114 &1952533850861302466
 MonoBehaviour:

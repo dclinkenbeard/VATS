@@ -6,7 +6,7 @@ public class BoidSpawner : MonoBehaviour
 {
     public GameObject agentPrefab;
     public int spawnCount;
-    public LayerMask obstacleMask;
+    //public LayerMask obstacleMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class BoidSpawner : MonoBehaviour
                 transform
                 );
 
-            agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
+            //agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
         }
     }
 
