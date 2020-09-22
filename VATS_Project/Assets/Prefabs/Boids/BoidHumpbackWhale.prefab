@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighborRadius: 5
   avoidRadius: 2
+  collisionLength: 10
   minSpeed: 0.5
   maxSpeed: 2
   maxTurnSpd: 2
@@ -124,7 +125,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c51687dfdbf249f468e09c87d4566899, type: 2}
   - {fileID: 11400000, guid: b3175cf4867777b41bb96a27ae4510cd, type: 2}
   behaviorWeights:
-  - 0
+  - 1
   - 0.3
   - 0.2
 --- !u!1 &5178439861403513421

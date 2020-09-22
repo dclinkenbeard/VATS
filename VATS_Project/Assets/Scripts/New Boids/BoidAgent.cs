@@ -6,6 +6,7 @@ public class BoidAgent : MonoBehaviour
 {
     public float neighborRadius = 5f;
     public float avoidRadius = 1f;
+    public float collisionLength = 5f;
 
     public float minSpeed = 5f;
     public float maxSpeed = 10f;
@@ -28,9 +29,17 @@ public class BoidAgent : MonoBehaviour
 
     List<Vector3> spherePoints;
     Vector3 velocity;
+
+
+    bool spawning = true;
+    bool despawning = false;
+    Vector3 scale;
     // Start is called before the first frame update
     void Start()
     {
+        scale = transform.localScale;
+        transform.localScale = new Vector3(0, 0, 0);
+        
         velocity = transform.forward * ((minSpeed + maxSpeed)/2);
         spherePoints = GenerateSpherePoints();
     }
@@ -38,6 +47,27 @@ public class BoidAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for debugging
+        //if (Input.GetKeyDown(KeyCode.B)) {
+        //  despawning = true;
+        //}
+        if (spawning) {
+            transform.localScale = Vector3.Lerp(transform.localScale, scale, 0.1f);
+            if ((transform.localScale - scale).sqrMagnitude < 0.1f) {
+                transform.localScale = scale;
+                spawning = false;
+            }
+        }
+
+        if (despawning) {
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0,0,0), 0.1f);
+            if (transform.localScale.sqrMagnitude < 0.1f)
+            {
+                transform.localScale = new Vector3(0,0,0);
+                Destroy(gameObject);
+            }
+        }
+
         Vector3 acceleration = transform.forward;
 
         //FindOpenDirection();
@@ -62,7 +92,7 @@ public class BoidAgent : MonoBehaviour
         //acceleration += center;
         //transform.position += velocity * Time.deltaTime;
 
-        if (Physics.SphereCast(transform.position, 1f, transform.forward, out _, 5f, obstacleMask))
+        if (Physics.SphereCast(transform.position, 1f, transform.forward, out _, collisionLength, obstacleMask))
         {
             Vector3 collisionAvoidDir = FindOpenDirection();
             Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * collisionWeight;
@@ -87,7 +117,7 @@ public class BoidAgent : MonoBehaviour
         {
             Vector3 dir = transform.TransformDirection(spherePoints[i]);
             Ray ray = new Ray(transform.position, dir);
-            if (!Physics.SphereCast(ray, 1f, 5f, obstacleMask))
+            if (!Physics.SphereCast(ray, 1f, collisionLength, obstacleMask))
             {
                 return dir;
             }

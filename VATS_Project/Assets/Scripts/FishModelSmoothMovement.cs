@@ -6,6 +6,9 @@ public class FishModelSmoothMovement : MonoBehaviour
 {
     Quaternion rotation;
     Vector3 position;
+
+    public float rotLerpSpd = 0.1f;
+    public float posLerpSpd = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,8 @@ public class FishModelSmoothMovement : MonoBehaviour
     void Update()
     {
         //transform.rotation = transform.parent.rotation;
-        rotation = Quaternion.Lerp(rotation, transform.parent.rotation, 0.1f);
-        position = Vector3.Lerp(position, transform.parent.position, 0.1f);
+        rotation = Quaternion.Lerp(rotation, transform.parent.rotation, rotLerpSpd);
+        position = Vector3.Lerp(position, transform.parent.position, posLerpSpd);
 
         transform.rotation = rotation;
         transform.position = position;
