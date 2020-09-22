@@ -144,6 +144,7 @@
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveAreaTexture.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\QueryDisplacements.compute" />
     <None Include="Assets\Crest\Crest\Shaders\OceanGlobals.hlsl" />
+    <None Include="Assets\Shaders\Fish\NewImageEffectShader.shader" />
     <None Include="Assets\Crest\Crest\Shaders\OceanHelpersDriven.hlsl" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesWaveParticle.shader" />
     <None Include="Assets\Crest\Crest\Shaders\GPUNoise\SOURCE.txt" />

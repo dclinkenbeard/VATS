@@ -12,7 +12,9 @@ public class BoidAgent : MonoBehaviour
 
     public float maxTurnSpd = 10f;
 
+    public string fishType;
     public LayerMask obstacleMask;
+    public LayerMask fishLayerMask;
 
     // two lists must be corresponding
     public List<BoidBehavior> boidBehaviors;
@@ -60,8 +62,7 @@ public class BoidAgent : MonoBehaviour
         //acceleration += center;
         //transform.position += velocity * Time.deltaTime;
 
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 1f, transform.forward, out hit, 5f, obstacleMask))
+        if (Physics.SphereCast(transform.position, 1f, transform.forward, out _, 5f, obstacleMask))
         {
             Vector3 collisionAvoidDir = FindOpenDirection();
             Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * collisionWeight;
@@ -192,17 +193,17 @@ public class BoidAgent : MonoBehaviour
     {
         List<Transform> context = new List<Transform>();
         Collider[] contextColliders = Physics.OverlapSphere(transform.position, neighborRadius);
-
+        
         foreach (Collider c in contextColliders)
         {
             if (c.gameObject == this) {
                 continue;
             }
-            if (c.gameObject.tag == "Fish")
-            {
+            if (fishLayerMask == (fishLayerMask | (1 << c.gameObject.layer))){
                 context.Add(c.transform);
             }
         }
+        
 
         return context;
     }
@@ -211,15 +212,14 @@ public class BoidAgent : MonoBehaviour
     {
         List<Transform> context = new List<Transform>();
         Collider[] contextColliders = Physics.OverlapSphere(transform.position, avoidRadius);
-
+        
         foreach (Collider c in contextColliders)
         {
             if (c.gameObject == this)
             {
                 continue;
             }
-            if (c.gameObject.tag == "Fish")
-            {
+            if (fishLayerMask == (fishLayerMask | (1 << c.gameObject.layer))) {
                 context.Add(c.transform);
             }
         }
