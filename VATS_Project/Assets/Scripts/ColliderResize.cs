@@ -31,12 +31,12 @@ public class ColliderResize : MonoBehaviour
         topCollider.transform.localPosition = new Vector3(topCollider.transform.localPosition.x, (localYPos / 2f), topCollider.transform.localPosition.z);
         bottomCollider.transform.localPosition = new Vector3(bottomCollider.transform.localPosition.x, -(localYPos / 2f), bottomCollider.transform.localPosition.z);
 
-        zColliderA.transform.localScale = new Vector3(localYPos, localYPos, 1);
-        zColliderB.transform.localScale = new Vector3(localYPos, localYPos, 1);
-        xColliderA.transform.localScale = new Vector3(localYPos, localYPos, 1);
-        xColliderB.transform.localScale = new Vector3(localYPos, localYPos, 1);
-        topCollider.transform.localScale = new Vector3(localYPos, localYPos, 1);
-        bottomCollider.transform.localScale = new Vector3(localYPos, localYPos, 1);
+        zColliderA.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
+        zColliderB.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
+        xColliderA.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
+        xColliderB.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
+        topCollider.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
+        bottomCollider.transform.localScale = new Vector3(localYPos+1, localYPos+1, 1);
 
     }
 }
