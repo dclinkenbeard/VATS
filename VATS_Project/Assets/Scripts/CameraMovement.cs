@@ -13,6 +13,8 @@ public class CameraMovement : MonoBehaviour
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
 
+    public LayerMask fishLayerMask;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,7 @@ public class CameraMovement : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                if (hit.transform.gameObject.tag == "Fish")
+                if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)))
                 {
                     trackingTarget = hit.transform;
                     trackingLerp = 0.005f;

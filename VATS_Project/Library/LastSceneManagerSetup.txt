@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Isaac_Scene.unity
+- path: Assets/Scenes/Isaac_Scenes/Isaac_Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
