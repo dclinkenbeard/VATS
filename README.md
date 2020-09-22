@@ -1,4 +1,11 @@
 # VATS
 
-used crest for ocean: https://github.com/crest-ocean/crest
-followed this tutorial for boids: https://www.youtube.com/watch?v=i_XinoVBqt8&ab_channel=BoardToBitsGames
+used crest for ocean: 
+- https://github.com/crest-ocean/crest
+
+Boids Resources:
+- https://www.youtube.com/watch?v=i_XinoVBqt8&ab_channel=BoardToBitsGames
+- https://www.youtube.com/watch?v=bqtqltqcQhw&ab_channel=SebastianLague
+- http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
+- https://www.bitshiftprogrammer.com/2018/01/how-to-animate-fish-swimming-with.html
+            
