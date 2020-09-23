@@ -125,7 +125,7 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Vector3 targetPos = trackingModel.position + (trackingModel.right * 2 * trackingTarget.localScale.x); //(trackingTarget.forward);
+        Vector3 targetPos = trackingModel.position + (trackingModel.right * 2f * trackingTarget.localScale.x); //(trackingTarget.forward);
         Vector3 targetAngle = trackingModel.rotation.eulerAngles;
         targetAngle.x = 0;
         targetAngle.z = 0;
