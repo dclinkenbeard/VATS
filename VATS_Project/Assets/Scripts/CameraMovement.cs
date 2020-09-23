@@ -38,7 +38,7 @@ public class CameraMovement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1000))
+            if (Physics.Raycast(ray, out hit, 1500))
             {
                 if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)))
                 {
@@ -125,7 +125,7 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Vector3 targetPos = trackingModel.position + (trackingModel.right * 2f * trackingTarget.localScale.x); //(trackingTarget.forward);
+        Vector3 targetPos = trackingModel.position + (trackingModel.right * Mathf.Clamp(2f * trackingTarget.localScale.x, 0f, 50f)); //(trackingTarget.forward);
         Vector3 targetAngle = trackingModel.rotation.eulerAngles;
         targetAngle.x = 0;
         targetAngle.z = 0;
