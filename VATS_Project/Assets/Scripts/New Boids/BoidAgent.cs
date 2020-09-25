@@ -49,7 +49,7 @@ public class BoidAgent : MonoBehaviour
     {
         //for debugging
         //if (Input.GetKeyDown(KeyCode.B)) {
-        //  despawning = true;
+        // despawning = true;
         //}
         if (spawning) {
             transform.localScale = Vector3.Lerp(transform.localScale, scale, 0.1f);
@@ -96,7 +96,7 @@ public class BoidAgent : MonoBehaviour
         {
             Vector3 collisionAvoidDir = FindOpenDirection();
             Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * collisionWeight;
-            acceleration += collisionAvoidForce;
+            acceleration = collisionAvoidForce;
         }
 
         velocity += acceleration * Time.deltaTime;

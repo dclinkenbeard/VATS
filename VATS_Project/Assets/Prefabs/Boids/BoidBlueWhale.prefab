@@ -111,7 +111,7 @@ MonoBehaviour:
   avoidRadius: 2
   collisionLength: 40
   minSpeed: 0.5
-  maxSpeed: 2
+  maxSpeed: 3
   maxTurnSpd: 3
   fishType: 
   obstacleMask:
