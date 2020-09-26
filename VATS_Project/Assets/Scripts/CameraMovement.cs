@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -14,12 +15,18 @@ public class CameraMovement : MonoBehaviour
     public float boostedSpeed = 50f;
 
     public LayerMask fishLayerMask;
+    public GameObject basicInterface;
+    public Text fishViewText;
+    public Text fishExitText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;       
+        Cursor.lockState = CursorLockMode.Locked;
+        basicInterface.SetActive(false);
+        fishViewText.text = "";
+        fishExitText.text = "";
     }
 
     // Update is called once per frame
@@ -33,19 +40,29 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1500))
+        if (Physics.Raycast(ray, out hit, 500)) //1500
+        {
+            if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1)
             {
-                if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)))
+                basicInterface.SetActive(true);
+                GameObject flockSpawn = hit.transform.parent.gameObject;
+                fishViewText.text = "Press Left Click to follow " + flockSpawn.GetComponent<FEV>().getFishName();
+
+                if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
                 {
                     trackingTarget = hit.transform;
                     trackingLerp = 0.005f;
                     state = 1;
+                    basicInterface.SetActive(false);
+                    fishViewText.text = "";
+                    fishExitText.text = "Press Q to stop following";
                 }
+            }else {
+                basicInterface.SetActive(false);
+                fishViewText.text = "";
             }
         }
 
@@ -53,6 +70,7 @@ public class CameraMovement : MonoBehaviour
         {
             transform.parent = null;
             state = 0;
+            fishExitText.text = "";
         }
 
         switch (state)
