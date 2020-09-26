@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -15,9 +15,22 @@ public class CameraMovement : MonoBehaviour
     public float boostedSpeed = 50f;
 
     public LayerMask fishLayerMask;
+
+    // Basic Interface
     public GameObject basicInterface;
-    public Text fishViewText;
-    public Text fishExitText;
+    public TextMeshProUGUI fishViewText;
+    public TextMeshProUGUI fishExitText;
+    public TextMeshProUGUI fishExamText;
+    private string fishName;
+
+    // Examination Room
+    public Transform camExamPos;
+    public Transform fishExamPos;
+    [SerializeField] private Vector3 camOrigPos;
+    [SerializeField] private Transform fishList;
+    [SerializeField] private GameObject fishExamObj;
+    [SerializeField] private bool inExamRoom;
+
 
 
     // Start is called before the first frame update
@@ -27,6 +40,8 @@ public class CameraMovement : MonoBehaviour
         basicInterface.SetActive(false);
         fishViewText.text = "";
         fishExitText.text = "";
+        fishExamText.text = "";
+        inExamRoom = false;
     }
 
     // Update is called once per frame
@@ -45,32 +60,73 @@ public class CameraMovement : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 500)) //1500
         {
-            if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1)
+            if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1 && !inExamRoom)
             {
+                // Turns on the 'eye' and tells user what key to press to follow fish
                 basicInterface.SetActive(true);
                 GameObject flockSpawn = hit.transform.parent.gameObject;
-                fishViewText.text = "Press Left Click to follow " + flockSpawn.GetComponent<FEV>().getFishName();
+
+                // Checks if fish has FEV TODO remove once all fish have it
+                if (flockSpawn.GetComponent<FEV>())
+                {
+                    fishName = flockSpawn.GetComponent<FEV>().getFishName();
+                }else {
+                    fishName = "Target fish missing FEV!";
+                }
+
+                fishViewText.text = "Press Left Click to follow " + fishName;
 
                 if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
                 {
                     trackingTarget = hit.transform;
                     trackingLerp = 0.005f;
                     state = 1;
+
                     basicInterface.SetActive(false);
                     fishViewText.text = "";
-                    fishExitText.text = "Press Q to stop following";
+                    fishExitText.text = "Press Q to stop following " + fishName;
+                    fishExamText.text = "Press E to examine " + fishName;
+                    fishExamObj = flockSpawn.GetComponent<BoidSpawner>().agentPrefab;
                 }
             }else {
+                // if not in range or already following a fish, interface will turn off
                 basicInterface.SetActive(false);
                 fishViewText.text = "";
             }
         }
 
+        // Exit following fish
         if (Input.GetKeyDown(KeyCode.Q))
         {
             transform.parent = null;
             state = 0;
             fishExitText.text = "";
+            fishExamText.text = "";
+        }
+
+        // Enter Exmination Room
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            transform.parent = null;
+            state = 0;
+
+            inExamRoom = true;
+
+            ExaminingFish(true);
+            CameraTeleport(false);         
+
+            fishExitText.text = "";
+            fishExamText.text = "Press R to exit Examination Room";
+        }
+
+        // Exit Examination Room
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CameraTeleport(true);
+            ExaminingFish(false);
+
+            inExamRoom = false;
+            fishExamText.text = "";
         }
 
         switch (state)
@@ -82,6 +138,43 @@ public class CameraMovement : MonoBehaviour
                 Track();
                 break;
         }
+    }
+
+    // Examination Room Camera Handling
+    public void CameraTeleport(bool returning)
+    {
+        if(returning)
+        {
+            this.transform.position = camOrigPos;
+        }else {
+            camOrigPos = this.transform.position;
+            this.transform.position = camExamPos.position;
+            this.transform.rotation = camExamPos.rotation;
+        }
+        return;
+    }
+
+    // Examination Room Fish Handling
+    public void ExaminingFish(bool examining)
+    {
+        foreach (Transform childFish in fishList)
+        {
+            if(examining)
+            {
+                if (childFish.name.Equals(fishExamObj.name))
+                {
+                    // Find target fish and bring it into exam position
+                    childFish.transform.position = fishExamPos.position;
+                }
+            }else {
+                if (childFish.name.Equals(fishExamObj.name))
+                {
+                    // Reset fish position
+                    childFish.position = fishList.position;
+                }
+            }
+        }
+            return;
     }
 
     public void FreeFly()
