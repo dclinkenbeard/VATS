@@ -32,6 +32,8 @@ public class gameHandler : MonoBehaviour
         dietText = transform.Find("dietText").GetComponent<TextMeshProUGUI>();
         rangeText = transform.Find("rangeText").GetComponent<TextMeshProUGUI>();
 
+        // add a synopsis text
+
         path = Application.dataPath + "/Scenes/Derek_Scene/JSON/Fish_Encyclopedia.JSON.txt";
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
@@ -48,6 +50,14 @@ public class gameHandler : MonoBehaviour
         }
         return null;
     }
+
+    // next fish button
+
+    // prev fish button
+
+    // observe fish button
+
+    // change status UI to double circle based on fish's status
 
     void Update()
     {
