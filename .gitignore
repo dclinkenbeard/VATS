@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+VATS_Project/Temp/UnityLockfile
+=======
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
@@ -58,3 +62,4 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+>>>>>>> 0fbfd454a34cb74a329085b8a4c475e39160b3ac
