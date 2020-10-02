@@ -85,7 +85,11 @@
     <Compile Include="Assets\Scripts\Boids\FlockScripts\FlockBehavior.cs" />
     <Compile Include="Assets\Scripts\Boids\GenerateSphereDirection.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+<<<<<<< HEAD
+    <Compile Include="Assets\Scripts\CameraMovementOriginal.cs" />
+=======
     <Compile Include="Assets\Scripts\CameraUI.cs" />
+>>>>>>> 9df1851579d4145824f0f98636ff1111fa87c097
     <Compile Include="Assets\Scripts\ColliderResize.cs" />
     <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingManager.cs" />
     <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingPreset.cs" />
