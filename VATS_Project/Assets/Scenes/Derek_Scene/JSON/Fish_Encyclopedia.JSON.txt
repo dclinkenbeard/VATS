@@ -1,0 +1,26 @@
+{
+	"fish":[
+		{
+		"id": 0,
+		"name": "Blacktip shark",
+		"diet": "fish octupus",
+		"type": "fish",
+		"size": "Up to 20 feet (1.8 m)",
+		"depth": "40 below",
+		"range": "The specific ocean",
+		"status": "endangered",
+		"habitat": "fucked"
+		},
+		{
+		"id": 1,
+		"name": "big shlonger",
+		"diet": "jellies",
+		"type": "junk",
+		"size": "Up to 1000 feet (100.8 m)",
+		"depth": "10 above sea level",
+		"range": "The specific sea lake",
+		"status": "endangered",
+		"habitat": "royally fucked"
+		}
+	]
+}

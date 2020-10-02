@@ -6,6 +6,8 @@ TagManager:
   tags:
   - fish
   - Fish
+  - 0
+  - 1
   layers:
   - Default
   - TransparentFX
