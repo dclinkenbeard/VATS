@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7848361773544628998}
   - component: {fileID: 7848361773544628997}
+  - component: {fileID: 6602540468730381525}
   m_Layer: 0
   m_Name: FlockSpawner
   m_TagString: Untagged
@@ -46,6 +47,16 @@ MonoBehaviour:
   agentPrefab: {fileID: 373250012994808081, guid: 93d79e39f7d014742ba85667cc80263e,
     type: 3}
   spawnCount: 350
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 768
+--- !u!114 &6602540468730381525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7848361773544628996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb87992231fbead4d8ebcb5aa30b6f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Fish
