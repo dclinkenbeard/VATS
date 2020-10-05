@@ -100,6 +100,8 @@
     <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidBehavior.cs" />
     <Compile Include="Assets\Scripts\New Boids\BehaviorScripts\BoidCohesionBehavior.cs" />
     <Compile Include="Assets\Scripts\New Boids\BoidAgent.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BoidFilters\BoidFilter.cs" />
+    <Compile Include="Assets\Scripts\New Boids\BoidFilters\SameFishFilter.cs" />
     <Compile Include="Assets\Scripts\New Boids\BoidSpawner.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
