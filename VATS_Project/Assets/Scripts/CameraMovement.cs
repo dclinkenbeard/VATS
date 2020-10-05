@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -15,11 +16,10 @@ public class CameraMovement : MonoBehaviour
 
     public LayerMask fishLayerMask;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;       
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -33,26 +33,62 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1500))
+        if (Physics.Raycast(ray, out hit, 500)) //1500
+        {
+            bool checkExamRoom = transform.GetComponent<CameraUI>().CheckInExamRoom();
+
+            if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1 && !checkExamRoom)
             {
-                if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)))
+                transform.GetComponent<CameraUI>().basicInterface.SetActive(true);
+                transform.GetComponent<CameraUI>().flockSpawn = hit.transform.parent.gameObject;
+                transform.GetComponent<CameraUI>().UITextHandler(1);
+
+                if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
                 {
                     trackingTarget = hit.transform;
                     trackingLerp = 0.005f;
                     state = 1;
+                    transform.GetComponent<CameraUI>().UITextHandler(2);
                 }
+            }
+            else
+            {
+                transform.GetComponent<CameraUI>().basicInterface.SetActive(false);
+                transform.GetComponent<CameraUI>().flockSpawn = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        // Exit following fish
+        if (Input.GetKeyDown(KeyCode.Q) && state == 1)
         {
             transform.parent = null;
             state = 0;
+            transform.GetComponent<CameraUI>().UITextHandler(0);
+        }
+
+        // Enter Exmination Room
+        if (Input.GetKeyDown(KeyCode.E) && state == 1)
+        {
+            transform.parent = null;
+            state = 0;
+
+            transform.GetComponent<CameraUI>().inExamRoom = true;
+            transform.GetComponent<CameraUI>().ExaminingFish(true);
+            transform.GetComponent<CameraUI>().CameraTeleport(false);
+            transform.GetComponent<CameraUI>().UITextHandler(3);
+
+        }
+
+        // Exit Examination Room
+        if (Input.GetKeyDown(KeyCode.R) && transform.GetComponent<CameraUI>().inExamRoom)
+        {
+            transform.GetComponent<CameraUI>().CameraTeleport(true);
+            transform.GetComponent<CameraUI>().ExaminingFish(false);
+            transform.GetComponent<CameraUI>().inExamRoom = false;
+            transform.GetComponent<CameraUI>().UITextHandler(0);
         }
 
         switch (state)
@@ -140,14 +176,14 @@ public class CameraMovement : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPos, trackingLerp);
             trackingLerp *= 1.1f;
             transform.LookAt(trackingModel.position);
-            Debug.Log("Tracking");
+            //Debug.Log("Tracking");
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.1f);
         }
         else
         {
             transform.position = targetPos;
             transform.LookAt(trackingModel.position);
-            Debug.Log("Tracked");
+            //Debug.Log("Tracked");
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
             //transform.parent = trackingTarget;
             //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);
