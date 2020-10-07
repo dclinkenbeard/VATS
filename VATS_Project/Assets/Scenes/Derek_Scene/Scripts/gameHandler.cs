@@ -65,8 +65,8 @@ public class gameHandler : MonoBehaviour
         nameText.text = itemData["fish"][index: fishID]["name"].ToString();
         typeText.text = "Animal type " + itemData["fish"][index: fishID]["type"].ToString();
         habitatText.text = "Habitat " + itemData["fish"][index: fishID]["habitat"].ToString();
-        depthText.text = "Depth " + itemData["fish"][index: fishID]["depth"].ToString();
-        sizeText.text = "Size " + itemData["fish"][index: fishID]["size"].ToString();
+        depthText.text = "Depth " + itemData["fish"][index: fishID]["maxDepth"].ToString();
+        sizeText.text = "Size " + itemData["fish"][index: fishID]["maxSize"].ToString();
         dietText.text = "Diet " + itemData["fish"][index: fishID]["diet"].ToString();
         rangeText.text = "Range " + itemData["fish"][index: fishID]["range"].ToString();
     }
