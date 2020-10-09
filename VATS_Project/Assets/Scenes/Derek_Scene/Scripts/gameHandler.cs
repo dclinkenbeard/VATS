@@ -32,6 +32,8 @@ public class gameHandler : MonoBehaviour
         dietText = transform.Find("dietText").GetComponent<TextMeshProUGUI>();
         rangeText = transform.Find("rangeText").GetComponent<TextMeshProUGUI>();
 
+        // add a synopsis text
+
         path = Application.dataPath + "/Scenes/Derek_Scene/JSON/Fish_Encyclopedia.JSON.txt";
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
@@ -49,14 +51,22 @@ public class gameHandler : MonoBehaviour
         return null;
     }
 
+    // next fish button
+
+    // prev fish button
+
+    // observe fish button
+
+    // change status UI to double circle based on fish's status
+
     void Update()
     {
         // fish stats displayed on UI
         nameText.text = itemData["fish"][index: fishID]["name"].ToString();
         typeText.text = "Animal type " + itemData["fish"][index: fishID]["type"].ToString();
         habitatText.text = "Habitat " + itemData["fish"][index: fishID]["habitat"].ToString();
-        depthText.text = "Depth " + itemData["fish"][index: fishID]["depth"].ToString();
-        sizeText.text = "Size " + itemData["fish"][index: fishID]["size"].ToString();
+        depthText.text = "Depth " + itemData["fish"][index: fishID]["maxDepth"].ToString();
+        sizeText.text = "Size " + itemData["fish"][index: fishID]["maxSize"].ToString();
         dietText.text = "Diet " + itemData["fish"][index: fishID]["diet"].ToString();
         rangeText.text = "Range " + itemData["fish"][index: fishID]["range"].ToString();
     }
