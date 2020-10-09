@@ -39,7 +39,7 @@ public class CameraMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1500)) //1500
+        if (Physics.Raycast(ray, out hit, 1500) && state == 0) //1500
         {
             bool checkExamRoom = transform.GetComponent<CameraUI>().CheckInExamRoom();
 
@@ -78,21 +78,19 @@ public class CameraMovement : MonoBehaviour
             transform.parent = null;
             state = 2;
 
-            transform.GetComponent<CameraUI>().inExamRoom = true;
-            transform.GetComponent<CameraUI>().ExaminingFish(true);
-            transform.GetComponent<CameraUI>().CameraTeleport(false);
-            transform.GetComponent<CameraUI>().UITextHandler(3);
+            transform.GetComponent<CameraUI>().examEnter = true;
 
         }
 
         // Exit Examination Room
         if (Input.GetKeyDown(KeyCode.R) && transform.GetComponent<CameraUI>().inExamRoom)
         {
-            transform.GetComponent<CameraUI>().CameraTeleport(true);
-            transform.GetComponent<CameraUI>().ExaminingFish(false);
-            transform.GetComponent<CameraUI>().inExamRoom = false;
-            transform.GetComponent<CameraUI>().UITextHandler(2);
+            transform.GetComponent<CameraUI>().examExit = true;
             state = 1;
+        }
+
+        if (transform.GetComponent<CameraUI>().inExamRoom) {
+            return;
         }
 
         switch (state)
