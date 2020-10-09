@@ -92,19 +92,19 @@ public class CameraUI : MonoBehaviour
                 fishExamText.text = "";
                 break;
             case 1:
-                fishViewText.text = "Press Left Click to follow " + fishName;
+                fishViewText.text = "Click to Follow";
                 fishExitText.text = "";
                 fishExamText.text = "";
                 break;
             case 2:
                 fishViewText.text = "";
-                fishExitText.text = "Press Q to stop following " + fishName;
-                fishExamText.text = "Press E to examine " + fishName; ;
+                fishExitText.text = "Q to Stop Following";
+                fishExamText.text = "E to Examine";
                 break;
             case 3:
                 fishViewText.text = "";
                 fishExitText.text = "";
-                fishExamText.text = "Press R to exit Examination Room";
+                fishExamText.text = "Press R to Return";
                 break;
         }
     }

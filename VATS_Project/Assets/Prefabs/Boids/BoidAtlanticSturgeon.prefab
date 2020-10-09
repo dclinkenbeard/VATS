@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2682686840098748954}
   - component: {fileID: 8553636635337650810}
-  - component: {fileID: 1176466475462458812}
-  - component: {fileID: 8200871211293577743}
+  - component: {fileID: 5931220137942407378}
   - component: {fileID: 5969240369254018505}
   m_Layer: 12
   m_Name: BoidAtlanticSturgeon
@@ -43,47 +42,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137512323270718412}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1176466475462458812
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137512323270718412}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!135 &8200871211293577743
-SphereCollider:
+--- !u!65 &5931220137942407378
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,7 +53,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.5, y: 0.25, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5969240369254018505
 MonoBehaviour:
@@ -113,7 +73,7 @@ MonoBehaviour:
   minSpeed: 4
   maxSpeed: 8
   maxTurnSpd: 8
-  fishType: 
+  fishType: Atlantic Sturgeon
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
@@ -141,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotLerpSpd: 0.02
-  posLerpSpd: 0.02
+  posLerpSpd: 0.05
 --- !u!1001 &3095121169243945363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,12 +117,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9c8b929a821d2e44b81cce22bf725ad3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c8b929a821d2e44b81cce22bf725ad3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.071
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c8b929a821d2e44b81cce22bf725ad3,
         type: 3}

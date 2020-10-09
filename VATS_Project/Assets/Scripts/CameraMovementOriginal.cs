@@ -36,7 +36,7 @@ public class CameraMovementOriginal: MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 500)) //1500
+        if (Physics.Raycast(ray, out hit, 1500)) //1500
         {
             if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1)
             {

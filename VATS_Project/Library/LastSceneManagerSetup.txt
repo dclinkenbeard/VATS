@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Derek_Scene/Derek_Scene.unity
+=======
+- path: Assets/Scenes/Isaac_Scenes/Isaac_Scene.unity
+>>>>>>> a11e6aef4d00d57b5569eef8503b7da77251ce60
   isLoaded: 1
   isActive: 1
   isSubScene: 0
