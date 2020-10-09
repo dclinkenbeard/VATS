@@ -13,11 +13,14 @@ public class CameraMovement : MonoBehaviour
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
+    public float camDistance = 10.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
 
     public LayerMask fishLayerMask;
+
+    private Vector3 previousPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -103,11 +106,15 @@ public class CameraMovement : MonoBehaviour
             case 1:
                 Track();
                 break;
+            case 2:
+                Rotate();
+                break;
         }
     }
 
     public void FreeFly()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         if (Cursor.lockState != CursorLockMode.Locked) {
             return;
         }
@@ -199,5 +206,45 @@ public class CameraMovement : MonoBehaviour
 
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 0.1f);
 
+    }
+
+    public void Rotate()
+    {
+        Camera cam = transform.gameObject.GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.None;
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            camDistance++;
+            CameraUpdate(cam, camDistance);
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            camDistance--;
+            CameraUpdate(cam, camDistance);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
+        }
+
+        if(Input.GetMouseButton(0))
+        {
+            CameraUpdate(cam, camDistance);
+        }
+    }
+
+    public void CameraUpdate(Camera cam, float camDistance)
+    {
+        Vector3 direction = previousPosition - cam.ScreenToViewportPoint(Input.mousePosition);
+
+        cam.transform.position = cam.GetComponent<CameraUI>().GetFishExamRoom().position;
+
+        cam.transform.Rotate(new Vector3(1, 0, 0), direction.y * 180);
+        cam.transform.Rotate(new Vector3(0, 1, 0), -direction.x * 180, Space.World);
+        cam.transform.Translate(new Vector3(0, 0, camDistance));
+
+        previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
     }
 }

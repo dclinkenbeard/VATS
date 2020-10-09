@@ -1975,6 +1975,8 @@ MonoBehaviour:
   mouseSense: 1.8
   movementSpeed: 5
   boostedSpeed: 20
+  min_bound: {x: 0, y: 0, z: 0}
+  max_bound: {x: 0, y: 0, z: 0}
   fishLayerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -2397,7 +2399,7 @@ PrefabInstance:
     - target: {fileID: 7848361773544628998, guid: 4c1fd452fdd7d4441bd64a62a1c86a62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7848361773544628998, guid: 4c1fd452fdd7d4441bd64a62a1c86a62,
         type: 3}
