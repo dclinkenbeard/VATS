@@ -14,6 +14,9 @@ public class CameraMovement : MonoBehaviour
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
 
+    public Vector3 min_bound;
+    public Vector3 max_bound;
+
     public LayerMask fishLayerMask;
 
     // Start is called before the first frame update
@@ -36,7 +39,7 @@ public class CameraMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 500)) //1500
+        if (Physics.Raycast(ray, out hit, 1500)) //1500
         {
             bool checkExamRoom = transform.GetComponent<CameraUI>().CheckInExamRoom();
 
@@ -73,7 +76,7 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && state == 1)
         {
             transform.parent = null;
-            state = 0;
+            state = 2;
 
             transform.GetComponent<CameraUI>().inExamRoom = true;
             transform.GetComponent<CameraUI>().ExaminingFish(true);
@@ -88,7 +91,8 @@ public class CameraMovement : MonoBehaviour
             transform.GetComponent<CameraUI>().CameraTeleport(true);
             transform.GetComponent<CameraUI>().ExaminingFish(false);
             transform.GetComponent<CameraUI>().inExamRoom = false;
-            transform.GetComponent<CameraUI>().UITextHandler(0);
+            transform.GetComponent<CameraUI>().UITextHandler(2);
+            state = 1;
         }
 
         switch (state)
