@@ -109,8 +109,6 @@ public class CameraUI : MonoBehaviour
                 screenBlack = false;
             }
         }
-
-        Debug.Log(transitionScreen.color);
     }
 
     // turn screen black and switch to examination mode
