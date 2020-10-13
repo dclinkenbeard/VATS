@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishModelSmoothMovement : MonoBehaviour
 {
+    Vector3 basePos;
     Quaternion rotation;
     Vector3 position;
 
@@ -12,6 +13,7 @@ public class FishModelSmoothMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        basePos = transform.localPosition;
         rotation = transform.parent.rotation;
         position = transform.parent.position;
     }
@@ -21,7 +23,7 @@ public class FishModelSmoothMovement : MonoBehaviour
     {
         //transform.rotation = transform.parent.rotation;
         rotation = Quaternion.Lerp(rotation, transform.parent.rotation, rotLerpSpd);
-        position = Vector3.Lerp(position, transform.parent.position, posLerpSpd);
+        position = Vector3.Lerp(position, transform.parent.position + basePos, posLerpSpd);
 
         transform.rotation = rotation;
         transform.position = position;
