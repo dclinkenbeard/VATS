@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
-    public float camDistance = 10.0f;
+    float camDistance = -10.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
@@ -216,12 +216,14 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             camDistance++;
-            CameraUpdate(cam, camDistance);
+            cam.transform.position = cam.GetComponent<CameraUI>().GetFishExamRoom().position;
+            cam.transform.Translate(new Vector3(0, 0, camDistance));
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             camDistance--;
-            CameraUpdate(cam, camDistance);
+            cam.transform.position = cam.GetComponent<CameraUI>().GetFishExamRoom().position;
+            cam.transform.Translate(new Vector3(0, 0, camDistance));
         }
 
         if (Input.GetMouseButtonDown(0))
