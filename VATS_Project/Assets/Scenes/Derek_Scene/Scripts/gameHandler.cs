@@ -13,6 +13,7 @@ public class gameHandler : MonoBehaviour
     private JsonData itemData = new JsonData();
 
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI sciNameText;
     public TextMeshProUGUI typeText;
     public TextMeshProUGUI habitatText;
     public TextMeshProUGUI depthText;
@@ -25,13 +26,13 @@ public class gameHandler : MonoBehaviour
     void Start()
     {
         nameText = transform.Find("nameText").GetComponent<TextMeshProUGUI>();
+        sciNameText = transform.Find("sciNameText").GetComponent<TextMeshProUGUI>();
         typeText = transform.Find("typeText").GetComponent<TextMeshProUGUI>();
         habitatText = transform.Find("habitatText").GetComponent<TextMeshProUGUI>();
         depthText = transform.Find("depthText").GetComponent<TextMeshProUGUI>();
         sizeText = transform.Find("sizeText").GetComponent<TextMeshProUGUI>();
         dietText = transform.Find("dietText").GetComponent<TextMeshProUGUI>();
         rangeText = transform.Find("rangeText").GetComponent<TextMeshProUGUI>();
-
         // add a synopsis text
 
         path = Application.dataPath + "/Scenes/Derek_Scene/JSON/Fish_Encyclopedia.JSON.txt";
@@ -51,10 +52,6 @@ public class gameHandler : MonoBehaviour
         return null;
     }
 
-    // next fish button
-
-    // prev fish button
-
     // observe fish button
 
     // change status UI to double circle based on fish's status
@@ -63,12 +60,13 @@ public class gameHandler : MonoBehaviour
     {
         // fish stats displayed on UI
         nameText.text = itemData["fish"][index: fishID]["name"].ToString();
-        typeText.text = "Animal type " + itemData["fish"][index: fishID]["type"].ToString();
-        habitatText.text = "Habitat " + itemData["fish"][index: fishID]["habitat"].ToString();
-        depthText.text = "Depth " + itemData["fish"][index: fishID]["maxDepth"].ToString();
-        sizeText.text = "Size " + itemData["fish"][index: fishID]["maxSize"].ToString();
-        dietText.text = "Diet " + itemData["fish"][index: fishID]["diet"].ToString();
-        rangeText.text = "Range " + itemData["fish"][index: fishID]["range"].ToString();
+        sciNameText.text = itemData["fish"][index: fishID]["sci"].ToString();
+        typeText.text = "\n" + itemData["fish"][index: fishID]["type"].ToString();
+        habitatText.text = "\n" + itemData["fish"][index: fishID]["habitat"].ToString();
+        depthText.text = "\n" + itemData["fish"][index: fishID]["maxDepth"].ToString();
+        sizeText.text = "\n" + itemData["fish"][index: fishID]["maxSize"].ToString();
+        dietText.text = "\n" + itemData["fish"][index: fishID]["diet"].ToString();
+        rangeText.text = "\n" + itemData["fish"][index: fishID]["range"].ToString();
     }
 
 }

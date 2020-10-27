@@ -63,7 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Buttons.cs" />
+    <Compile Include="Assets\DisplayFish.cs" />
     <Compile Include="Assets\FEV.cs" />
+    <Compile Include="Assets\Scenes\Derek_Scene\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelButton.cs" />
+    <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelController.cs" />
+    <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelUI.cs" />
     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\fevUIList.cs" />
     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\gameHandler.cs" />
     <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidAlignmentBehavior.cs" />
@@ -106,6 +112,7 @@
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
     <Compile Include="Assets\Scripts\WaterWave.cs" />
+    <Compile Include="Assets\ga.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\UpdateDynWaves.compute" />
