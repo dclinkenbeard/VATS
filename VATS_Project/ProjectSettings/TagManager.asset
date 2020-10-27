@@ -8,6 +8,12 @@ TagManager:
   - Fish
   - 0
   - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
   layers:
   - Default
   - TransparentFX
@@ -22,7 +28,7 @@ TagManager:
   - Large Fish
   - PostProcessing
   - Fish
-  - 
+  - FIsh Models
   - 
   - 
   - 
@@ -44,4 +50,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4097148265
+    locked: 0
+  - name: Fish Models
+    uniqueID: 107821561
     locked: 0
