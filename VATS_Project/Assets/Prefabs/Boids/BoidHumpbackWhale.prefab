@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 2
   maxTurnSpd: 2
   fishType: Humpback Whale
+  id: 21
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

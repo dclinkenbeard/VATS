@@ -8,6 +8,7 @@ using TMPro;
 public class CameraMovement : MonoBehaviour
 {
     int state = 0;
+    int targetState = -2;
     Transform trackingTarget;
     public float trackingLerp = 0f;
 
@@ -49,7 +50,7 @@ public class CameraMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1500)) //1500
+        if (Physics.Raycast(ray, out hit, 1500) && state == 0) //1500
         {
             bool checkExamRoom = transform.GetComponent<CameraUI>().CheckInExamRoom();
 
@@ -85,25 +86,27 @@ public class CameraMovement : MonoBehaviour
         // Enter Exmination Room
         if (Input.GetKeyDown(KeyCode.E) && state == 1)
         {
+            state = -1;
+            transform.GetComponent<CameraUI>().examEnter = true;
             transform.parent = null;
-            state = 2;
-
-            transform.GetComponent<CameraUI>().inExamRoom = true;
-            transform.GetComponent<CameraUI>().ExaminingFish(true);
-            transform.GetComponent<CameraUI>().CameraTeleport(false);
-            transform.GetComponent<CameraUI>().UITextHandler(3);
+            targetState = 2;
 
         }
 
         // Exit Examination Room
         if (Input.GetKeyDown(KeyCode.R) && transform.GetComponent<CameraUI>().inExamRoom)
         {
-            transform.GetComponent<CameraUI>().CameraTeleport(true);
-            transform.GetComponent<CameraUI>().ExaminingFish(false);
-            transform.GetComponent<CameraUI>().inExamRoom = false;
-            transform.GetComponent<CameraUI>().UITextHandler(2);
-            state = 1;
+            state = -1;
+            transform.GetComponent<CameraUI>().examExit = true;
+            targetState = 1;
         }
+
+        // To prevent fast transition and allow reg transition
+        if(targetState > -2 && !transform.GetComponent<CameraUI>().examExit && !transform.GetComponent<CameraUI>().examEnter){
+            state = targetState;
+            targetState = -2;
+        }
+
 
         // Open and close Ocean Settings Menu
         if (Input.GetKeyDown(KeyCode.M))
@@ -120,7 +123,6 @@ public class CameraMovement : MonoBehaviour
                 sliderText.text = "Press M to open Ocean Sliders";
                 sliderInterface.SetActive(false);
             }
-
         }
 
         switch (state)

@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 8
   maxTurnSpd: 8
   fishType: Manta Ray
+  id: 13
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

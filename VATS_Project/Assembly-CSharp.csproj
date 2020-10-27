@@ -38,7 +38,6 @@
   <ItemGroup>
      <Compile Include="Assets\Buttons.cs" />
      <Compile Include="Assets\DisplayFish.cs" />
-     <Compile Include="Assets\FEV.cs" />
      <Compile Include="Assets\Scenes\Derek_Scene\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelButton.cs" />
      <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelController.cs" />
@@ -49,7 +48,6 @@
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidAvoidanceBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidCohesionBehavior.cs" />
-     <Compile Include="Assets\Scripts\Boids\BoidAgent.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidFilters\BoidFilter.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidFilters\SameFishFilter.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidSpawner.cs" />
@@ -71,11 +69,13 @@
      <Compile Include="Assets\Scripts\Boids\TutorialBoids\FlockScripts\FlockAgent.cs" />
      <Compile Include="Assets\Scripts\Boids\TutorialBoids\FlockScripts\FlockBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\TutorialBoids\GenerateSphereDirection.cs" />
+     <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\CameraMovementOriginal.cs" />
      <Compile Include="Assets\Scripts\CameraUI.cs" />
      <Compile Include="Assets\Scripts\ColliderResize.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingManager.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingPreset.cs" />
+     <Compile Include="Assets\Scripts\FEV.cs" />
      <Compile Include="Assets\Scripts\FishModelSmoothMovement.cs" />
      <Compile Include="Assets\Scripts\FishMotion.cs" />
      <Compile Include="Assets\Scripts\FogEffect.cs" />

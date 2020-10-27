@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1137512323270718412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2682686840098748954}
+  - component: {fileID: 8553636635337650810}
+  - component: {fileID: 3367353104749939771}
+  - component: {fileID: 5969240369254018505}
+  m_Layer: 12
+  m_Name: BoidBottlenoseDolphin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2682686840098748954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137512323270718412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children:
+  - {fileID: 8958168684742712917}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8553636635337650810
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137512323270718412}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &3367353104749939771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137512323270718412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5969240369254018505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137512323270718412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c57a21ee00e584e83f99c19c9088a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighborRadius: 4
+  avoidRadius: 2
+  collisionLength: 5
+  minSpeed: 5
+  maxSpeed: 10
+  maxTurnSpd: 10
+  fishType: Bottlenose Dolphin
+  id: 22
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  fishLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  boidBehaviors:
+  - {fileID: 11400000, guid: ac7a6a03843a09a46b26c1562c4a6046, type: 2}
+  - {fileID: 11400000, guid: c51687dfdbf249f468e09c87d4566899, type: 2}
+  - {fileID: 11400000, guid: b3175cf4867777b41bb96a27ae4510cd, type: 2}
+  behaviorWeights:
+  - 2.5
+  - 2
+  - 1
+--- !u!114 &6002696659850628830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582205404533900527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78362dfd6e00a6e4eb6948758856ed4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotLerpSpd: 0.1
+  posLerpSpd: 0.1
+--- !u!1001 &8924858519721834942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2682686840098748954}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_Name
+      value: bottlenose_dolphin_model
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748359892381204692, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022880048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748359892381204692, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.029734213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.474
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 30f721ebcb6d3b640aff8736f75af68d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.082
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f721ebcb6d3b640aff8736f75af68d, type: 3}
+--- !u!1 &8582205404533900527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 30f721ebcb6d3b640aff8736f75af68d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8924858519721834942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8958168684742712917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30f721ebcb6d3b640aff8736f75af68d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8924858519721834942}
+  m_PrefabAsset: {fileID: 0}
