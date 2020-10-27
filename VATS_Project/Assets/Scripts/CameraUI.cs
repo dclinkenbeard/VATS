@@ -153,6 +153,7 @@ public class CameraUI : MonoBehaviour
     }
 
     public bool CheckInExamRoom() { return inExamRoom; }
+    public Transform GetFishExamRoom() { return fishExamPos; }
 
     public void UITextHandler(int textState)
     {

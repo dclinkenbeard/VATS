@@ -271,13 +271,21 @@
       <HintPath>F:/Unity/2019.4.10f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+<<<<<<< HEAD
       <HintPath>F:/Unity/2019.4.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+=======
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+>>>>>>> 0ca7f998c3335aa1f5c7da5837fe70ced2708613
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
+<<<<<<< HEAD
       <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Assets/Scenes/Derek_Scene/Assets/LitJson.dll</HintPath>
+=======
+      <HintPath>D:/Users/truon/Documents/GitHub/VATS/VATS_Project/Assets/Scenes/Derek_Scene/Assets/LitJson.dll</HintPath>
+>>>>>>> 0ca7f998c3335aa1f5c7da5837fe70ced2708613
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:/Unity/2019.4.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -625,10 +633,17 @@
       <HintPath>F:/Unity/2019.4.10f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
+<<<<<<< HEAD
       <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/Isaac Torres/Desktop/VATS/VATS_Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+=======
+      <HintPath>D:/Users/truon/Documents/GitHub/VATS/VATS_Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/Users/truon/Documents/GitHub/VATS/VATS_Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+>>>>>>> 0ca7f998c3335aa1f5c7da5837fe70ced2708613
     </Reference>
   </ItemGroup>
   <ItemGroup>
