@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 10
   maxTurnSpd: 10
   fishType: Orca
+  id: 23
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

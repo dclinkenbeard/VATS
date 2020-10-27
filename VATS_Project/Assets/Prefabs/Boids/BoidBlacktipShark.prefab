@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 14
   maxTurnSpd: 14
   fishType: Blacktip Shark
+  id: 8
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

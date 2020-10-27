@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 10
   maxTurnSpd: 10
   fishType: Barracuda
+  id: 11
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

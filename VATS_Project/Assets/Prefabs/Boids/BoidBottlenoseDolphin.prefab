@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 10
   maxTurnSpd: 10
   fishType: Bottlenose Dolphin
+  id: 22
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

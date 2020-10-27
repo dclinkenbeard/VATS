@@ -14,6 +14,7 @@ public class BoidAgent : MonoBehaviour
     public float maxTurnSpd = 10f;
 
     public string fishType;
+    public int id;
     public LayerMask obstacleMask;
     public LayerMask fishLayerMask;
 
@@ -31,8 +32,8 @@ public class BoidAgent : MonoBehaviour
     Vector3 velocity;
 
 
-    bool spawning = true;
-    bool despawning = false;
+    public bool spawning = true;
+    public bool despawning = false;
     Vector3 scale;
     // Start is called before the first frame update
     void Start()
@@ -48,10 +49,12 @@ public class BoidAgent : MonoBehaviour
     void Update()
     {
         //for debugging
-        //if (Input.GetKeyDown(KeyCode.B)) {
-        // despawning = true;
-        //}
-        if (spawning) {
+        /*
+        if (Input.GetKeyDown(KeyCode.B)) {
+        despawning = true;
+        }
+        */
+        if (spawning && !despawning) {
             transform.localScale = Vector3.Lerp(transform.localScale, scale, 0.1f);
             if ((transform.localScale - scale).sqrMagnitude < 0.1f) {
                 transform.localScale = scale;
