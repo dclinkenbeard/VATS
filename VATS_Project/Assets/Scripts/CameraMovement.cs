@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using TMPro;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -22,10 +23,16 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 previousPosition;
 
+    // Slider Interface
+    public GameObject sliderInterface;
+    public TextMeshProUGUI sliderText;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        sliderText.text = "Press M to open Ocean Sliders";
+        sliderInterface.SetActive(false);
     }
 
     // Update is called once per frame
@@ -92,8 +99,27 @@ public class CameraMovement : MonoBehaviour
             state = 1;
         }
 
+<<<<<<< HEAD
         if (transform.GetComponent<CameraUI>().inExamRoom) {
             return;
+=======
+        // Open and close Ocean Settings Menu
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (state == 0)
+            {
+                state = 3;
+                sliderText.text = "Press M to close Ocean Sliders";
+                sliderInterface.SetActive(true);
+            }
+            else if (state == 3)
+            {
+                state = 0;
+                sliderText.text = "Press M to open Ocean Sliders";
+                sliderInterface.SetActive(false);
+            }
+
+>>>>>>> 333f6ea8964edaaa2c23853a382e471224443eff
         }
 
         switch (state)
@@ -102,11 +128,16 @@ public class CameraMovement : MonoBehaviour
                 FreeFly();
                 break;
             case 1:
+                sliderText.text = "";
+                sliderInterface.SetActive(false);
                 Track();
                 break;
             case 2:
                 Transform examPos = transform.gameObject.GetComponent<CameraUI>().GetFishExamRoom();
                 Rotate(examPos);
+                break;
+            case 3:
+                Cursor.lockState = CursorLockMode.None;
                 break;
         }
     }
@@ -203,8 +234,6 @@ public class CameraMovement : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0,-90f,0);
         }*/
 
-
-
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 0.1f);
 
     }
@@ -239,11 +268,8 @@ public class CameraMovement : MonoBehaviour
 
         if (state == 1)
         {
-            Debug.Log("following fish camUpdate");
             cam.transform.position = target.position;
             cam.transform.Translate(new Vector3(0, 0, camDistance));
-
-            //CameraUpdate(cam, camDistance, target);
         }
     }
 
