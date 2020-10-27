@@ -8,6 +8,7 @@ using TMPro;
 public class CameraMovement : MonoBehaviour
 {
     int state = 0;
+    int targetState = -2;
     Transform trackingTarget;
     public float trackingLerp = 0f;
 
@@ -85,24 +86,28 @@ public class CameraMovement : MonoBehaviour
         // Enter Exmination Room
         if (Input.GetKeyDown(KeyCode.E) && state == 1)
         {
-            transform.parent = null;
-            state = 2;
-
+            state = -1;
             transform.GetComponent<CameraUI>().examEnter = true;
+            transform.parent = null;
+            targetState = 2;
 
         }
 
         // Exit Examination Room
         if (Input.GetKeyDown(KeyCode.R) && transform.GetComponent<CameraUI>().inExamRoom)
         {
+            state = -1;
             transform.GetComponent<CameraUI>().examExit = true;
-            state = 1;
+            targetState = 1;
         }
 
-<<<<<<< HEAD
-        if (transform.GetComponent<CameraUI>().inExamRoom) {
-            return;
-=======
+        // To prevent fast transition and allow reg transition
+        if(targetState > -2 && !transform.GetComponent<CameraUI>().examExit && !transform.GetComponent<CameraUI>().examEnter){
+            state = targetState;
+            targetState = -2;
+        }
+
+
         // Open and close Ocean Settings Menu
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -118,8 +123,6 @@ public class CameraMovement : MonoBehaviour
                 sliderText.text = "Press M to open Ocean Sliders";
                 sliderInterface.SetActive(false);
             }
-
->>>>>>> 333f6ea8964edaaa2c23853a382e471224443eff
         }
 
         switch (state)
