@@ -1,4 +1,5 @@
 sceneSetups:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 - path: Assets/Scenes/Derek_Scene/Derek_Scene.unity
@@ -8,6 +9,9 @@ sceneSetups:
 =======
 - path: Assets/Scenes/Derek_Scene/Derek_Scene.unity
 >>>>>>> Stashed changes
+=======
+- path: Assets/Scenes/Isaac_Scenes/SampleScene.unity
+>>>>>>> c9d210e2e608e07b5933fb844e79c3ad1e13e697
   isLoaded: 1
   isActive: 1
   isSubScene: 0

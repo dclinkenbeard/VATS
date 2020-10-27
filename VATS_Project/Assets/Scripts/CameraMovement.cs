@@ -13,11 +13,14 @@ public class CameraMovement : MonoBehaviour
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
+    float camDistance = -10.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
 
     public LayerMask fishLayerMask;
+
+    private Vector3 previousPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -103,11 +106,16 @@ public class CameraMovement : MonoBehaviour
             case 1:
                 Track();
                 break;
+            case 2:
+                Transform examPos = transform.gameObject.GetComponent<CameraUI>().GetFishExamRoom();
+                Rotate(examPos);
+                break;
         }
     }
 
     public void FreeFly()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         if (Cursor.lockState != CursorLockMode.Locked) {
             return;
         }
@@ -165,7 +173,9 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Vector3 targetPos = trackingModel.position + (trackingModel.right * Mathf.Clamp(2f * trackingTarget.localScale.x, 0f, 50f)); //(trackingTarget.forward);
+        Rotate(trackingModel);
+
+        /*Vector3 targetPos = trackingModel.position + (trackingModel.right * Mathf.Clamp(2f * trackingTarget.localScale.x, 0f, 50f)); //(trackingTarget.forward);
         Vector3 targetAngle = trackingModel.rotation.eulerAngles;
         targetAngle.x = 0;
         targetAngle.z = 0;
@@ -193,11 +203,62 @@ public class CameraMovement : MonoBehaviour
             //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);
             //transform.LookAt(trackingTarget.position);
             //transform.localRotation = Quaternion.Euler(0,-90f,0);
-        }
+        }*/
 
 
 
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 0.1f);
 
+    }
+
+    public void Rotate(Transform target)
+    {
+        Camera cam = transform.gameObject.GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.None;
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            camDistance++;
+            cam.transform.position = target.position;
+            cam.transform.Translate(new Vector3(0, 0, camDistance));
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            camDistance--;
+            cam.transform.position = target.position;
+            cam.transform.Translate(new Vector3(0, 0, camDistance));
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
+        }
+
+        if(Input.GetMouseButton(0))
+        {
+            CameraUpdate(cam, camDistance, target);
+        }
+
+        if (state == 1)
+        {
+            Debug.Log("following fish camUpdate");
+            cam.transform.position = target.position;
+            cam.transform.Translate(new Vector3(0, 0, camDistance));
+
+            //CameraUpdate(cam, camDistance, target);
+        }
+    }
+
+    public void CameraUpdate(Camera cam, float camDistance, Transform target)
+    {
+        Vector3 direction = previousPosition - cam.ScreenToViewportPoint(Input.mousePosition);
+
+        cam.transform.position = target.position;
+
+        cam.transform.Rotate(new Vector3(1, 0, 0), direction.y * 180);
+        cam.transform.Rotate(new Vector3(0, 1, 0), -direction.x * 180, Space.World);
+        cam.transform.Translate(new Vector3(0, 0, camDistance));
+
+        previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
     }
 }
