@@ -2,7 +2,8 @@
 	"fish":[
 		{
 		"id": 0,
-		"name": "Antler coral",
+		"name": "Antler coral", 
+		"sci": "Pocillopora grandis",
 		"type": "Invertebrate",
 		"diet": "Nutrients provided by algae growing in their tissues; small, drifting animals",
 		"habitat": "Coral reefs",
@@ -18,6 +19,7 @@
 		{
 		"id": 1,
 		"name": "Cauliflower coral",
+		"sci": "Pocillopora damicornis",
 		"type": "Invertebrate",
 		"diet": "Capture planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -32,7 +34,8 @@
 		},
 		{
 		"id": 2,
-		"name": "Acropora valenciennesi",
+		"name": "Branch coral",
+		"sci": "Acropora valenciennesi",
 		"type": "Invertebrate",
 		"diet": "Photosymbiotic, feeds on particles of organic matter that are suspended in water",
 		"habitat": "Coral reefs",
@@ -48,6 +51,7 @@
 		{
 		"id": 3,
 		"name": "Mushroom coral",
+		"sci": "Fungiidae",
 		"type": "Invertebrate",
 		"diet": "Captures planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -62,7 +66,8 @@
 		},
 		{
 		"id": 4,
-		"name": "Acropora papillare",
+		"name": "Staghorn coral",
+		"sci": "Acropora papillare",
 		"type": "Invertebrate",
 		"diet": "Captures planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -78,6 +83,7 @@
 		{
 		"id": 5,
 		"name": "Leaf coral",
+		"sci": "Pavona decussata",
 		"type": "Invertebrate",
 		"diet": "Captures planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -92,7 +98,8 @@
 		},
 		{
 		"id": 6,
-		"name": "Acropora gemmifera",
+		"name": "Gemmifera acropora",
+		"sci": "Acropora gemmifera",
 		"type": "Invertebrate",
 		"diet": "Captures planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -108,6 +115,7 @@
 		{
 		"id": 7,
 		"name": "Green robusta",
+		"sci": "Acropora robusta",
 		"type": "Invertebrate",
 		"diet": "Captures planktonic organisms, food particles from the water column, and can absorb dissolved organic matter",
 		"habitat": "Coral reefs",
@@ -123,6 +131,7 @@
 		{
 		"id": 8,
 		"name": "Blacktip shark",
+		"sci": "Carcharhinus limbatus",
 		"type": "Fish",
 		"diet": "Small fishes, crustaceans and cephalopods",
 		"habitat": "Coral reefs",
@@ -138,6 +147,7 @@
 		{
 		"id": 9,
 		"name": "Scalloped hammerhead",
+		"sci": "Sphyrna lewini",
 		"type": "Fish",
 		"diet": "Fishes, squid, crustaceans, stingrays",
 		"habitat": "Open waters",
@@ -153,6 +163,7 @@
 		{
 		"id": 10,
 		"name": "White shark",
+		"sci": "Carcharodon carcharias",
 		"type": "Fish",
 		"diet": "Fishes, other sharks, skates, stingrays, sea turtles, mollusks, crustaceans, seabirds and even dead whales",
 		"habitat": "Open waters",
@@ -168,6 +179,7 @@
 		{
 		"id": 11,
 		"name": "Barracuda",
+		"sci": "Sphyraena",
 		"type": "fish",
 		"diet": "Small fish such as anchovies, sardines, young pacific mackerels, jack mackerels, grunions and squid",
 		"habitat": "Open waters",
@@ -183,6 +195,7 @@
 		{
 		"id": 12,
 		"name": "Clownfish",
+		"sci": "Amphiprioninae",
 		"type": "Fish",
 		"diet": "Tiny drifting animals like copepods and zooplankton; algae",
 		"habitat": "Coral reefs",
@@ -198,6 +211,7 @@
 		{
 		"id": 13,
 		"name": "Manta ray",
+		"sci": "Mobula birostris",
 		"type": "Fish",
 		"diet": "Small fish and crustaceans; as filter feeders: they swim with their mouths wide open, drawing in zooplankton and krill",
 		"habitat": "Coral reefs",
@@ -213,6 +227,7 @@
 		{
 		"id": 14,
 		"name": "Atlantic sturgeon",
+		"sci": "Acipenser oxyrhynchus oxyrhynchus",
 		"type": "Fish",
 		"diet": "Crustaceans, worms, insects and mollusks",
 		"habitat": "Shallow waters",
@@ -228,6 +243,7 @@
 		{
 		"id": 15,
 		"name": "Striped bass",
+		"sci": "Morone saxatilis",
 		"type": "Fish",
 		"diet": "Feed on a variety of small fish and invertebrates, including worms, squid, menhaden, anchovies and crustaceans",
 		"habitat": "Open waters",
@@ -243,6 +259,7 @@
 		{
 		"id": 16,
 		"name": "Smalltooth sawfish",
+		"sci": "Pristis pectinata",
 		"type": "Fish",
 		"diet": "Their diet is thought to consist of crabs, shrimp, small fish, and other bottom-dwelling organisms; crustaceans and mollusks",
 		"habitat": "Coastal waters",
@@ -258,6 +275,7 @@
 		{
 		"id": 17,
 		"name": "Loggerhead turtle",
+		"sci": "Caretta caretta",
 		"type": "Fish",
 		"diet": "Primarily carnivorous and feed mostly on shellfish; they eat horseshoe crabs, clams, mussels, and other invertebrates",
 		"habitat": "Coastal waters",
@@ -273,6 +291,7 @@
 		{
 		"id": 18,
 		"name": "Green sea turtle",
+		"sci": "Chelonia mydas",
 		"type": "Fish",
 		"diet": "Sea grasses and macroalgae; juveniles also eat invertebrates (including jellyfish)",
 		"habitat": "Open waters",
@@ -288,6 +307,7 @@
 		{
 		"id": 19,
 		"name": "Blue whale",
+		"sci": "Balaenoptera musculus",
 		"type": "Marine Animal",
 		"diet": "Krill; occasionally, pelagic crabs",
 		"habitat": "Open waters",
@@ -303,6 +323,7 @@
 		{
 		"id": 20,
 		"name": "Gray whale",
+		"sci": "Eschrichtius robustus",
 		"type": "Marine Animal",
 		"diet": "Mostly bottom-dwelling crustaceans; also schooling fishes, shrimp and worms",
 		"habitat": "Coastal waters",
@@ -318,6 +339,7 @@
 		{
 		"id": 21,
 		"name": "Humpback whale",
+		"sci": "Megaptera novaeangliae",
 		"type": "Marine Animal",
 		"diet": "Krill, anchovies, herring, sand lance and invertebrates; consuming up to 3,000 pounds of food per day",
 		"habitat": "Coastal waters",
@@ -333,6 +355,7 @@
 		{
 		"id": 22,
 		"name": "Bottlenose dolphin",
+		"sci": "Tursiops",
 		"type": "Marine Animal",
 		"diet": "Fishes and squid",
 		"habitat": "Coastal waters",
@@ -348,6 +371,7 @@
 		{
 		"id": 23,
 		"name": "Orca",
+		"sci": "Orcinus orca",
 		"type": "Marine Animal",
 		"diet": "Other whales; dolphins, seals and sea lions; penguins and other seabirds; sea turtles and fishes (especially herring and salmon)",
 		"habitat": "Open waters",
