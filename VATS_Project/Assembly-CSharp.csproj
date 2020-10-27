@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
     <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
     <Compile Include="Assets\Scripts\WaterWave.cs" />
+    <Compile Include="Assets\SliderScript.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\UpdateDynWaves.compute" />

@@ -51,6 +51,7 @@ public class CameraUI : MonoBehaviour
 
         inExamRoom = false;
 
+        // Check if the exam room is not empty
         if(examinationRoom != null)
         {
             camExamPos = examinationRoom.transform.GetChild(1);
