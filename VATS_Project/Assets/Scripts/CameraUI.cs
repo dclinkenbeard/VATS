@@ -10,7 +10,7 @@ public class CameraUI : MonoBehaviour
     // Basic Interface
     public GameObject canvas;
     public GameObject basicInterface;
-    public GameObject flockSpawn;
+    public GameObject fishManager;
     TextMeshProUGUI fishViewText;
     TextMeshProUGUI fishExitText;
     TextMeshProUGUI fishExamText;
@@ -76,16 +76,23 @@ public class CameraUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flockSpawn != null)
+        if (fishManager != null)
         {
-            if (flockSpawn.GetComponent<FEV>() != null)
+            if (fishManager.GetComponent<FishManager>() != null)
             {
-                fishName = flockSpawn.GetComponent<FEV>().getFishName();
-                fishExamObj = flockSpawn.GetComponent<BoidSpawner>().agentPrefab;
+                fishName = transform.gameObject.GetComponent<CameraMovement>().GetFishName();
+                foreach(GameObject fishChild in fishManager.GetComponent<FishManager>().FishPrefabs)
+                {
+                    if (fishChild.name.Equals(fishName))
+                    {
+                        fishExamObj = fishChild;
+                    }
+                }
+
             }
             else
             {
-                fishName = "Target fish missing FEV!";
+                fishName = "Target fish missing Fish Manager!";
             }
         }
 
@@ -195,6 +202,8 @@ public class CameraUI : MonoBehaviour
         {
             // Go to exam position
             camOrigPos = this.transform.position;
+            transform.gameObject.GetComponent<CameraMovement>().SetCamDistance(camExamPos.localPosition.x);
+            Debug.Log("Cam exam local pos for x" + camExamPos.localPosition.x);
             this.transform.position = camExamPos.position;
             this.transform.rotation = camExamPos.rotation;
         }
