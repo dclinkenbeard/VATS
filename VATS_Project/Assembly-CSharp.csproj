@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidAvoidanceBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidCohesionBehavior.cs" />
+     <Compile Include="Assets\Scripts\Boids\BoidAgent.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidFilters\BoidFilter.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidFilters\SameFishFilter.cs" />
      <Compile Include="Assets\Scripts\Boids\BoidSpawner.cs" />
@@ -76,6 +77,8 @@
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingManager.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingPreset.cs" />
      <Compile Include="Assets\Scripts\FEV.cs" />
+     <Compile Include="Assets\Scripts\FishInfoSet.cs" />
+     <Compile Include="Assets\Scripts\FishManager.cs" />
      <Compile Include="Assets\Scripts\FishModelSmoothMovement.cs" />
      <Compile Include="Assets\Scripts\FishMotion.cs" />
      <Compile Include="Assets\Scripts\FogEffect.cs" />
