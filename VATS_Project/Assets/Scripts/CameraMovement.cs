@@ -127,20 +127,24 @@ public class CameraMovement : MonoBehaviour
         switch (state)
         {
             case 0:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
                 sliderText.text = "Press M to open Ocean Sliders";
                 sliderInterface.SetActive(false);
                 FreeFly();
                 break;
             case 1:
+                gameObject.GetComponent<FishInfoSet>().fishID = trackingTarget.GetComponent<BoidAgent>().id;
                 sliderText.text = "";
                 sliderInterface.SetActive(false);
                 Track();
                 break;
             case 2:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
                 Transform examPos = transform.gameObject.GetComponent<CameraUI>().GetFishExamRoom();
                 Rotate(examPos);
                 break;
             case 3:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
                 sliderText.text = "Press M to close Ocean Sliders";
                 sliderInterface.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
@@ -161,6 +165,7 @@ public class CameraMovement : MonoBehaviour
 
     public void FreeFly()
     {
+        gameObject.GetComponent<FishInfoSet>().fishID = -1; 
         Cursor.lockState = CursorLockMode.Locked;
         if (Cursor.lockState != CursorLockMode.Locked) {
             return;
@@ -211,7 +216,6 @@ public class CameraMovement : MonoBehaviour
 
     public void Track()
     {
-
         Transform trackingModel = trackingTarget.GetChild(0);
         if (transform.parent == trackingModel) {
             //transform.localPosition = new Vector3(1f, 0, 0);
