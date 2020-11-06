@@ -12,7 +12,7 @@ public class FishInfoSet : MonoBehaviour
     private JsonData itemData = new JsonData();
 
     public TextMeshProUGUI fishInfoText;
-    public int fishID = 8;
+    public int fishID = -1;
     void Start()
     {
 

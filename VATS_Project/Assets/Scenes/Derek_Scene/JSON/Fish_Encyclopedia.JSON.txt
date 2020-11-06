@@ -162,7 +162,7 @@
 		},
 		{
 		"id": 10,
-		"name": "White shark",
+		"name": "Great White Shark",
 		"sci": "Carcharodon carcharias",
 		"type": "Fish",
 		"diet": "Fishes, other sharks, skates, stingrays, sea turtles, mollusks, crustaceans, seabirds and even dead whales",
@@ -189,7 +189,7 @@
 		"maxTemp": 82,
 		"minDepth": 6,
 		"maxDepth": 90,
-		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niños",
+		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niï¿½os",
 		"status": "Least Concern"
 		},
 		{
@@ -253,7 +253,7 @@
 		"maxTemp": 68,
 		"minDepth": 0,
 		"maxDepth": 20,
-		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. John’s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
+		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. Johnï¿½s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
 		"status": "Stable"
 		},
 		{

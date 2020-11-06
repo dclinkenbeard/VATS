@@ -14,8 +14,8 @@ public class FishManager : MonoBehaviour
     public List<GameObject> FishPrefabs = new List<GameObject>();
     List<int> SpawnIndex = new List<int>();
     List<GameObject> currentAgents = new List<GameObject>();
-    public int depth;
-    public int temp;
+    public float depth;
+    public float temp;
     void Start()
     {
 
@@ -38,7 +38,7 @@ public class FishManager : MonoBehaviour
 
     // change status UI to double circle based on fish's status
 
-    void SpawnFish(){
+    public void SpawnFish(){
 
         foreach(GameObject agent in currentAgents){ 
             agent.GetComponent<BoidAgent>().despawning = true;
