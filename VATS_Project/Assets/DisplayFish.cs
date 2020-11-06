@@ -21,15 +21,15 @@ public class DisplayFish : MonoBehaviour
     {
         activateFish = true;
 
-        fishModel.SetActive(true);
-        fishModel = GameObject.Find(fishTag.ToString());
+        //fishModel.SetActive(true);
+        //fishModel = GameObject.Find(fishTag.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
         fishTag = gh.fishID;
-        fishModel = GameObject.Find(fishTag.ToString());
+        //fishModel = GameObject.Find(fishTag.ToString());
         DeactivateFish();
         InstaFish();
     }
@@ -38,7 +38,7 @@ public class DisplayFish : MonoBehaviour
     {
         activateFish = true;
 
-        if (activateFish)
+     /*   if (activateFish)
         {
             fishMesh = fishModel.GetComponent<Renderer>();
 
@@ -46,17 +46,17 @@ public class DisplayFish : MonoBehaviour
             {
                 fishMesh.enabled = true;
             }
-        }
+        }*/
     }
 
     public void DeactivateFish()
     {
         activateFish = false;
 
-        if (!activateFish)
+     /*   if (!activateFish)
         {
             fishMesh = fishModel.GetComponent<Renderer>();
             fishMesh.enabled = false;
-        }
+        }*/
     }
 }
