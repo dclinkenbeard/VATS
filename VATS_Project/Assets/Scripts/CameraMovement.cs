@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
-    float camDistance = -10.0f;
+    public float camDistance = -10.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
@@ -27,6 +27,8 @@ public class CameraMovement : MonoBehaviour
     // Slider Interface
     public GameObject sliderInterface;
     public TextMeshProUGUI sliderText;
+
+    string fishName;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +59,7 @@ public class CameraMovement : MonoBehaviour
             if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1 && !checkExamRoom)
             {
                 transform.GetComponent<CameraUI>().basicInterface.SetActive(true);
-                transform.GetComponent<CameraUI>().flockSpawn = hit.transform.parent.gameObject;
+                transform.GetComponent<CameraUI>().fishManager = hit.transform.parent.gameObject;
                 transform.GetComponent<CameraUI>().UITextHandler(1);
 
                 if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
@@ -66,12 +68,13 @@ public class CameraMovement : MonoBehaviour
                     trackingLerp = 0.005f;
                     state = 1;
                     transform.GetComponent<CameraUI>().UITextHandler(2);
+                    fishName = SetFishName(trackingTarget.gameObject);
                 }
             }
             else
             {
                 transform.GetComponent<CameraUI>().basicInterface.SetActive(false);
-                transform.GetComponent<CameraUI>().flockSpawn = null;
+                transform.GetComponent<CameraUI>().fishManager = null;
             }
         }
 
@@ -114,20 +117,18 @@ public class CameraMovement : MonoBehaviour
             if (state == 0)
             {
                 state = 3;
-                sliderText.text = "Press M to close Ocean Sliders";
-                sliderInterface.SetActive(true);
             }
             else if (state == 3)
             {
                 state = 0;
-                sliderText.text = "Press M to open Ocean Sliders";
-                sliderInterface.SetActive(false);
             }
         }
 
         switch (state)
         {
             case 0:
+                sliderText.text = "Press M to open Ocean Sliders";
+                sliderInterface.SetActive(false);
                 FreeFly();
                 break;
             case 1:
@@ -140,10 +141,23 @@ public class CameraMovement : MonoBehaviour
                 Rotate(examPos);
                 break;
             case 3:
+                sliderText.text = "Press M to close Ocean Sliders";
+                sliderInterface.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 break;
         }
     }
+
+    public void SetCamDistance(float distance) { camDistance = distance; }
+
+    public string SetFishName(GameObject trackingTarget)
+    {
+        string tempName = trackingTarget.gameObject.name;
+        string finalName = tempName.Remove(tempName.Length - 7, 7);
+        return finalName;
+    }
+
+    public string GetFishName() { return fishName; }
 
     public void FreeFly()
     {

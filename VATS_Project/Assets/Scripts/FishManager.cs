@@ -28,7 +28,7 @@ public class FishManager : MonoBehaviour
         string text = "\n";
 
         text += CalculateFish();
-        Debug.Log(text);
+        //Debug.Log(text);
 
         if (Input.GetKeyDown(KeyCode.B)) {
             SpawnFish();
