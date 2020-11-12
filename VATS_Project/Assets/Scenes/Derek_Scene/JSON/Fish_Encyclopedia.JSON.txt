@@ -14,7 +14,9 @@
 		"minDepth": 15,
 		"maxDepth": 60,
 		"range": "Coral reefs around the world",
-		"status": "Critically Endangered"
+		"status": "Critically Endangered",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 1,
@@ -30,7 +32,9 @@
 		"minDepth": 3.28,
 		"maxDepth": 88.6,
 		"range": "Distributed widely in the Red Sea, eastern Africa, Indian and Pacific Oceans",
-		"status": "Vulnerable"
+		"status": "Vulnerable",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 2,
@@ -46,7 +50,9 @@
 		"minDepth": 16.4042,
 		"maxDepth": 82.02,
 		"range": "Indo-Pacific",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 3,
@@ -62,7 +68,9 @@
 		"minDepth": 3.28084,
 		"maxDepth": 164.04,
 		"range": "All oceans",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 4,
@@ -78,7 +86,9 @@
 		"minDepth": 3.3,
 		"maxDepth": 16.4,
 		"range": "Coral Reefs",
-		"status": "Vulnerable"
+		"status": "Vulnerable",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 5,
@@ -94,7 +104,9 @@
 		"minDepth": 3.3,
 		"maxDepth": 25,
 		"range": "Found from the Red Sea east to Samoa",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 6,
@@ -110,7 +122,9 @@
 		"minDepth": 3.28,
 		"maxDepth": 49.2126,
 		"range": "Widespread, common on exposed upper reef slopes and on reef flats",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 7,
@@ -126,7 +140,9 @@
 		"minDepth": 9.84,
 		"maxDepth": 49.21,
 		"range": "Restricted to shallow reef environments, common on reef margins exposed to strong wave action",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 4,
+		"uppLimit": 50
 		},
 		{
 		"id": 8,
@@ -142,7 +158,9 @@
 		"minDepth": 0,
 		"maxDepth": 330,
 		"range": "Indo-Pacific: Red Sea to East Africa to the Hawaiian Islands; north to Japan and south to Australia",
-		"status": "Near Threatened"
+		"status": "Near Threatened",
+		"lowLimit": 1,
+		"uppLimit": 4
 		},
 		{
 		"id": 9,
@@ -158,7 +176,9 @@
 		"minDepth": 0,
 		"maxDepth": 1600,
 		"range": "Pupped in coastal lagoons, then migrate offshore later in life; found around the world in tropical, subtropical and warm-temperate waters",
-		"status": "Endangered"
+		"status": "Endangered",
+		"lowLimit": 1,
+		"uppLimit": 4
 		},
 		{
 		"id": 10,
@@ -174,7 +194,9 @@
 		"minDepth": 0,
 		"maxDepth": 3900,
 		"range": "Continental shelf and open waters of temperate seas and oceans, sometimes venturing into the tropical zones",
-		"status": "Vulnerable"
+		"status": "Vulnerable",
+		"lowLimit": 1,
+		"uppLimit": 2
 		},
 		{
 		"id": 11,
@@ -190,7 +212,9 @@
 		"minDepth": 6,
 		"maxDepth": 90,
 		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niños",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 1,
+		"uppLimit": 50
 		},
 		{
 		"id": 12,
@@ -206,7 +230,9 @@
 		"minDepth": 3.3,
 		"maxDepth": 39.3,
 		"range": "Throughout most of the tropical Indo-Pacific",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 1,
+		"uppLimit": 8
 		},
 		{
 		"id": 13,
@@ -222,7 +248,9 @@
 		"minDepth": 10,
 		"maxDepth": 3200,
 		"range": "Commonly found in the warmer, tropical of waters of the world's oceans",
-		"status": "Vulnerable"
+		"status": "Vulnerable",
+		"lowLimit": 1,
+		"uppLimit": 3
 		},
 		{
 		"id": 14,
@@ -238,7 +266,9 @@
 		"minDepth": 5,
 		"maxDepth": 88.6,
 		"range": "Inhabit the shallow waters of the continental shelf and also coastal brackish waters; they enter large river systems to spawn",
-		"status": "Endangered"
+		"status": "Endangered",
+		"lowLimit": 1,
+		"uppLimit": 5
 		},
 		{
 		"id": 15,
@@ -254,7 +284,9 @@
 		"minDepth": 0,
 		"maxDepth": 20,
 		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. John’s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
-		"status": "Stable"
+		"status": "Stable",
+		"lowLimit": 1,
+		"uppLimit": 15
 		},
 		{
 		"id": 16,
@@ -270,7 +302,9 @@
 		"minDepth": 0,
 		"maxDepth": 400,
 		"range": "Tropical to subtropical latitudes of the Atlantic Ocean",
-		"status": "Critically Endangered"
+		"status": "Critically Endangered",
+		"lowLimit": 1,
+		"uppLimit": 5
 		},
 		{
 		"id": 17,
@@ -286,7 +320,9 @@
 		"minDepth": 6.56,
 		"maxDepth": 177.17,
 		"range": "New England/Mid-Atlantic, Pacific Islands, Southeast, West Coast, Foreign",
-		"status": "Vulnerable"
+		"status": "Vulnerable",
+		"lowLimit": 1,
+		"uppLimit": 8
 		},
 		{
 		"id": 18,
@@ -302,7 +338,9 @@
 		"minDepth": 0,
 		"maxDepth": 68.9,
 		"range": "Worldwide in tropical and subtropical waters",
-		"status": "Endangered"
+		"status": "Endangered",
+		"lowLimit": 1,
+		"uppLimit": 5
 		},
 		{
 		"id": 19,
@@ -318,7 +356,9 @@
 		"minDepth": 0,
 		"maxDepth": 328.08,
 		"range": "All oceans",
-		"status": "Endangered"
+		"status": "Endangered",
+		"lowLimit": 1,
+		"uppLimit": 2
 		},
 		{
 		"id": 20,
@@ -334,7 +374,9 @@
 		"minDepth": 0,
 		"maxDepth": 500,
 		"range": "Alaska to Baja California; also found near Sakhalin Island, Russia",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 1,
+		"uppLimit": 3
 		},
 		{
 		"id": 21,
@@ -350,7 +392,9 @@
 		"minDepth": 0,
 		"maxDepth": 656.17,
 		"range": "All oceans",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 1,
+		"uppLimit": 3
 		},
 		{
 		"id": 22,
@@ -366,7 +410,9 @@
 		"minDepth": 0,
 		"maxDepth": 150,
 		"range": "Worldwide in temperate and tropical oceans",
-		"status": "Least Concern"
+		"status": "Least Concern",
+		"lowLimit": 1,
+		"uppLimit": 8
 		},
 		{
 		"id": 23,
@@ -382,7 +428,9 @@
 		"minDepth": 0,
 		"maxDepth": 850,
 		"range": "Coastal oceans worldwide, but most common in Arctic and Antarctic waters",
-		"status": "Data Deficient"
+		"status": "Data Deficient",
+		"lowLimit": 1,
+		"uppLimit": 5
 		}
 	]
 }
