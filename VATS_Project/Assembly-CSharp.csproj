@@ -159,6 +159,7 @@
     <None Include="Assets\Crest\Crest\Shaders\OceanReflection.hlsl" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\Debug\TextureArray.shader" />
+    <None Include="Assets\Scenes\Derek_Scene\JSON\PlasticData.JSON.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveArea.shader" />
