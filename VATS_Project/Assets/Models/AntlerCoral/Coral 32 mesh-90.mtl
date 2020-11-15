@@ -1,0 +1,47 @@
+newmtl Material_0
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+map_Kd tex1.jpg
+newmtl Material_1
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+map_Kd tex2.jpg
+newmtl Material_2
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+map_Kd tex3.jpg
+newmtl Material_3
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+map_Kd tex4.jpg
+newmtl Material_4
+Ka 0.5000 0.5000 0.5000
+Kd 0.5000 0.5000 0.5000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+newmtl Material_5
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1
+Ns 0.0000
+illum 1
+map_Kd tex5.jpg
