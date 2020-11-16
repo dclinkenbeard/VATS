@@ -47,7 +47,7 @@ public class FishManager : MonoBehaviour
         currentAgents.Clear();
 
         foreach(int x in SpawnIndex){
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GameObject agentPrefab = FishPrefabs[x];
                 GameObject agent = Instantiate(agentPrefab,
