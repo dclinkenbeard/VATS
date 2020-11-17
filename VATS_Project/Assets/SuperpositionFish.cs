@@ -42,7 +42,7 @@ public class SuperpositionFish : MonoBehaviour
         {
             Debug.Log("lb");
 
-            nextFishModel.transform.position = new Vector3(0, 30, 0);
+            nextFishModel.transform.position = new Vector3(0, -90, 0);
             fishModel.transform.position = new Vector3(-37, 0, 70);
         }
 
@@ -55,11 +55,11 @@ public class SuperpositionFish : MonoBehaviour
 
         Debug.Log(fishModel.transform.position);
 
-        if (nextFish < 5)
+        if (nextFish < 11)
         {
             Debug.Log("rb");
 
-            fishModel.transform.position = new Vector3(0, 30, 0);
+            fishModel.transform.position = new Vector3(0, -90, 0);
             nextFishModel.transform.position = new Vector3(-37, 0, 70);
         }
 /*        else if (nextFish < 4)
@@ -71,7 +71,7 @@ public class SuperpositionFish : MonoBehaviour
 
     public void Increase()
     {
-        if (nextFish < 5)
+        if (nextFish < 11)
         {
             gh.fishID++;
             nextFish++;
