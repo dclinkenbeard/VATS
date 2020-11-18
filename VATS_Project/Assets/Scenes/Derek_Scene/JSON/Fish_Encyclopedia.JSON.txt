@@ -211,15 +211,10 @@
 		"maxTemp": 82,
 		"minDepth": 6,
 		"maxDepth": 90,
-<<<<<<< HEAD
-		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niños",
+		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niï¿½os",
 		"status": "Least Concern",
 		"lowLimit": 1,
 		"uppLimit": 50
-=======
-		"range": "Alaska to Baja California, Mexico; usually south of Point Conception except during El Niï¿½os",
-		"status": "Least Concern"
->>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
 		},
 		{
 		"id": 12,
@@ -288,15 +283,10 @@
 		"maxTemp": 68,
 		"minDepth": 0,
 		"maxDepth": 20,
-<<<<<<< HEAD
-		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. John’s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
+		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. Johnï¿½s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
 		"status": "Stable",
 		"lowLimit": 1,
 		"uppLimit": 15
-=======
-		"range": "Live along the East Coast from the St. Lawrence River in Canada to St. Johnï¿½s River in Florida, and in the Gulf of Mexico from Florida to Louisiana",
-		"status": "Stable"
->>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
 		},
 		{
 		"id": 16,
