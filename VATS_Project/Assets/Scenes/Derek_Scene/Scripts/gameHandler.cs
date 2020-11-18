@@ -20,6 +20,8 @@ public class gameHandler : MonoBehaviour
     public TextMeshProUGUI sizeText;
     public TextMeshProUGUI dietText;
     public TextMeshProUGUI rangeText;
+    public TextMeshProUGUI conservationText;
+
 
     public int fishID;
 
@@ -33,6 +35,8 @@ public class gameHandler : MonoBehaviour
         sizeText = transform.Find("sizeText").GetComponent<TextMeshProUGUI>();
         dietText = transform.Find("dietText").GetComponent<TextMeshProUGUI>();
         rangeText = transform.Find("rangeText").GetComponent<TextMeshProUGUI>();
+        conservationText = transform.Find("statusText").GetComponent<TextMeshProUGUI>();
+
         // add a synopsis text
 
         path = Application.dataPath + "/Scenes/Derek_Scene/JSON/Fish_Encyclopedia.JSON.txt";
@@ -67,6 +71,8 @@ public class gameHandler : MonoBehaviour
         sizeText.text = "\n" + itemData["fish"][index: fishID]["maxSize"].ToString();
         dietText.text = "\n" + itemData["fish"][index: fishID]["diet"].ToString();
         rangeText.text = "\n" + itemData["fish"][index: fishID]["range"].ToString();
+        conservationText.text = "\n" + itemData["fish"][index: fishID]["status"].ToString();
+
     }
 
 }

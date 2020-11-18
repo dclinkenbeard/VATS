@@ -29,10 +29,10 @@ public class FishManager : MonoBehaviour
 
         text += CalculateFish();
         //Debug.Log(text);
-
+        /*
         if (Input.GetKeyDown(KeyCode.B)) {
             SpawnFish();
-        }
+        }*/
     }
     // observe fish button
 
