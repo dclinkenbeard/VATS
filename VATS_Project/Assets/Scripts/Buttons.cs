@@ -5,7 +5,8 @@ using UnityEngine;
 public class Buttons : MonoBehaviour
 {
     public gameHandler gh;
-    public DisplayFish df;
+    //public DisplayFish df;
+    public SuperpositionFish sf;
     public GameObject fishModel;
     
     //public GameObject prefab;
@@ -35,23 +36,52 @@ public class Buttons : MonoBehaviour
 
     public void NextButton()
     {
-        gh.fishID++;
+        sf.Increase();
+
+        sf.RBSuperposition();
+        //gh.fishID++;
+        //sf.activateFish = true;
+
+        /*        if (sf.activateFish)
+                {*/
+        //sf.Superposition();
+        //}
+
+        //sf.Superposition();
+
+        //sf.Deposition();
         //Destroy(prefab);
-        Debug.Log("Destroy and move on");
+        //Debug.Log("Destroy and move on");
         /*        mc.EnableModel(fishModel.transform);
         */
-        df.DeactivateFish();
-        df.InstaFish();
+        /*        df.DeactivateFish();
+                df.InstaFish();*/
+
+
+
 
     }
 
     public void PrevButton()
     {
-        gh.fishID--;
+        sf.Decrease();
+
+        sf.LBSuperposition();
+        //gh.fishID--;
+        //sf.activateFish = true;
+
+        /*        if (sf.activateFish)
+                {*/
+        //sf.Superposition();
+        //}
+
+        //sf.Superposition();
+
+        //sf.Deposition();
         // Destroy(prefab);
 
-        df.DeactivateFish();
-        df.InstaFish();
+        /*        df.DeactivateFish();
+                df.InstaFish();*/
     }
 
     public void InstaFish()

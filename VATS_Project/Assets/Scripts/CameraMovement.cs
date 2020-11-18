@@ -267,12 +267,14 @@ public class CameraMovement : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             camDistance++;
+            camDistance = ClampCamera(camDistance);  
             cam.transform.position = target.position;
             cam.transform.Translate(new Vector3(0, 0, camDistance));
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             camDistance--;
+            camDistance = ClampCamera(camDistance);
             cam.transform.position = target.position;
             cam.transform.Translate(new Vector3(0, 0, camDistance));
         }
@@ -305,5 +307,22 @@ public class CameraMovement : MonoBehaviour
         cam.transform.Translate(new Vector3(0, 0, camDistance));
 
         previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
+    }
+
+    public float ClampCamera(float camDistance)
+    {
+        float clampedCamDis;
+        switch (state)
+        {
+            case 1:
+                // When tracking marine life
+                clampedCamDis = Mathf.Clamp(camDistance, -15.0f, 15.0f);
+                break;
+            case 2:
+                // When examining marine life
+                clampedCamDis = Mathf.Clamp(camDistance, -10.0f, 10.0f);
+                break;
+        }
+        return clampedCamDis;
     }
 }

@@ -1,0 +1,316 @@
+{
+	"pollution":[
+		{	
+		"year": 1950,
+		"coastalMicro": 1000,
+		"coastalMacro": 34,
+		"offshoreMicro": 7000,
+		"offshoreMacro": 2500
+		},
+		{	
+		"year": 1960,
+		"coastalMicro": 3000,
+		"coastalMacro": 260
+		"offshoreMicro": 29000,
+		"offshoreMacro": 14000
+		},
+		{	
+		"year": 1970,
+		"coastalMicro": 7000,
+		"coastalMacro": 2000,
+		"offshoreMicro": 72000,
+		"offshoreMacro": 48000
+		},
+		{	
+		"year": 1980,
+		"coastalMicro": 12000,
+		"coastalMacro": 3500,
+		"offshoreMicro": 99000,
+		"offshoreMacro": 93000
+		},
+		{	
+		"year": 1990,
+		"coastalMicro": 19000,
+		"coastalMacro": 5000,
+		"offshoreMicro": 120000,
+		"offshoreMacro": 190000
+		},
+		{	
+		"year": 2000,
+		"coastalMicro": 27000,
+		"coastalMacro": 19000,
+		"offshoreMicro": 98000,
+		"offshoreMacro": 350000
+		},
+		{	
+		"year": 2010,
+		"coastalMicro": 12000,
+		"coastalMacro": 19000,
+		"offshoreMicro": 16000,
+		"offshoreMacro": 240000
+		},
+		{
+		"year": 2020,
+		"asdf": asdf
+		},
+	],
+	"macroProjection":[
+		{
+		"year": 1950,
+		"eGrowth: 0,
+		"eLevel": 0,
+		"eStop": 0,
+		},
+		{
+		"year": 1955,
+		"eGrowth: 1800,
+		"eLevel": 1800,
+		"eStop": 1800
+		},
+		{
+		"year": 1960,
+		"eGrowth: 5600,
+		"eLevel": 5600,
+		"eStop": 5600
+		},
+		{
+		"year": 1965,
+		"eGrowth: 13500,
+		"eLevel": 13500,
+		"eStop": 13500
+		},
+		{
+		"year": 1970,
+		"eGrowth: 30200,
+		"eLevel": 30200,
+		"eStop": 30200
+		},
+		{
+		"year": 1975,
+		"eGrowth: 59200,
+		"eLevel": 59200,
+		"eStop": 59200
+		},
+		{
+		"year": 1980,
+		"eGrowth: 99300,
+		"eLevel": 99300,
+		"eStop": 99300
+		},
+		{
+		"year": 1985,
+		"eGrowth: 149600,
+		"eLevel": 149600,
+		"eStop": 149600
+		},
+		{
+		"year": 1990,
+		"eGrowth: 215900,
+		"eLevel": 215900,
+		"eStop": 215900
+		},
+		{
+		"year": 1995,
+		"eGrowth: 300200,
+		"eLevel": 300200,
+		"eStop": 300200
+		},
+		{
+		"year": 2000,
+		"eGrowth: 413100,
+		"eLevel": 413100,
+		"eStop": 413100
+		},
+		{
+		"year": 2005,
+		"eGrowth: 557100,
+		"eLevel": 557100,
+		"eStop": 557100
+		},
+		{
+		"year": 2010,
+		"eGrowth: 730100,
+		"eLevel": 730100,
+		"eStop": 730100
+		},
+		{
+		"year": 2015,
+		"eGrowth: 934100,
+		"eLevel": 934100,
+		"eStop": 934100
+		},
+		{
+		"year": 2020,
+		"eGrowth: 1180000,
+		"eLevel": 1180000,
+		"eStop": 1140000
+		},
+		{
+		"year": 2025,
+		"eGrowth: 1470000,
+		"eLevel": 1440000,
+		"eStop": 1120000
+		},
+		{
+		"year": 2030,
+		"eGrowth: 1810000,
+		"eLevel": 1680000,
+		"eStop": 1050000
+		},
+		{
+		"year": 2035,
+		"eGrowth: 2220000,
+		"eLevel": 1920000,
+		"eStop": 976600,
+		},
+		{
+		"year": 2040,
+		"eGrowth: 2700000,
+		"eLevel": 2130000,
+		"eStop": 904500
+		},
+		{
+		"year": 2045,
+		"eGrowth: 3280000,
+		"eLevel": 2330000,
+		"eStop": 839500
+		},
+		{
+		"year": 2050,
+		"eGrowth: 3970000
+		"eLevel": 2510000,
+		"eStop": 778600
+		},
+	],
+	"microProjection":[
+		{
+		"year": 1950,
+		"eGrowth: 0,
+		"eLevel": 0,
+		"eStop": 0
+		},
+		{
+		"year": 1955,
+		"eGrowth: 100,
+		"eLevel": 100,
+		"eStop": 100
+		},
+		{
+		"year": 1960,
+		"eGrowth: 600,
+		"eLevel": 600,
+		"eStop": 600
+		},
+		{
+		"year": 1965,
+		"eGrowth: 1800,
+		"eLevel": 1800,
+		"eStop": 1800
+		},
+		{
+		"year": 1970,
+		"eGrowth: 4700,
+		"eLevel": 4700,
+		"eStop": 4700
+		},
+		{
+		"year": 1975,
+		"eGrowth: 10800,
+		"eLevel": 10800,
+		"eStop": 10800
+		},
+		{
+		"year": 1980,
+		"eGrowth: 22000,
+		"eLevel": 22000,
+		"eStop": 22000
+		},
+		{
+		"year": 1985,
+		"eGrowth: 39700,
+		"eLevel": 39700,
+		"eStop": 39700
+		},
+		{
+		"year": 1990,
+		"eGrowth: 65900,
+		"eLevel": 65900,
+		"eStop": 65900
+		},
+		{
+		"year": 1995,
+		"eGrowth: 103100,
+		"eLevel": 103100,
+		"eStop": 103100
+		},
+		{
+		"year": 2000,
+		"eGrowth: 154500,
+		"eLevel": 154500,
+		"eStop": 154500
+		},
+		{
+		"year": 2005,
+		"eGrowth: 224700,
+		"eLevel": 224700,
+		"eStop": 224700
+		},
+		{
+		"year": 2010,
+		"eGrowth: 297700,
+		"eLevel": 297700,
+		"eStop": 297700,
+		},
+		{
+		"year": 2015
+		"eGrowth: 439800,
+		"eLevel": 439800,
+		"eStop": 439800
+		},
+		{
+		"year": 2020,
+		"eGrowth: 594000,
+		"eLevel": 594000,
+		"eStop": 594000
+		},
+		{
+		"year": 2025,
+		"eGrowth: 787300,
+		"eLevel": 786,300,
+		"eStop": 764500
+		},
+		{
+		"year": 2030,
+		"eGrowth: 1030000,
+		"eLevel": 1020000,
+		"eStop": 928000
+		},
+		{
+		"year": 2035,
+		"eGrowth: 1320000,
+		"eLevel": 1280000,
+		"eStop": 1080000
+		},
+		{
+		"year": 2040,
+		"eGrowth: 1680000,
+		"eLevel": 1580000,
+		"eStop": 1220000
+		},
+		{
+		"year": 2045,
+		"eGrowth: 2120000,
+		"eLevel": 1920000,
+		"eStop": 1350000
+		},
+		{
+		"year": 2050,
+		"eGrowth: 2650000,
+		"eLevel": 2280000,
+		"eStop": 1480000
+		},
+	]
+}
+
+
+	
