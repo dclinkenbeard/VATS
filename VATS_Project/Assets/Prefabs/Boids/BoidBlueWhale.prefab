@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 3
   maxTurnSpd: 3
   fishType: Blue Whale
+  id: 19
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

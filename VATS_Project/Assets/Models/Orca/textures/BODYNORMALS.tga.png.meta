@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dd958e841ce11054d8f884f41ffb5d6d
+=======
+guid: edddf621635364e43aad4fe0f77478be
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +11,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+<<<<<<< HEAD
     sRGBTexture: 1
+=======
+    sRGBTexture: 0
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -51,7 +59,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 0
+=======
+  textureType: 1
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0

@@ -74,6 +74,7 @@ MonoBehaviour:
   maxSpeed: 8
   maxTurnSpd: 8
   fishType: Hammerhead
+  id: 9
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256

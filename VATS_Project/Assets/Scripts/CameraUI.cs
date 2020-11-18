@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraUI : MonoBehaviour
 {
     // Basic Interface
     public GameObject canvas;
     public GameObject basicInterface;
-    public GameObject flockSpawn;
+    public GameObject fishManager;
     TextMeshProUGUI fishViewText;
     TextMeshProUGUI fishExitText;
     TextMeshProUGUI fishExamText;
+    Image transitionScreen;
     private string fishName;
 
     // Examination Room
@@ -23,6 +25,10 @@ public class CameraUI : MonoBehaviour
     private Transform fishList;
     private GameObject fishExamObj;
     public bool inExamRoom;
+
+    bool screenBlack = false;
+    public bool examEnter = false;
+    public bool examExit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +49,9 @@ public class CameraUI : MonoBehaviour
             // Get fish exam text
             fishExamText = canvas.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             fishExamText.text = "";
+
+            transitionScreen = canvas.transform.GetChild(3).GetComponent<Image>();
+            
         }
         else
         {
@@ -51,6 +60,7 @@ public class CameraUI : MonoBehaviour
 
         inExamRoom = false;
 
+        // Check if the exam room is not empty
         if(examinationRoom != null)
         {
             camExamPos = examinationRoom.transform.GetChild(1);
@@ -66,17 +76,87 @@ public class CameraUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flockSpawn != null)
+        if (fishManager != null)
         {
-            if (flockSpawn.GetComponent<FEV>() != null)
+            if (fishManager.GetComponent<FishManager>() != null)
             {
-                fishName = flockSpawn.GetComponent<FEV>().getFishName();
-                fishExamObj = flockSpawn.GetComponent<BoidSpawner>().agentPrefab;
+                fishName = transform.gameObject.GetComponent<CameraMovement>().GetFishName();
+                foreach(GameObject fishChild in fishManager.GetComponent<FishManager>().FishPrefabs)
+                {
+                    if (fishChild.name.Equals(fishName))
+                    {
+                        fishExamObj = fishChild;
+                    }
+                }
+
             }
             else
             {
-                fishName = "Target fish missing FEV!";
+                fishName = "Target fish missing Fish Manager!";
             }
+        }
+
+        if (examEnter) {
+            TransitionToExam();
+        }
+
+        if (examExit)
+        {
+            TransitionToExplore();
+        }
+
+        // get rid of screen alpha if screen is black
+        if (screenBlack) {
+            if (transitionScreen.color.a > 0)
+            {
+                Color c = transitionScreen.color;
+                c.a -= 0.01f;
+                transitionScreen.color = c;
+            }
+            else {
+                screenBlack = false;
+            }
+        }
+    }
+
+    // turn screen black and switch to examination mode
+    public void TransitionToExam() {
+        screenBlack = false;
+        if (transitionScreen.color.a < 1)
+        {
+            Color c = transitionScreen.color;
+            c.a += 0.01f;
+            transitionScreen.color = c;
+        }
+        else
+        {
+            screenBlack = true;
+            inExamRoom = true;
+            ExaminingFish(true);
+            CameraTeleport(false);
+            UITextHandler(3);
+            examEnter = false;
+        }
+    }
+
+    // turn screen black and switch to exploration mode
+    public void TransitionToExplore()
+    {
+        screenBlack = false;
+        if (transitionScreen.color.a < 1)
+        {
+            Color c = transitionScreen.color;
+            c.a += 0.01f;
+            transitionScreen.color = c;
+        }
+        else
+        {
+            screenBlack = true;
+            CameraTeleport(true);
+            ExaminingFish(false);
+            inExamRoom = false;
+            UITextHandler(2);
+            examExit = false;
         }
     }
 
@@ -122,6 +202,8 @@ public class CameraUI : MonoBehaviour
         {
             // Go to exam position
             camOrigPos = this.transform.position;
+            transform.gameObject.GetComponent<CameraMovement>().SetCamDistance(camExamPos.localPosition.x);
+            Debug.Log("Cam exam local pos for x" + camExamPos.localPosition.x);
             this.transform.position = camExamPos.position;
             this.transform.rotation = camExamPos.rotation;
         }

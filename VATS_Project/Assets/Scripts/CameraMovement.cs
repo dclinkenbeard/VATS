@@ -3,17 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using TMPro;
 
 public class CameraMovement : MonoBehaviour
 {
     int state = 0;
+    int targetState = -2;
     Transform trackingTarget;
     public float trackingLerp = 0f;
 
     public float mouseSense = 1.8f;
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
-    float camDistance = -10.0f;
+    public float camDistance = -10.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
@@ -22,10 +24,18 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 previousPosition;
 
+    // Slider Interface
+    public GameObject sliderInterface;
+    public TextMeshProUGUI sliderText;
+
+    string fishName;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        sliderText.text = "Press M to open Ocean Sliders";
+        sliderInterface.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,14 +52,14 @@ public class CameraMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1500)) //1500
+        if (Physics.Raycast(ray, out hit, 1500) && state == 0) //1500
         {
             bool checkExamRoom = transform.GetComponent<CameraUI>().CheckInExamRoom();
 
             if (fishLayerMask == (fishLayerMask | (1 << hit.transform.gameObject.layer)) && state != 1 && !checkExamRoom)
             {
                 transform.GetComponent<CameraUI>().basicInterface.SetActive(true);
-                transform.GetComponent<CameraUI>().flockSpawn = hit.transform.parent.gameObject;
+                transform.GetComponent<CameraUI>().fishManager = hit.transform.parent.gameObject;
                 transform.GetComponent<CameraUI>().UITextHandler(1);
 
                 if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
@@ -58,12 +68,13 @@ public class CameraMovement : MonoBehaviour
                     trackingLerp = 0.005f;
                     state = 1;
                     transform.GetComponent<CameraUI>().UITextHandler(2);
+                    fishName = SetFishName(trackingTarget.gameObject);
                 }
             }
             else
             {
                 transform.GetComponent<CameraUI>().basicInterface.SetActive(false);
-                transform.GetComponent<CameraUI>().flockSpawn = null;
+                transform.GetComponent<CameraUI>().fishManager = null;
             }
         }
 
@@ -78,43 +89,83 @@ public class CameraMovement : MonoBehaviour
         // Enter Exmination Room
         if (Input.GetKeyDown(KeyCode.E) && state == 1)
         {
+            state = -1;
+            transform.GetComponent<CameraUI>().examEnter = true;
             transform.parent = null;
-            state = 2;
-
-            transform.GetComponent<CameraUI>().inExamRoom = true;
-            transform.GetComponent<CameraUI>().ExaminingFish(true);
-            transform.GetComponent<CameraUI>().CameraTeleport(false);
-            transform.GetComponent<CameraUI>().UITextHandler(3);
+            targetState = 2;
 
         }
 
         // Exit Examination Room
         if (Input.GetKeyDown(KeyCode.R) && transform.GetComponent<CameraUI>().inExamRoom)
         {
-            transform.GetComponent<CameraUI>().CameraTeleport(true);
-            transform.GetComponent<CameraUI>().ExaminingFish(false);
-            transform.GetComponent<CameraUI>().inExamRoom = false;
-            transform.GetComponent<CameraUI>().UITextHandler(2);
-            state = 1;
+            state = -1;
+            transform.GetComponent<CameraUI>().examExit = true;
+            targetState = 1;
+        }
+
+        // To prevent fast transition and allow reg transition
+        if(targetState > -2 && !transform.GetComponent<CameraUI>().examExit && !transform.GetComponent<CameraUI>().examEnter){
+            state = targetState;
+            targetState = -2;
+        }
+
+
+        // Open and close Ocean Settings Menu
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (state == 0)
+            {
+                state = 3;
+            }
+            else if (state == 3)
+            {
+                state = 0;
+            }
         }
 
         switch (state)
         {
             case 0:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
+                sliderText.text = "Press M to open Ocean Sliders";
+                sliderInterface.SetActive(false);
                 FreeFly();
                 break;
             case 1:
+                gameObject.GetComponent<FishInfoSet>().fishID = trackingTarget.GetComponent<BoidAgent>().id;
+                sliderText.text = "";
+                sliderInterface.SetActive(false);
                 Track();
                 break;
             case 2:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
                 Transform examPos = transform.gameObject.GetComponent<CameraUI>().GetFishExamRoom();
                 Rotate(examPos);
+                break;
+            case 3:
+                gameObject.GetComponent<FishInfoSet>().fishID = -1; 
+                sliderText.text = "Press M to close Ocean Sliders";
+                sliderInterface.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
                 break;
         }
     }
 
+    public void SetCamDistance(float distance) { camDistance = distance; }
+
+    public string SetFishName(GameObject trackingTarget)
+    {
+        string tempName = trackingTarget.gameObject.name;
+        string finalName = tempName.Remove(tempName.Length - 7, 7);
+        return finalName;
+    }
+
+    public string GetFishName() { return fishName; }
+
     public void FreeFly()
     {
+        gameObject.GetComponent<FishInfoSet>().fishID = -1; 
         Cursor.lockState = CursorLockMode.Locked;
         if (Cursor.lockState != CursorLockMode.Locked) {
             return;
@@ -165,7 +216,6 @@ public class CameraMovement : MonoBehaviour
 
     public void Track()
     {
-
         Transform trackingModel = trackingTarget.GetChild(0);
         if (transform.parent == trackingModel) {
             //transform.localPosition = new Vector3(1f, 0, 0);
@@ -205,8 +255,6 @@ public class CameraMovement : MonoBehaviour
             //transform.localRotation = Quaternion.Euler(0,-90f,0);
         }*/
 
-
-
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 0.1f);
 
     }
@@ -241,11 +289,8 @@ public class CameraMovement : MonoBehaviour
 
         if (state == 1)
         {
-            Debug.Log("following fish camUpdate");
             cam.transform.position = target.position;
             cam.transform.Translate(new Vector3(0, 0, camDistance));
-
-            //CameraUpdate(cam, camDistance, target);
         }
     }
 

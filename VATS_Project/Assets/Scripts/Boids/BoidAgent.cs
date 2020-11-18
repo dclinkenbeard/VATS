@@ -14,6 +14,7 @@ public class BoidAgent : MonoBehaviour
     public float maxTurnSpd = 10f;
 
     public string fishType;
+    public int id;
     public LayerMask obstacleMask;
     public LayerMask fishLayerMask;
 
@@ -31,8 +32,8 @@ public class BoidAgent : MonoBehaviour
     Vector3 velocity;
 
 
-    bool spawning = true;
-    bool despawning = false;
+    public bool spawning = true;
+    public bool despawning = false;
     Vector3 scale;
     // Start is called before the first frame update
     void Start()
@@ -48,10 +49,12 @@ public class BoidAgent : MonoBehaviour
     void Update()
     {
         //for debugging
-        //if (Input.GetKeyDown(KeyCode.B)) {
-        // despawning = true;
-        //}
-        if (spawning) {
+        /*
+        if (Input.GetKeyDown(KeyCode.B)) {
+        despawning = true;
+        }
+        */
+        if (spawning && !despawning) {
             transform.localScale = Vector3.Lerp(transform.localScale, scale, 0.1f);
             if ((transform.localScale - scale).sqrMagnitude < 0.1f) {
                 transform.localScale = scale;
@@ -91,8 +94,8 @@ public class BoidAgent : MonoBehaviour
         //acceleration += cohesion;
         //acceleration += center;
         //transform.position += velocity * Time.deltaTime;
-
-        if (Physics.SphereCast(transform.position, 1f, transform.forward, out _, collisionLength, obstacleMask))
+        
+        if (Physics.Raycast(transform.position, transform.forward, out _, collisionLength, obstacleMask))
         {
             Vector3 collisionAvoidDir = FindOpenDirection();
             Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * collisionWeight;
@@ -117,7 +120,7 @@ public class BoidAgent : MonoBehaviour
         {
             Vector3 dir = transform.TransformDirection(spherePoints[i]);
             Ray ray = new Ray(transform.position, dir);
-            if (!Physics.SphereCast(ray, 1f, collisionLength, obstacleMask))
+            if (!Physics.Raycast(ray, collisionLength, obstacleMask))
             {
                 return dir;
             }
@@ -222,16 +225,15 @@ public class BoidAgent : MonoBehaviour
     List<Transform> GetNearbyObjects()
     {
         List<Transform> context = new List<Transform>();
-        Collider[] contextColliders = Physics.OverlapSphere(transform.position, neighborRadius);
-        
+        Collider[] contextColliders = Physics.OverlapSphere(transform.position, neighborRadius, fishLayerMask);
+        //Collider[] contextColliders = Physics.OverlapBox(transform.position, new Vector3(neighborRadius, neighborRadius, neighborRadius));
         foreach (Collider c in contextColliders)
         {
             if (c.gameObject == this) {
                 continue;
             }
-            if (fishLayerMask == (fishLayerMask | (1 << c.gameObject.layer))){
-                context.Add(c.transform);
-            }
+            context.Add(c.transform);
+
         }
         
 
@@ -241,17 +243,18 @@ public class BoidAgent : MonoBehaviour
     List<Transform> GetAvoidObjects()
     {
         List<Transform> context = new List<Transform>();
-        Collider[] contextColliders = Physics.OverlapSphere(transform.position, avoidRadius);
-        
+        Collider[] contextColliders = Physics.OverlapSphere(transform.position, avoidRadius, fishLayerMask);
+        //Collider[] contextColliders = Physics.OverlapBox(transform.position, new Vector3(avoidRadius, avoidRadius, avoidRadius));
+
         foreach (Collider c in contextColliders)
         {
             if (c.gameObject == this)
             {
                 continue;
             }
-            if (fishLayerMask == (fishLayerMask | (1 << c.gameObject.layer))) {
-                context.Add(c.transform);
-            }
+            //if (fishLayerMask == (fishLayerMask | (1 << c.gameObject.layer))) {
+            context.Add(c.transform);
+            //}
         }
 
         return context;

@@ -37,14 +37,14 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_Sun: {fileID: 917897146}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1572,8 +1572,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\t\t\t\t        Vulnerable      Endangered    \t\t\t\t\t        Extinct\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9de82efd18006a64099033d19224a24f, type: 2}
+  m_sharedMaterial: {fileID: 6358132311968316176, guid: 9de82efd18006a64099033d19224a24f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1802,8 +1803,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "LC\t    NT\t       VU         EN         CR       EW        EX"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9de82efd18006a64099033d19224a24f, type: 2}
+  m_sharedMaterial: {fileID: 6358132311968316176, guid: 9de82efd18006a64099033d19224a24f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4764,8 +4766,12 @@ Transform:
   - {fileID: 1060528571}
   - {fileID: 456425849}
   - {fileID: 954919868}
+<<<<<<< HEAD
   - {fileID: 2120384220}
   - {fileID: 436431190}
+=======
+  - {fileID: 1671913173}
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
   - {fileID: 1592365540}
   - {fileID: 746998313}
   - {fileID: 1626727528}
@@ -5686,6 +5692,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1265763896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5699,11 +5706,25 @@ GameObject:
   - component: {fileID: 1265763898}
   m_Layer: 5
   m_Name: statusText
+=======
+--- !u!1 &1237182429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 155493052}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626727528}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &1265763897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5842,6 +5863,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265763896}
   m_CullTransparentMesh: 0
+=======
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
 --- !u!1 &1322137907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,8 +7888,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9de82efd18006a64099033d19224a24f, type: 2}
+  m_sharedMaterial: {fileID: 6358132311968316176, guid: 9de82efd18006a64099033d19224a24f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8120,12 +8144,68 @@ MonoBehaviour:
   sf: {fileID: 1152144485}
   fishModel: {fileID: 1076665985}
   fishTag: 0
+<<<<<<< HEAD
 --- !u!4 &1626727528 stripped
+=======
+--- !u!114 &1626319530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626319524}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c217adf0ae05b84897222a8acc99541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1626727528
+>>>>>>> 25958d86572df90fa1109f92fdc38c4aaa4e8666
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 2682686840098748954, guid: 35c2e41102531e54ab89b6983d660a9c,
     type: 3}
   m_PrefabInstance: {fileID: 155493052}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237182429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1671913173}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1671913172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 155493052}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671913173}
+  m_Layer: 0
+  m_Name: BoidBase (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1671913173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 155493052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671913172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1626727528}
+  m_Father: {fileID: 1076665986}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773482126
 GameObject:
   m_ObjectHideFlags: 0
@@ -9496,8 +9576,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9de82efd18006a64099033d19224a24f, type: 2}
+  m_sharedMaterial: {fileID: 6358132311968316176, guid: 9de82efd18006a64099033d19224a24f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
