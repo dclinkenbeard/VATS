@@ -311,16 +311,16 @@ public class CameraMovement : MonoBehaviour
 
     public float ClampCamera(float camDistance)
     {
-        float clampedCamDis;
+        float clampedCamDis = 0;
         switch (state)
         {
             case 1:
                 // When tracking marine life
-                clampedCamDis = Mathf.Clamp(camDistance, -15.0f, 15.0f);
+                clampedCamDis = Mathf.Clamp(camDistance, -15.0f, -10.0f);
                 break;
             case 2:
                 // When examining marine life
-                clampedCamDis = Mathf.Clamp(camDistance, -10.0f, 10.0f);
+                clampedCamDis = Mathf.Clamp(camDistance, -15.0f, -5.0f);
                 break;
         }
         return clampedCamDis;

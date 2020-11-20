@@ -191,6 +191,7 @@ public class FreeFlyCamera : MonoBehaviour
         if (_enableRotation)
         {
             // Pitch
+            Debug.Log(Quaternion.AngleAxis(-Input.GetAxis("Mouse Y") * _mouseSense, Vector3.right));
             transform.rotation *= Quaternion.AngleAxis(
                 -Input.GetAxis("Mouse Y") * _mouseSense,
                 Vector3.right
