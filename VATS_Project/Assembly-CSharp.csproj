@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\ColliderResize.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingManager.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingPreset.cs" />
+     <Compile Include="Assets\Scripts\DisplayFish.cs" />
      <Compile Include="Assets\Scripts\FEV.cs" />
      <Compile Include="Assets\Scripts\FishInfoSet.cs" />
      <Compile Include="Assets\Scripts\FishManager.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets\Scripts\FreeFlyCamera.cs" />
      <Compile Include="Assets\Scripts\MeshGenerator.cs" />
      <Compile Include="Assets\Scripts\SliderScript.cs" />
+     <Compile Include="Assets\Scripts\TitleControl.cs" />
      <Compile Include="Assets\Scripts\UnderwaterEffect.cs" />
      <Compile Include="Assets\Scripts\UnderwaterEnvironmentalLighting.cs" />
      <Compile Include="Assets\Scripts\WaterWave.cs" />

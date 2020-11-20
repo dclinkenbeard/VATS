@@ -11,8 +11,9 @@ public class FishManager : MonoBehaviour
     string path;
     private string json;
     private JsonData itemData = new JsonData();
+    public TextMeshProUGUI currentFishText;
     public List<GameObject> FishPrefabs = new List<GameObject>();
-    List<int> SpawnIndex = new List<int>();
+    List<Vector2Int> SpawnIndex = new List<Vector2Int>();
     List<GameObject> currentAgents = new List<GameObject>();
     public float depth;
     public float temp;
@@ -28,6 +29,9 @@ public class FishManager : MonoBehaviour
         string text = "\n";
 
         text += CalculateFish();
+
+        currentFishText.text = text;
+
         //Debug.Log(text);
         /*
         if (Input.GetKeyDown(KeyCode.B)) {
@@ -46,10 +50,10 @@ public class FishManager : MonoBehaviour
 
         currentAgents.Clear();
 
-        foreach(int x in SpawnIndex){
-            for (int i = 0; i < 5; i++)
+        foreach(Vector2Int x in SpawnIndex){
+            for (int i = 0; i < x[1]; i++)
             {
-                GameObject agentPrefab = FishPrefabs[x];
+                GameObject agentPrefab = FishPrefabs[x[0]];
                 GameObject agent = Instantiate(agentPrefab,
                     transform.position + Random.insideUnitSphere * 30f,
                     Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
@@ -81,7 +85,10 @@ public class FishManager : MonoBehaviour
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
 
-                SpawnIndex.Add(i);
+                int lowSpawn = int.Parse(itemData["fish"][index: id]["lowLimit"].ToString());
+                int highSpawn = int.Parse(itemData["fish"][index: id]["uppLimit"].ToString());
+                int spawnCount = Random.Range(lowSpawn, highSpawn);
+                SpawnIndex.Add(new Vector2Int(i,spawnCount));
             }
         }
 

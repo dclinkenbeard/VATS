@@ -311,7 +311,7 @@ public class CameraMovement : MonoBehaviour
 
     public float ClampCamera(float camDistance)
     {
-        float clampedCamDis;
+        float clampedCamDis = 0;
         switch (state)
         {
             case 1:
