@@ -16,7 +16,7 @@ public class FishInfoSet : MonoBehaviour
     void Start()
     {
 
-        path = Application.dataPath + "/Scenes/Derek_Scene/JSON/Fish_Encyclopedia.JSON.txt";
+        path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
     }
