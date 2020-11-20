@@ -16,6 +16,9 @@ public class CameraMovement : MonoBehaviour
     public float movementSpeed = 10f;
     public float boostedSpeed = 50f;
     public float camDistance = -10.0f;
+    public float minPitch, maxPitch;
+    private float yaw = 0.0f;
+    private float pitch = 0.0f;
 
     public Vector3 min_bound;
     public Vector3 max_bound;
@@ -200,6 +203,14 @@ public class CameraMovement : MonoBehaviour
         transform.position += deltaPosition * currentSpeed * Time.deltaTime;
 
         //Rotation
+
+        yaw += mouseSense  * Input.GetAxis("Mouse X");
+        pitch -= mouseSense * Input.GetAxis("Mouse Y");
+        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);                               
+
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
+        /*
         // Pitch
         transform.rotation *= Quaternion.AngleAxis(
             -Input.GetAxis("Mouse Y") * mouseSense,
@@ -212,6 +223,7 @@ public class CameraMovement : MonoBehaviour
             transform.eulerAngles.y + Input.GetAxis("Mouse X") * mouseSense,
             transform.eulerAngles.z
         );
+        */
     }
 
     public void Track()
