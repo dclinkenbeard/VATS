@@ -64,6 +64,21 @@ public class FishManager : MonoBehaviour
                 //agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
             }
         }
+
+        //remove this later
+        for (int i = 0; i < 100; i++)
+        {
+            GameObject agentPrefab = FishPrefabs[7];
+            GameObject agent = Instantiate(agentPrefab,
+                transform.position + Random.insideUnitSphere * 30f,
+                Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
+                transform
+                );
+
+            currentAgents.Add(agent);
+            //agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
+        }
+
     }
 
     private string CalculateFish()
