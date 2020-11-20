@@ -36,12 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\Rotate.cs" />
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelButton.cs" />
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelController.cs" />
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelUI.cs" />
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\fevUIList.cs" />
-     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\gameHandler.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidAlignmentBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidAvoidanceBehavior.cs" />
      <Compile Include="Assets\Scripts\Boids\BehaviorScripts\BoidBehavior.cs" />
@@ -75,6 +69,12 @@
      <Compile Include="Assets\Scripts\ColliderResize.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingManager.cs" />
      <Compile Include="Assets\Scripts\Day &amp; Night Cycle\LightingPreset.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\ShowModelButton.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\ShowModelController.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\ShowModelUI.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\fevUIList.cs" />
+     <Compile Include="Assets\Scripts\DerekScripts\gameHandler.cs" />
      <Compile Include="Assets\Scripts\DisplayFish.cs" />
      <Compile Include="Assets\Scripts\FEV.cs" />
      <Compile Include="Assets\Scripts\FishInfoSet.cs" />
@@ -140,7 +140,7 @@
      <None Include="Assets\Crest\Crest\Shaders\OceanReflection.hlsl" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Crest\Crest\Shaders\Resources\Debug\TextureArray.shader" />
-     <None Include="Assets\Scenes\Derek_Scene\JSON\PlasticData.JSON.txt" />
+     <None Include="Assets\JSON\PlasticData.JSON.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceRemoveArea.shader" />
@@ -159,7 +159,7 @@
      <None Include="Assets\Crest\Crest\Shaders\Resources\QueryFlow.compute" />
      <None Include="Assets\Crest\Crest\Shaders\GPUNoise\GPUNoise.hlsl" />
      <None Include="Assets\Crest\Crest\Shaders\Resources\ShapeCombine.shader" />
-     <None Include="Assets\Scenes\Derek_Scene\JSON\Fish_Encyclopedia.JSON.txt" />
+     <None Include="Assets\JSON\Fish_Encyclopedia.JSON.txt" />
      <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\ClipSurfaceConvexHull.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Crest\Crest\Shaders\OceanHelpers.hlsl" />
