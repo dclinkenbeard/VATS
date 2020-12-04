@@ -66,7 +66,7 @@ public class FishManager : MonoBehaviour
         }
 
         //remove this later
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 300; i++)
         {
             GameObject agentPrefab = FishPrefabs[7];
             GameObject agent = Instantiate(agentPrefab,
