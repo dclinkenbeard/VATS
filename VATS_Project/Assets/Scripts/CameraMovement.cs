@@ -44,13 +44,6 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (Cursor.lockState == CursorLockMode.Locked) {
-                Cursor.lockState = CursorLockMode.None;
-            }else if (Cursor.lockState == CursorLockMode.None){
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-        }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -192,13 +185,6 @@ public class CameraMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
                 deltaPosition += transform.right;
-            /*
-            if (Input.GetKey(_moveUp))
-                deltaPosition += transform.up;
-
-            if (Input.GetKey(_moveDown))
-                deltaPosition -= transform.up;
-            */
 
         transform.position += deltaPosition * currentSpeed * Time.deltaTime;
 
@@ -210,65 +196,16 @@ public class CameraMovement : MonoBehaviour
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
-        /*
-        // Pitch
-        transform.rotation *= Quaternion.AngleAxis(
-            -Input.GetAxis("Mouse Y") * mouseSense,
-            Vector3.right
-        );
-
-        // Paw
-        transform.rotation = Quaternion.Euler(
-            transform.eulerAngles.x,
-            transform.eulerAngles.y + Input.GetAxis("Mouse X") * mouseSense,
-            transform.eulerAngles.z
-        );
-        */
     }
 
     public void Track()
     {
         Transform trackingModel = trackingTarget.GetChild(0);
         if (transform.parent == trackingModel) {
-            //transform.localPosition = new Vector3(1f, 0, 0);
-            //transform.localRotation = Quaternion.Euler(0, -90f, 0);
             return;
         }
 
         Rotate(trackingModel);
-
-        /*Vector3 targetPos = trackingModel.position + (trackingModel.right * Mathf.Clamp(2f * trackingTarget.localScale.x, 0f, 50f)); //(trackingTarget.forward);
-        Vector3 targetAngle = trackingModel.rotation.eulerAngles;
-        targetAngle.x = 0;
-        targetAngle.z = 0;
-        targetAngle.y -= 90;
-
-        //Vector3 fishRot = trackingTarget.rotation.eulerAngles;
-        //Quaternion targetRot = Quaternion.Euler(fishRot.x, fishRot.y - 90f, fishRot.z);
-
-        if (Vector3.Distance(transform.position, targetPos) > 1f)
-        {
-            //trackingLerp = 0.1f;
-            transform.position = Vector3.Lerp(transform.position, targetPos, trackingLerp);
-            trackingLerp *= 1.1f;
-            transform.LookAt(trackingModel.position);
-            //Debug.Log("Tracking");
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.1f);
-        }
-        else
-        {
-            transform.position = targetPos;
-            transform.LookAt(trackingModel.position);
-            //Debug.Log("Tracked");
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetAngle), 0.01f);
-            //transform.parent = trackingTarget;
-            //transform.localPosition =  trackingTarget.position + new Vector3(1f,0,0);
-            //transform.LookAt(trackingTarget.position);
-            //transform.localRotation = Quaternion.Euler(0,-90f,0);
-        }*/
-
-        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 0.1f);
-
     }
 
     public void Rotate(Transform target)

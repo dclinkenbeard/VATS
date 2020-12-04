@@ -61,12 +61,11 @@ public class FishManager : MonoBehaviour
                     );
 
                 currentAgents.Add(agent);
-                //agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
             }
         }
 
-        //remove this later
-        for (int i = 0; i < 300; i++)
+        //////////////// remove this later
+        for (int i = 0; i < 400; i++)
         {
             GameObject agentPrefab = FishPrefabs[7];
             GameObject agent = Instantiate(agentPrefab,
@@ -76,8 +75,8 @@ public class FishManager : MonoBehaviour
                 );
 
             currentAgents.Add(agent);
-            //agent.GetComponent<BoidAgent>().obstacleMask = obstacleMask;
         }
+        /////////////////
 
     }
 
@@ -108,17 +107,6 @@ public class FishManager : MonoBehaviour
         }
 
         return text;
-        // fish stats displayed on UI
-        /*
-        nameText.text = itemData["fish"][index: fishID]["name"].ToString();
-        sciNameText.text = itemData["fish"][index: fishID]["sci"].ToString();
-        typeText.text = "\n" + itemData["fish"][index: fishID]["type"].ToString();
-        habitatText.text = "\n" + itemData["fish"][index: fishID]["habitat"].ToString();
-        depthText.text = "\n" + itemData["fish"][index: fishID]["maxDepth"].ToString();
-        sizeText.text = "\n" + itemData["fish"][index: fishID]["maxSize"].ToString();
-        dietText.text = "\n" + itemData["fish"][index: fishID]["diet"].ToString();
-        rangeText.text = "\n" + itemData["fish"][index: fishID]["range"].ToString();
-        */
     }
 
 }
