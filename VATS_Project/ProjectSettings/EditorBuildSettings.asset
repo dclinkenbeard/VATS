@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Isaac_Scenes/TitleScene.unity
     guid: 2d755fc2189b3394db096fb96119cc84
   - enabled: 1
-    path: Assets/Scenes/Isaac_Scenes/Isaac_Scene.unity
+    path: Assets/Scenes/Isaac_Scenes/ExplorationScene.unity
     guid: f0fb511ae4631f94793098fc10f47dd7
   m_configObjects: {}
