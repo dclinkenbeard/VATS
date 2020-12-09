@@ -7,7 +7,8 @@ using TMPro;
 
 public class FishInfoSet : MonoBehaviour
 {
-    string path;
+    //string path;
+    public TextAsset jsonFile;
     private string json;
     private JsonData itemData = new JsonData();
 
@@ -16,8 +17,9 @@ public class FishInfoSet : MonoBehaviour
     void Start()
     {
 
-        path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
-        json = File.ReadAllText(path);
+        //path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
+
+        json = jsonFile.text;
         itemData = JsonMapper.ToObject(json);
     }
 

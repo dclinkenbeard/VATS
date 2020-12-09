@@ -37,6 +37,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         sliderText.text = "Press M to open Ocean Sliders";
         sliderInterface.SetActive(false);
     }
@@ -113,10 +114,12 @@ public class CameraMovement : MonoBehaviour
             if (state == 0)
             {
                 state = 3;
+                Cursor.visible = true;
             }
             else if (state == 3)
             {
                 state = 0;
+                Cursor.visible = false;
             }
         }
 

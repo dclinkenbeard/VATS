@@ -31,6 +31,7 @@ public class PauseScript : MonoBehaviour
     {
         cameraMovement.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         askMainMenu.SetActive(false);
         askQuitMenu.SetActive(false);
@@ -41,6 +42,7 @@ public class PauseScript : MonoBehaviour
     {
         cameraMovement.enabled = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0.0f;
         pauseMenu.SetActive(true);
     }

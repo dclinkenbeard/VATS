@@ -8,8 +8,10 @@ using TMPro;
 [System.Serializable]
 public class FishManager : MonoBehaviour
 {
-    string path;
+    //string path;
+
     private string json;
+    public TextAsset jsonFile;
     private JsonData itemData = new JsonData();
     public TextMeshProUGUI currentFishText;
     public List<GameObject> FishPrefabs = new List<GameObject>();
@@ -20,8 +22,8 @@ public class FishManager : MonoBehaviour
     void Start()
     {
 
-        path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
-        json = File.ReadAllText(path);
+        //path = "Assets/JSON/Fish_Encyclopedia.JSON.txt";
+        json = jsonFile.text;
         itemData = JsonMapper.ToObject(json);
     }
 
@@ -30,6 +32,7 @@ public class FishManager : MonoBehaviour
 
         text += CalculateFish();
 
+        //text = path;
         currentFishText.text = text;
 
         //Debug.Log(text);
