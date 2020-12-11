@@ -39,7 +39,7 @@ public class Buttons : MonoBehaviour
         sf.Increase();
 
         sf.RBSuperposition();
-        //gh.fishID++;
+        //mh.fishID++;
         //sf.activateFish = true;
 
         /*        if (sf.activateFish)
@@ -67,7 +67,7 @@ public class Buttons : MonoBehaviour
         sf.Decrease();
 
         sf.LBSuperposition();
-        //gh.fishID--;
+        //mh.fishID--;
         //sf.activateFish = true;
 
         /*        if (sf.activateFish)

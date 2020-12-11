@@ -63,6 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GridButton.cs" />
+    <Compile Include="Assets\GridToFev.cs" />
+    <Compile Include="Assets\ModelCollider.cs" />
+    <Compile Include="Assets\ModelHandler.cs" />
     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelButton.cs" />
     <Compile Include="Assets\Scenes\Derek_Scene\Scripts\ShowModelController.cs" />
@@ -152,6 +156,7 @@
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\InjectorSignedDistanceField.shader" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\FlowFixedDirection.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Ocean.shader" />
+    <None Include="Assets\Scenes\Derek_Scene\JSON\Model_Positioning.JSON.txt" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\Resources\OceanDepths.shader" />
     <None Include="Assets\Crest\Crest\Shaders\OceanInputs\AnimWavesGerstnerBatchGeometry.shader" />
     <None Include="Assets\Crest\Crest\Shaders\Resources\SdfInitJumpFlood.compute" />

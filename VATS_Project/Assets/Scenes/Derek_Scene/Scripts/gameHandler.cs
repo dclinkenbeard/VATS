@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using System.IO;
 using LitJson;
@@ -12,6 +13,9 @@ public class gameHandler : MonoBehaviour
     private string json;
     private JsonData itemData = new JsonData();
 
+    public SuperpositionFish sf;
+    public GridToFev grid;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI sciNameText;
     public TextMeshProUGUI typeText;
@@ -22,11 +26,12 @@ public class gameHandler : MonoBehaviour
     public TextMeshProUGUI rangeText;
     public TextMeshProUGUI conservationText;
 
-
     public int fishID;
 
     void Start()
     {
+        fishID = grid.FetchId();
+
         nameText = transform.Find("nameText").GetComponent<TextMeshProUGUI>();
         sciNameText = transform.Find("sciNameText").GetComponent<TextMeshProUGUI>();
         typeText = transform.Find("typeText").GetComponent<TextMeshProUGUI>();
@@ -72,7 +77,6 @@ public class gameHandler : MonoBehaviour
         dietText.text = "\n" + itemData["fish"][index: fishID]["diet"].ToString();
         rangeText.text = "\n" + itemData["fish"][index: fishID]["range"].ToString();
         conservationText.text = "\n" + itemData["fish"][index: fishID]["status"].ToString();
-
     }
 
 }
