@@ -9,3 +9,5 @@ Boids Resources:
 - http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
 - https://www.bitshiftprogrammer.com/2018/01/how-to-animate-fish-swimming-with.html
             
+Information about the ocean and acid levels
+- https://earth.org/ocean-acidification-linked-to-plastic-pollution/
