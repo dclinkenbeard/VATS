@@ -1,20 +1,5 @@
 # VATS
 
-used crest for ocean: 
-- https://github.com/crest-ocean/crest
-
-Boids Resources:
-- https://www.youtube.com/watch?v=i_XinoVBqt8&ab_channel=BoardToBitsGames
-- https://www.youtube.com/watch?v=bqtqltqcQhw&ab_channel=SebastianLague
-- http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
-- https://www.bitshiftprogrammer.com/2018/01/how-to-animate-fish-swimming-with.html
-            
-Information about the ocean and acid levels
-- https://earth.org/ocean-acidification-linked-to-plastic-pollution/
-
-
-# Campus-Buddy
-
 ======
 
 ## Table of Contents
@@ -22,6 +7,7 @@ Information about the ocean and acid levels
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [Dependencies](#Dependencies)
 
 ## Overview
 
@@ -160,6 +146,20 @@ Campus buddy is a navigation app to navigate you through the campus and helps yo
     - (Read/GET) Show all created Events
     - (Create/POST) Add an Event
     - (Delete) Delete an Event a user has created
+## Dependencies
+
+### used crest for ocean: 
+- https://github.com/crest-ocean/crest
+
+### Boids Resources:
+- https://www.youtube.com/watch?v=i_XinoVBqt8&ab_channel=BoardToBitsGames
+- https://www.youtube.com/watch?v=bqtqltqcQhw&ab_channel=SebastianLague
+- http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
+- https://www.bitshiftprogrammer.com/2018/01/how-to-animate-fish-swimming-with.html
+            
+### Information about the ocean and acid levels
+- https://earth.org/ocean-acidification-linked-to-plastic-pollution/
+
 
 ## Sprint 1
 ### User registers and logs in
