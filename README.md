@@ -160,20 +160,3 @@ Campus buddy is a navigation app to navigate you through the campus and helps yo
 ### Information about the ocean and acid levels
 - https://earth.org/ocean-acidification-linked-to-plastic-pollution/
 
-## Sprint 1
-### User registers and logs in
-<img src="http://g.recordit.co/0pdR7ZURCs.gif" width=400>
-
-
-## Sprint 2
-### User logs in and stays logged in
-<img src="https://i.imgur.com/0UsBNEJ.gif" width=400>
-
-### User can view a calendar on top half of screen, also register and view classes on bottom half of screen
-<img src="https://s3.gifyu.com/images/sprint3.gif" width=400>
-
-## Sprint 3
-<img src="http://g.recordit.co/UEWnXZNetp.gif" width=400>
-
-## Sprint 4
-<img src="http://g.recordit.co/k0q7r9Ehu7.gif" width=400>
