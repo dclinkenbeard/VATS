@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class dictates how light is show in the simulation
+/// </summary>
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
@@ -12,44 +15,32 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 24)] private float TimeOfDay;
     [SerializeField] private float TimeSpeed;
     public bool RunDay;
-    public bool ActualTime;
+    public bool UsingRealWorldTime;
 
-    private void Update()
+    private void UpdateLighting()
     {
-        if(Preset == null)
-        {
-            return;
-        }
+        if (Preset == null) return;
 
-        if(ActualTime)
+        if (UsingRealWorldTime)
         {
             Debug.Log("System Time is " + System.DateTime.Now.Hour + ":" + System.DateTime.Now.Minute + ":" + System.DateTime.Now.Second);
         }
 
         if (RunDay)
         {
-            if (Application.isPlaying)
+            if (UsingRealWorldTime)
             {
-                if(ActualTime)
-                {
-                    TimeOfDay = RealTimeCalculation();
-                }
-                else
-                {
-                    TimeOfDay += (Time.deltaTime / TimeSpeed);
-                    TimeOfDay %= 24; // Clamp between 0-24
-                }
+                TimeOfDay = RealTimeCalculation();
             }
-            else
+
+            if (Application.isPlaying && !UsingRealWorldTime)
             {
-                if (ActualTime)
-                {
-                    TimeOfDay = RealTimeCalculation();
-                }
+                TimeOfDay += (Time.deltaTime / TimeSpeed);
+                TimeOfDay %= 24; // Clamp between 0-24
             }
         }
 
-        UpdateLighting(TimeOfDay / 24.0f);
+        CalculateNewLighting(TimeOfDay / 24.0f);
     }
 
     private float RealTimeCalculation()
@@ -62,12 +53,12 @@ public class LightingManager : MonoBehaviour
         return TimeOfDay_;   
     }
 
-    private void UpdateLighting(float timePercentage)
+    private void CalculateNewLighting(float timePercentage)
     {
         RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercentage);
         RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercentage);
 
-        if(DirectionalLight != null)
+        if (DirectionalLight != null)
         {
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercentage);
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercentage * 360.0f) - 90.0f, 270, 0));
@@ -76,7 +67,7 @@ public class LightingManager : MonoBehaviour
 
     private void OnValidate()
     {
-        if(DirectionalLight != null)
+        if (DirectionalLight != null)
         {
             return;
         }

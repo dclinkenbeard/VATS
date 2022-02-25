@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class defines three different variables that dictate how light is colored
+/// </summary>
 [System.Serializable]
 [CreateAssetMenu(fileName = "Lighting Preset", menuName = "Scriptables/Lighting Preset", order = 1)]
 public class LightingPreset : ScriptableObject
