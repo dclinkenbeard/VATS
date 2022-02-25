@@ -48,37 +48,8 @@ Virtual Aquarium Tank System is a unity based game that allows user to explore s
 
 
 ### 3. Navigation
-
-**Tab Navigation** (Tab to Screen)
-
-* Logout -> login screen
-* user details -> user details page
-* float button (bottom of the page) "Home"
-* Back button
-
-**Flow Navigation** (Screen to Screen)
-
-* Login
-   * Home Screen
-   * Sign up screen (incase we don't get access to csumb api)
-* Home Screen
-   * Login
-   * Mapping
-   * Class Schedule
-   * Events
-   * Info
-   * User details page
-* Mapping
-    * Home Screen
-* Class Schedule
-    * Home Screen
-    * Mapping (later on)
-* Event Page
-    * Home Screen
-    * Event details page
-* Info Page
-    * Home Screen
-    * Resources details page
+[Mostly the file structure goes here and as well as in-game instructions
+** --
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
@@ -92,23 +63,15 @@ Virtual Aquarium Tank System is a unity based game that allows user to explore s
 ## Schema 
 ### Models
 
-**User**
+**FEVs**
 | Property   | Type   | Description                                                          |
 |------------|--------|----------------------------------------------------------------------|
-| userId     | Int    | Unique ID associated with a user                                     |
-| username   | String | Unique name associated with user                                     |
-| email      | String | Campus/CSUMB Email.                                                  |
-| profileImg | file   | Profile picture of user. Could also just use image of email account. |
-| Password   | String | Password to log in. Maybe unnecessary if logging in with email.      |
+| ...        | ...    | ...                                                                  |
+| ...        | ...    | ...                                                                  |
+| ...        | ...    | ...                                                                  |
+| ...        | ...    | ...                                                                  |
+| ...        | ...    | ...                                                                  |
 
-**Events**
-| Property   | Type     | Description                                                          |
-|------------|----------|----------------------------------------------------------------------|
-| eventName  | String   | Event name                                                           |
-| eventDate  | DateTime | Date of event                                                        |
-| eventLink  | String   | Link for more event details                                          |
-| creatDate  | DateTime | Date the event was posted                                            |
-| eventDesc  | String   | Brief description of the event                                       |
 
 ### Networking
 - 
