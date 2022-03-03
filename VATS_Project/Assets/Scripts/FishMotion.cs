@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*  
+*   Gets fish render and sets random range of movement for sardine fish
+*   Not active in conservation mode
+*   Path: ExplorationScene/ExaminationRoom/FishList/BoidSardine/SimpleSardine/SardineSkin
+*/  
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
