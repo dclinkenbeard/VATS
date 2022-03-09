@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*  
+*   Pause script press P key to pause only active with exploration scene
+*   Path: ExplorationScene/Canvas/PauseMenuInterface
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +31,7 @@ public class PauseScript : MonoBehaviour
             }
         }
     }
-
+    // Resume game 
     public void ResumeGame()
     {
         cameraMovement.enabled = true;
@@ -36,7 +41,7 @@ public class PauseScript : MonoBehaviour
         askQuitMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
+    // Pause game lock camera movement, activate pause menu
     public void PauseGame()
     {
         cameraMovement.enabled = false;
@@ -49,7 +54,7 @@ public class PauseScript : MonoBehaviour
     {
         ResumeGame();
     }
-
+    // for not going through process, "No" keyword
     public void BackButton()
     {
         pauseMenu.SetActive(true);
