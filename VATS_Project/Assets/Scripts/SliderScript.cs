@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/**
+ * SliderScript.cs
+ * Description: This script connects the UI Slider of Conservation Mode with
+ *              FEV to see the effect of different values on the sea life
+ * Last updated: 02/25/2022
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,21 +14,25 @@ using TMPro;
 
 public class SliderScript : MonoBehaviour
 {
+    //Declare sliders
     public UnityEngine.UI.Slider tempSlider;
     public UnityEngine.UI.Slider presSlider;
     public UnityEngine.UI.Slider acidSlider;
     public UnityEngine.UI.Slider timeSlider;
 
+    //Declare float variables
     public float tempValue;
     public float presValue;
     public float acidValue;
     public float timeValue;
 
+    //Declare input field text values
     public InputField tempText;
     public InputField presText;
     public InputField acidText;
     public InputField timeText;
 
+    //Import and declare fishManager class
     public FishManager fishManager;
 
     private void Start()
@@ -48,6 +59,10 @@ public class SliderScript : MonoBehaviour
         fishManager.temp = tempValue;
     }
 
+    /**
+     * On Temperature slider value change, this function is called
+     * parsse float from string and set it as new value
+     */
     public void TempInput(string text)
     {
         if(text == null)
@@ -68,6 +83,10 @@ public class SliderScript : MonoBehaviour
         fishManager.depth = presValue;
     }
 
+    /**
+     * On Pressure slider value change, this function is called
+     * parsse float from string and set it as new value
+     */
     public void PresInput(string text)
     {
         if (text == null)
@@ -87,6 +106,11 @@ public class SliderScript : MonoBehaviour
         acidText.text = acidValue.ToString();
     }
 
+    /**
+     * On Acidity slider value change, this function is called
+     * parsse float from string and set it as new value
+     * --- NOT IMPLEMENTED YET ---
+     */
     public void AcidInput(string text)
     {
         if (text == null)
@@ -106,6 +130,11 @@ public class SliderScript : MonoBehaviour
         timeText.text = timeValue.ToString();
     }
 
+    /**
+     * On time slider value change, this function is called
+     * parsse float from string and set it as new value
+     * --- NOT IMPLEMENTED YET ---
+     */
     public void TimeInput(string text)
     {
         if (text == null)
@@ -124,6 +153,9 @@ public class SliderScript : MonoBehaviour
         Debug.Log("SENDING VALUES TO SCRIPT");
     }
 
+    /**
+     * Check for current value of the slider and set it accordingly
+     */
     private float CheckNewValue(UnityEngine.UI.Slider slider, float newValue)
     {
         float returnValue;
