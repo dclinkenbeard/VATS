@@ -8,18 +8,31 @@ using TMPro;
 [System.Serializable]
 public class FishManager : MonoBehaviour
 {
+    //Declaring JSON/Database variables
     string path;
     private string json;
     private JsonData itemData = new JsonData();
+
     public TextMeshProUGUI currentFishText;
-    public List<GameObject> FishPrefabs = new List<GameObject>();
-    List<Vector2Int> SpawnIndex = new List<Vector2Int>();
-    List<GameObject> currentAgents = new List<GameObject>();
     public float depth;
     public float temp;
+
+    //Declare a list to hold fish prefabs
+    public List<GameObject> FishPrefabs = new List<GameObject>();
+
+    //List to hold the spawn position
+    List<Vector2Int> SpawnIndex = new List<Vector2Int>();
+
+    //List to hold the current fishes that can be spawned
+    List<GameObject> currentAgents = new List<GameObject>();
+    
+
+    /**
+     * On Start, link the JSON database filepath 
+     * and load it onto a variable 
+     */
     void Start()
     {
-
         path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
@@ -42,14 +55,21 @@ public class FishManager : MonoBehaviour
 
     // change status UI to double circle based on fish's status
 
+
+    /**
+     * Spawn the fish prefabs using vector 3 in specific range
+     */
     public void SpawnFish(){
 
+        //Despawn and remove all the existing fishes
         foreach(GameObject agent in currentAgents){ 
             agent.GetComponent<BoidAgent>().despawning = true;
         }
 
+        //Clear the current fishes list
         currentAgents.Clear();
 
+        //Loop through spawnindex vector2
         foreach(Vector2Int x in SpawnIndex){
             for (int i = 0; i < x[1]; i++)
             {
@@ -80,6 +100,11 @@ public class FishManager : MonoBehaviour
 
     }
 
+    /**
+     * Calculate the fishes that can be spawned 
+     * using the current slider value range
+     * add them to the list and display them
+     */
     private string CalculateFish()
     {
         string text = "Fish valid: \n";
