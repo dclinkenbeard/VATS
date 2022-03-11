@@ -200,7 +200,7 @@ public class CameraUI : MonoBehaviour
         }
         else
         {
-            // Go to exam position
+            // Go to examination position
             camOrigPos = this.transform.position;
             transform.gameObject.GetComponent<CameraMovement>().SetCamDistance(camExamPos.localPosition.x);
             Debug.Log("Cam exam local pos for x" + camExamPos.localPosition.x);
