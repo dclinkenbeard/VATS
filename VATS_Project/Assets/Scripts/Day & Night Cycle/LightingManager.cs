@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class dictates how light is show in the simulation
+/// This class dictates how light is shown in the simulation
 /// </summary>
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -32,25 +32,31 @@ public class LightingManager : MonoBehaviour
             {
                 TimeOfDay = RealTimeCalculation();
             }
-
-            if (Application.isPlaying && !UsingRealWorldTime)
+            else
             {
-                TimeOfDay += (Time.deltaTime / TimeSpeed);
-                TimeOfDay %= 24; // Clamp between 0-24
+                if (Application.isPlaying)
+                {
+                    TimeOfDay += (Time.deltaTime / TimeSpeed);
+                    TimeOfDay %= 24; // Clamp between 0-24
+                }
             }
+            
         }
 
         CalculateNewLighting(TimeOfDay / 24.0f);
     }
 
+    /// <summary>
+    /// Gets the current time of day for the user and returns it.
+    /// </summary>
     private float RealTimeCalculation()
     {
-        float TimeOfDay_;
+        float CurrentTimeOfDay_;
         float hour = System.DateTime.Now.Hour;
         float minute = System.DateTime.Now.Minute;
 
-        TimeOfDay_ = hour + (minute / 60.0f);
-        return TimeOfDay_;   
+        CurrentTimeOfDay_ = hour + (minute / 60.0f);
+        return CurrentTimeOfDay_;
     }
 
     private void CalculateNewLighting(float timePercentage)
@@ -65,6 +71,9 @@ public class LightingManager : MonoBehaviour
         }
     }
 
+/// <summary>
+/// This method sets correct light to DirectionalLight variable
+/// </summary>
     private void OnValidate()
     {
         if (DirectionalLight != null)
@@ -72,16 +81,16 @@ public class LightingManager : MonoBehaviour
             return;
         }
 
-        if(RenderSettings.sun != null)
+        if (RenderSettings.sun != null)
         {
             DirectionalLight = RenderSettings.sun;
         }
         else
         {
             Light[] lights = GameObject.FindObjectsOfType<Light>();
-            foreach(Light light in lights)
+            foreach (Light light in lights)
             {
-                if(light.type == LightType.Directional)
+                if (light.type == LightType.Directional)
                 {
                     DirectionalLight = light;
                     return;
