@@ -4,7 +4,13 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/**
+* <summary>
+   CameraUI.cs is where you are in the exploration scene and you can choose to follow the fish and insect them in the examination room. This program controls the texts that pop up
+when viewing the fish and also handles how the camera changes when you choose to examine a fish. When you go into the examniation room the screen goes from the examination room and blacks out
+before opening in to the examination room. It centers the fish in the middle and lets you pane around the fish. You can then stop examining and go back into exploration scene
+</summary>
+*/
 public class CameraUI : MonoBehaviour
 {
     // Basic Interface
@@ -159,7 +165,8 @@ public class CameraUI : MonoBehaviour
             examExit = false;
         }
     }
-
+    //When in exploration mode, you can choose to follow a fish, examine the fish that leads into the examination room, and stop following the fish. These are the cases
+    //that will switch depending on what option you trigger
     public bool CheckInExamRoom() { return inExamRoom; }
     public Transform GetFishExamRoom() { return fishExamPos; }
 
