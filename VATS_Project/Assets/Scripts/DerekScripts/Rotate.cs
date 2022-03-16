@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Rotates the fish in Derek_Scene (not currently active)
+/// </summary>
 public class Rotate : MonoBehaviour
 {
     [SerializeField]

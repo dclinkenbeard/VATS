@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used in Derek_Scene to switch between the different fish
+/// </summary>
 public class SuperpositionFish : MonoBehaviour
 {
     public gameHandler gh;
@@ -10,6 +13,9 @@ public class SuperpositionFish : MonoBehaviour
     private int fishTag;
     public int nextFish;
 
+    /// <summary>
+    /// Grabs the current and next fish models and tags then positions them
+    /// </summary>
     void Start()
     {
         fishTag = gh.fishID;
@@ -19,7 +25,6 @@ public class SuperpositionFish : MonoBehaviour
         nextFishModel = GameObject.Find(nextFish.ToString());
 
         fishModel.transform.position = new Vector3(-37, 0, 70);
-
     }
 
     void Update()
@@ -30,6 +35,9 @@ public class SuperpositionFish : MonoBehaviour
         nextFishModel = GameObject.Find(nextFish.ToString());
     }
 
+    /// <summary>
+    /// Loads fish model when moving onto the previous fish
+    /// </summary>
     public void LBSuperposition()
     {
         fishTag = gh.fishID;
@@ -48,6 +56,9 @@ public class SuperpositionFish : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Loads fish model when moving onto the next fish
+    /// </summary>
     public void RBSuperposition()
     {
         fishTag = gh.fishID;
