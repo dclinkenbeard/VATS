@@ -1,26 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 using UnityEngine;
 
-// Parser class used to read data from CSV files
+// Parser class used to read data from XML files
 public class FEVParser : MonoBehaviour
 {
     void Start()
     {
-        // Load csv file from Resources folder
-        TextAsset fevFile = Resources.Load<TextAsset>("FEVs/sample1");
+        loadData();
+    }
 
-        // Split document into rows
-        string[] fevLines = fevFile.text.Split("\n"[0]);
 
-        for (int i = 1; i < fevLines.Length; i++)
+    void loadData()
+    {
+        TextAsset fevFile = Resources.Load<TextAsset>("FEVs/EelSample");
+        XmlSerializer fevSerializer = new XmlSerializer(typeof(FEV));
+        using (StringReader fevReader = new StringReader(fevFile.text))
         {
-            string[] fevData = (fevLines[i].Trim()).Split(","[0]);
-            for (int j = 1; j < fevData.Length; j++)
-            {
-                Debug.Log(fevData[j]);
-            }  
+            FEV fev = (fevSerializer.Deserialize(fevReader)) as FEV;
         }
     }
 
