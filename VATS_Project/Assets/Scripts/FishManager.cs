@@ -16,6 +16,7 @@ public class FishManager : MonoBehaviour
     public TextMeshProUGUI currentFishText;
     public float depth;
     public float temp;
+    public float acidity;
 
     //Declare a list to hold fish prefabs
     public List<GameObject> FishPrefabs = new List<GameObject>();
@@ -119,8 +120,13 @@ public class FishManager : MonoBehaviour
             float minDepth = float.Parse(itemData["fish"][index: id]["minDepth"].ToString());
             float maxDepth = float.Parse(itemData["fish"][index: id]["maxDepth"].ToString());
 
-            if(temp > minTemp && temp < maxTemp 
-                && depth > minDepth && depth < maxDepth){
+            float minAcidity = float.Parse(itemData["fish"][index: id]["minAcidity"].ToString());
+            float maxAcidity = float.Parse(itemData["fish"][index: id]["maxAcidity"].ToString());
+
+            if (temp > minTemp && temp < maxTemp 
+                && depth > minDepth && depth < maxDepth
+                && acidity > minAcidity && acidity < maxAcidity)
+            {
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
 
