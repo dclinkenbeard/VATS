@@ -19,6 +19,7 @@ public class SliderScript : MonoBehaviour
     public UnityEngine.UI.Slider presSlider;
     public UnityEngine.UI.Slider acidSlider;
     public UnityEngine.UI.Slider timeSlider;
+    public UnityEngine.UI.Slider pollutionSlider;
 
     //Declare float variables
     public float tempValue;
@@ -39,7 +40,7 @@ public class SliderScript : MonoBehaviour
 
     private void Start()
     {
-        if(tempSlider == null || presSlider == null || acidSlider == null || timeSlider == null)
+        if(tempSlider == null || presSlider == null || acidSlider == null || timeSlider == null || pollutionSlider == null)
         {
             Debug.Log("ERROR: MISSING SLIDER GAME OBJECT IN SLIDERSCRIPT");
         }
@@ -49,6 +50,7 @@ public class SliderScript : MonoBehaviour
             presText.text = presValue.ToString();
             acidText.text = acidValue.ToString();
             timeText.text = timeValue.ToString();
+            pollutionText.text = pollutionValue.ToString();
         }
     }
 
