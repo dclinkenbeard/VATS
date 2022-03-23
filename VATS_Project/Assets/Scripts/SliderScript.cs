@@ -25,12 +25,14 @@ public class SliderScript : MonoBehaviour
     public float presValue;
     public float acidValue;
     public float timeValue;
+    public float pollutionValue;
 
     //Declare input field text values
     public InputField tempText;
     public InputField presText;
     public InputField acidText;
     public InputField timeText;
+    public InputField pollutionText;
 
     //Import and declare fishManager class
     public FishManager fishManager;
@@ -123,6 +125,32 @@ public class SliderScript : MonoBehaviour
         AciditySlider(newValue);
     }
 
+    // Pollution Slider & Input Field
+    public void PollutionSlider(float newValue)
+    {
+        pollutionValue = newValue;
+        pollutionSlider.value = pollutionValue;
+        pollutionText.text = pollutionValue.ToString();
+        fishManager.pollution = pollutionValue;
+    }
+
+    /**
+     * On Pollution slider value change, this function is called
+     * parsse float from string and set it as new value
+     * --- NOT IMPLEMENTED YET ---
+     */
+    public void PollutionInput(string text)
+    {
+        if (text == null)
+        {
+            text = "0";
+        }
+        float newValue = float.Parse(text);
+        newValue = CheckNewValue(pollutionSlider, newValue);
+        PollutionSlider(newValue);
+    }
+
+
     // Time Slider & Input Field
     public void TimeSlider(float newValue)
     {
@@ -130,6 +158,7 @@ public class SliderScript : MonoBehaviour
         timeSlider.value = timeValue;
         timeText.text = timeValue.ToString();
     }
+
 
     /**
      * On time slider value change, this function is called
