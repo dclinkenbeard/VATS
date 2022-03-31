@@ -8,7 +8,7 @@
     <fishType>Eel</fishType>
     <id>-1</id>
     <modelUrl>e</modelUrl>
-    <fishName>Eel</fishName>
+    <name>Eel</name>
     <scientificName>Anguilla japonica</scientificName>
     <type>Eel</type>
     <diet>Fish, crustaceans, mollusks</diet>

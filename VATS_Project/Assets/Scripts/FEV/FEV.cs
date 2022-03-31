@@ -4,34 +4,32 @@ using UnityEngine;
 
 public class FEV
 {
+
+
     // Values for creating boid agents
-    public float neighborRadius;
-    public float avoidRadius;
-    public float collisionLength;
-    public float minSpeed;
-    public float maxSpeed;
-    public float maxTurnSpd;
-    public string fishType;
     public int id;
+    public double neighborRadius;
+    public double avoidRadius;
+    public double collisionLength;
+    public double minSpeed;
+    public double maxSpeed;
+    public double maxTurnSpd;
+    public string fishType;
     public string modelUrl;
 
     // Values for JSON encyclopedia
-    public string fishName;
+    public string name;
     public string scientificName;
     public string type;
     public string diet;
     public string habitat;
-    public float minSize, maxSize;
-    public float minTemp, maxTemp;
-    public float minDepth, maxDepth;
+    public double minSize, maxSize;
+    public double minTemp, maxTemp;
+    public double minDepth, maxDepth;
     public string range;
     public string status;
     public int lowerLimit, upperLimit;
 
-    void Start()
-    {
-
-    }
-
+    
     //change fish spawn on parameter change
 }
