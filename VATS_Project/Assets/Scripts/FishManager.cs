@@ -17,6 +17,7 @@ public class FishManager : MonoBehaviour
     public float depth;
     public float temp;
     public float acidity;
+    public float pollution;
 
     //Declare a list to hold fish prefabs
     public List<GameObject> FishPrefabs = new List<GameObject>();
@@ -123,9 +124,13 @@ public class FishManager : MonoBehaviour
             float minAcidity = float.Parse(itemData["fish"][index: id]["minAcidity"].ToString());
             float maxAcidity = float.Parse(itemData["fish"][index: id]["maxAcidity"].ToString());
 
+            float minPollution = float.Parse(itemData["fish"][index: id]["minPollution"].ToString());
+            float maxPollution = float.Parse(itemData["fish"][index: id]["maxPollution"].ToString());
+
             if (temp > minTemp && temp < maxTemp 
                 && depth > minDepth && depth < maxDepth
-                && acidity > minAcidity && acidity < maxAcidity)
+                && acidity > minAcidity && acidity < maxAcidity
+                && acidity > minPollution && acidity < maxPollution)
             {
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
