@@ -154,16 +154,16 @@ public class SliderScript : MonoBehaviour
      * parse float from string and set it as new value
      * --- NOT IMPLEMENTED YET ---
      */
-    // public void PollutionInput(string text)
-    // {
-    //     if (text == null)
-    //     {
-    //         text = "0";
-    //     }
-    //     float newValue = float.Parse(text);
-    //     newValue = CheckNewValue(pollutionSlider, newValue);
-    //     PollutionSlider(newValue);
-    // }
+    public void PollutionInput(string text)
+    {
+       if (text == null)
+        {
+            text = "0";
+        }
+        float newValue = float.Parse(text);
+        newValue = CheckNewValue(pollutionSlider, newValue);
+        PollutionSlider(newValue);
+    }
 
 
     // Time Slider & Input Field
