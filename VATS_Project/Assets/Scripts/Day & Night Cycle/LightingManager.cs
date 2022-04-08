@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class dictates how light is shown in the simulation
+/// </summary>
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
@@ -12,85 +15,82 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 24)] private float TimeOfDay;
     [SerializeField] private float TimeSpeed;
     public bool RunDay;
-    public bool ActualTime;
+    public bool UsingRealWorldTime;
 
-    private void Update()
+    private void UpdateLighting()
     {
-        if(Preset == null)
-        {
-            return;
-        }
+        if (Preset == null) return;
 
-        if(ActualTime)
+        if (UsingRealWorldTime)
         {
             Debug.Log("System Time is " + System.DateTime.Now.Hour + ":" + System.DateTime.Now.Minute + ":" + System.DateTime.Now.Second);
         }
 
         if (RunDay)
         {
-            if (Application.isPlaying)
+            if (UsingRealWorldTime)
             {
-                if(ActualTime)
-                {
-                    TimeOfDay = RealTimeCalculation();
-                }
-                else
+                TimeOfDay = RealTimeCalculation();
+            }
+            else
+            {
+                if (Application.isPlaying)
                 {
                     TimeOfDay += (Time.deltaTime / TimeSpeed);
                     TimeOfDay %= 24; // Clamp between 0-24
                 }
             }
-            else
-            {
-                if (ActualTime)
-                {
-                    TimeOfDay = RealTimeCalculation();
-                }
-            }
+            
         }
 
-        UpdateLighting(TimeOfDay / 24.0f);
+        CalculateNewLighting(TimeOfDay / 24.0f);
     }
 
+    /// <summary>
+    /// Gets the current time of day for the user and returns it.
+    /// </summary>
     private float RealTimeCalculation()
     {
-        float TimeOfDay_;
+        float CurrentTimeOfDay_;
         float hour = System.DateTime.Now.Hour;
         float minute = System.DateTime.Now.Minute;
 
-        TimeOfDay_ = hour + (minute / 60.0f);
-        return TimeOfDay_;   
+        CurrentTimeOfDay_ = hour + (minute / 60.0f);
+        return CurrentTimeOfDay_;
     }
 
-    private void UpdateLighting(float timePercentage)
+    private void CalculateNewLighting(float timePercentage)
     {
         RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercentage);
         RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercentage);
 
-        if(DirectionalLight != null)
+        if (DirectionalLight != null)
         {
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercentage);
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercentage * 360.0f) - 90.0f, 270, 0));
         }
     }
 
+/// <summary>
+/// This method sets correct light to DirectionalLight variable
+/// </summary>
     private void OnValidate()
     {
-        if(DirectionalLight != null)
+        if (DirectionalLight != null)
         {
             return;
         }
 
-        if(RenderSettings.sun != null)
+        if (RenderSettings.sun != null)
         {
             DirectionalLight = RenderSettings.sun;
         }
         else
         {
             Light[] lights = GameObject.FindObjectsOfType<Light>();
-            foreach(Light light in lights)
+            foreach (Light light in lights)
             {
-                if(light.type == LightType.Directional)
+                if (light.type == LightType.Directional)
                 {
                     DirectionalLight = light;
                     return;

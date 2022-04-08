@@ -5,6 +5,9 @@ using System.IO;
 using LitJson;
 using TMPro;
 
+/// <summary>
+/// Takes care of displaying the fish info in Derek_Scene
+/// </summary>
 [System.Serializable]
 public class gameHandler : MonoBehaviour
 {
@@ -22,9 +25,11 @@ public class gameHandler : MonoBehaviour
     public TextMeshProUGUI rangeText;
     public TextMeshProUGUI conservationText;
 
-
     public int fishID;
 
+    /// <summary>
+    /// Grabs the text
+    /// </summary>
     void Start()
     {
         nameText = transform.Find("nameText").GetComponent<TextMeshProUGUI>();
@@ -44,6 +49,9 @@ public class gameHandler : MonoBehaviour
         itemData = JsonMapper.ToObject(json);
     }
 
+    /// <summary>
+    /// Parses through the currently available fish to get the correct one
+    /// </summary>
     JsonData GetItem(string name, string type)
     {
         for (int ii = 0; ii < itemData[type].Count; ii++)
@@ -60,6 +68,9 @@ public class gameHandler : MonoBehaviour
 
     // change status UI to double circle based on fish's status
 
+    /// <summary>
+    /// Updates the empty fields to display correct info
+    /// </summary>
     void Update()
     {
         // fish stats displayed on UI

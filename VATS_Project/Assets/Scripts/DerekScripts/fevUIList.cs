@@ -7,5 +7,4 @@ public class fevUIList
     public string diet;
     public string status;
     public string habitat;
-
 }
