@@ -4,27 +4,15 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
-3. [Dependencies](#Dependencies)
+2. [Product Spec](#Product-Spec)
+3. [Schema](#Schema)
+4. [Dependencies](#Dependencies)
 
 ## Overview
 
 Virtual Aquarium Tank System is a unity based game that allows user to explore sea life using simulation and finding out how different factors affect sea animals.
 
 ### Description
-
-
-### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:** 
-- **Mobile:** 
-- **Story:**
-- **Market:** 
-- **Habit:** 
-- **Scope:** 
-
 
 ## Product Spec
 
@@ -45,18 +33,15 @@ Virtual Aquarium Tank System is a unity based game that allows user to explore s
 * Exploration Scene
    * ----
    * ------
+   
+* Conservation Scene
+   * ----
+   * ------
 
 
 ### 3. Navigation
 [Mostly the file structure goes here and as well as in-game instructions
 ** --
-
-## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="" width=600>
-* Using figma
-
-### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
 
@@ -72,11 +57,6 @@ Virtual Aquarium Tank System is a unity based game that allows user to explore s
 | ...        | ...    | ...                                                                  |
 | ...        | ...    | ...                                                                  |
 
-
-### Networking
-- 
-
-#### Network Requests
 
 
 ## Dependencies

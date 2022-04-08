@@ -19,25 +19,28 @@ public class SliderScript : MonoBehaviour
     public UnityEngine.UI.Slider presSlider;
     public UnityEngine.UI.Slider acidSlider;
     public UnityEngine.UI.Slider timeSlider;
+    public UnityEngine.UI.Slider pollutionSlider;
 
     //Declare float variables
     public float tempValue;
     public float presValue;
     public float acidValue;
     public float timeValue;
+    public float pollutionValue;
 
     //Declare input field text values
     public InputField tempText;
     public InputField presText;
     public InputField acidText;
     public InputField timeText;
+    public InputField pollutionText;
 
     //Import and declare fishManager class
     public FishManager fishManager;
 
     private void Start()
     {
-        if(tempSlider == null || presSlider == null || acidSlider == null || timeSlider == null)
+        if(tempSlider == null || presSlider == null || acidSlider == null || timeSlider == null || pollutionSlider == null)
         {
             Debug.Log("ERROR: MISSING SLIDER GAME OBJECT IN SLIDERSCRIPT");
         }
@@ -47,6 +50,7 @@ public class SliderScript : MonoBehaviour
             presText.text = presValue.ToString();
             acidText.text = acidValue.ToString();
             timeText.text = timeValue.ToString();
+            pollutionText.text = pollutionValue.ToString();
         }
     }
 
@@ -85,7 +89,7 @@ public class SliderScript : MonoBehaviour
 
     /**
      * On Pressure slider value change, this function is called
-     * parsse float from string and set it as new value
+     * parse float from string and set it as new value
      */
     public void PresInput(string text)
     {
@@ -101,27 +105,66 @@ public class SliderScript : MonoBehaviour
     // Acidity Slider & Input Field
     public void AciditySlider(float newValue)
     {
+        // rate of change in pH
         acidValue = newValue;
         acidSlider.value = acidValue;
         acidText.text = acidValue.ToString();
-        fishManager.acidity = acidValue;
+        fishManager.acidity += acidValue;
+        //Debug.Log(fishManager.acidity);
+    }
+
+    // Acidity Slider & Input Field
+    public void AcidityRateSlider(float newValue)
+    {
+        // rate of change in pH
+        acidValue = newValue;
+        acidSlider.value = acidValue;
+        acidText.text = acidValue.ToString();
+        fishManager.acidityRate = acidValue;
+        Debug.Log(fishManager.acidityRate);
     }
 
     /**
      * On Acidity slider value change, this function is called
-     * parsse float from string and set it as new value
+     * parse float from string and set it as new value
      * --- NOT IMPLEMENTED YET ---
      */
-    public void AcidInput(string text)
+    // public void AcidInput(string text)
+    // {
+    //     if (text == null)
+    //     {
+    //         text = "0";
+    //     }
+    //     float newValue = float.Parse(text);
+    //     newValue = CheckNewValue(acidSlider, newValue);
+    //     AciditySlider(newValue);
+    // }
+
+    // Pollution Slider & Input Field
+    public void PollutionSlider(float newValue)
     {
-        if (text == null)
-        {
-            text = "0";
-        }
-        float newValue = float.Parse(text);
-        newValue = CheckNewValue(acidSlider, newValue);
-        AciditySlider(newValue);
+        pollutionValue = newValue;
+        pollutionSlider.value = pollutionValue;
+        pollutionText.text = pollutionValue.ToString();
+        fishManager.pollution = pollutionValue;
     }
+
+    /**
+     * On Pollution slider value change, this function is called
+     * parse float from string and set it as new value
+     * --- NOT IMPLEMENTED YET ---
+     */
+    // public void PollutionInput(string text)
+    // {
+    //     if (text == null)
+    //     {
+    //         text = "0";
+    //     }
+    //     float newValue = float.Parse(text);
+    //     newValue = CheckNewValue(pollutionSlider, newValue);
+    //     PollutionSlider(newValue);
+    // }
+
 
     // Time Slider & Input Field
     public void TimeSlider(float newValue)
@@ -129,29 +172,35 @@ public class SliderScript : MonoBehaviour
         timeValue = newValue;
         timeSlider.value = timeValue;
         timeText.text = timeValue.ToString();
+        fishManager.time = timeValue;
+        
+        
     }
+
 
     /**
      * On time slider value change, this function is called
-     * parsse float from string and set it as new value
+     * parse float from string and set it as new value
      * --- NOT IMPLEMENTED YET ---
      */
-    public void TimeInput(string text)
-    {
-        if (text == null)
-        {
-            text = "0";
-        }
-        float newValue = float.Parse(text);
-        newValue = CheckNewValue(timeSlider, newValue);
-        TimeSlider(newValue);
-    }
+    // public void TimeInput(string text)
+    // {
+    //     if (text == null)
+    //     {
+    //         text = "0";
+    //     }
+    //     float newValue = float.Parse(text);
+    //     newValue = CheckNewValue(timeSlider, newValue);
+    //     TimeSlider(newValue);
+    // }
 
     // On Apply Button
     public void OnApply()
     {
         fishManager.SpawnFish();
         Debug.Log("SENDING VALUES TO SCRIPT");
+        fishManager.accountForTime();
+        Debug.Log(fishManager.acidity);
     }
 
     /**

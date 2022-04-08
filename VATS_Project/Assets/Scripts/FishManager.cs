@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using LitJson;
 using TMPro;
@@ -16,7 +17,12 @@ public class FishManager : MonoBehaviour
     public TextMeshProUGUI currentFishText;
     public float depth;
     public float temp;
-    public float acidity;
+
+    public float acidity = 7.0f;
+    public float acidityRate;
+    public float pollution;
+    public float time;
+
 
     //Declare a list to hold fish prefabs
     public List<GameObject> FishPrefabs = new List<GameObject>();
@@ -101,6 +107,10 @@ public class FishManager : MonoBehaviour
 
     }
 
+    public void accountForTime() {
+        acidity = acidity + (acidityRate * time);
+    }
+
     /**
      * Calculate the fishes that can be spawned 
      * using the current slider value range
@@ -123,9 +133,21 @@ public class FishManager : MonoBehaviour
             float minAcidity = float.Parse(itemData["fish"][index: id]["minAcidity"].ToString());
             float maxAcidity = float.Parse(itemData["fish"][index: id]["maxAcidity"].ToString());
 
+
+            float minPollution = float.Parse(itemData["fish"][index: id]["minPollution"].ToString());
+            float maxPollution = float.Parse(itemData["fish"][index: id]["maxPollution"].ToString());
+
+
+
+            if (SceneManager.GetActiveScene().name == "ConservationScene") {
+                //accountForTime();
+            }
+
+
             if (temp > minTemp && temp < maxTemp 
                 && depth > minDepth && depth < maxDepth
-                && acidity > minAcidity && acidity < maxAcidity)
+                && acidity > minAcidity && acidity < maxAcidity
+                && acidity > minPollution && acidity < maxPollution)
             {
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
