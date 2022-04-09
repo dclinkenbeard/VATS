@@ -4,13 +4,14 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
-
-using System.IO;
+using UnityEditor;
 using LitJson;
 
 // Parser class used to read data from XML files
 public class FEVParser : MonoBehaviour
 {
+    string assetPath = "Assets/Scripts/Boids/BoidObjects/";
+
     void Start()
     {
         loadData();
@@ -47,8 +48,39 @@ public class FEVParser : MonoBehaviour
         JsonMapper.ToJson(itemData, fevWriter);
         // File.WriteAllText(path, fevWriter.ToString());
 
-        Debug.Log(JsonMapper.ToJson(itemData));;
+
+        GameObject newFish = new GameObject();
+        BoidAgent newAgent = newFish.AddComponent<BoidAgent>() as BoidAgent;
+        MeshFilter filter = newFish.AddComponent<MeshFilter>() as MeshFilter;
+        BoxCollider collider = newFish.AddComponent<BoxCollider>() as BoxCollider;
+
+        
+
+        newAgent.avoidRadius = (float)fev.avoidRadius;
+        newAgent.neighborRadius = (float)fev.neighborRadius;
+        newAgent.collisionLength = (float)fev.collisionLength;
+
+        newAgent.minSpeed = (float)fev.minSpeed;
+        newAgent.maxSpeed = (float)fev.maxSpeed;
+        newAgent.maxTurnSpd = (float)fev.maxTurnSpd;
+        newAgent.fishType = fev.fishType;
+        newAgent.id = fev.id;
+
+        BoidBehavior behavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
+
+        newAgent.boidBehaviors = new List<BoidBehavior>();
+        newAgent.boidBehaviors.Add(behavior);
+
+        newAgent.behaviorWeights = new List<float>();
+        newAgent.behaviorWeights.Add(3);
+
+        GameObject.Instantiate(newFish, this.transform);
+
+        // TODO: Get actual model from AssetBundle URL provided by FEV
+        GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        tempModel.transform.parent = newFish.transform;
     }
+
 
 
     
