@@ -19,7 +19,7 @@ public class FEV
 
     // Values for JSON encyclopedia
     public string name;
-    public string scientificName;
+    public string sci;
     public string type;
     public string diet;
     public string habitat;
@@ -28,7 +28,7 @@ public class FEV
     public double minDepth, maxDepth;
     public string range;
     public string status;
-    public int lowerLimit, upperLimit;
+    public int lowLimit, uppLimit;
 
     
     //change fish spawn on parameter change

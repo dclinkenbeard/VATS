@@ -46,13 +46,15 @@ public class FEVParser : MonoBehaviour
         JsonWriter fevWriter = new JsonWriter();
         fevWriter.PrettyPrint = true;
         JsonMapper.ToJson(itemData, fevWriter);
-        // File.WriteAllText(path, fevWriter.ToString());
+        File.WriteAllText(path, fevWriter.ToString());
 
 
         GameObject newFish = new GameObject();
-        BoidAgent newAgent = newFish.AddComponent<BoidAgent>() as BoidAgent;
         MeshFilter filter = newFish.AddComponent<MeshFilter>() as MeshFilter;
         BoxCollider collider = newFish.AddComponent<BoxCollider>() as BoxCollider;
+        BoidAgent newAgent = newFish.AddComponent<BoidAgent>() as BoidAgent;
+        
+        
 
         
 
@@ -79,6 +81,8 @@ public class FEVParser : MonoBehaviour
         // TODO: Get actual model from AssetBundle URL provided by FEV
         GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
         tempModel.transform.parent = newFish.transform;
+
+        PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/Eel.prefab", InteractionMode.UserAction);
     }
 
 
