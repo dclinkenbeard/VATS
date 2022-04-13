@@ -20,7 +20,8 @@ public class FishManager : MonoBehaviour
 
     public float acidity = 8.0f;
     public float acidityRate = 0.0f;
-    public float pollution;
+    public float pollution = 0.0f;
+    public float pollutionRate = 0.0f;
     public float time;
 
 
@@ -114,6 +115,7 @@ public class FishManager : MonoBehaviour
     public void accountForTime() 
     {
         acidity = acidity + (acidityRate * time);
+        pollution = pollution + (pollutionRate * time);
     }
 
     /**
@@ -139,8 +141,8 @@ public class FishManager : MonoBehaviour
             float maxAcidity = float.Parse(itemData["fish"][index: id]["maxAcidity"].ToString());
 
 
-            //float minPollution = float.Parse(itemData["fish"][index: id]["minPollution"].ToString());
-            //float maxPollution = float.Parse(itemData["fish"][index: id]["maxPollution"].ToString());
+            float minPollution = float.Parse(itemData["fish"][index: id]["minPollution"].ToString());
+            float maxPollution = float.Parse(itemData["fish"][index: id]["maxPollution"].ToString());
 
 
 
@@ -151,8 +153,8 @@ public class FishManager : MonoBehaviour
 
             if (temp > minTemp && temp < maxTemp 
                 && depth > minDepth && depth < maxDepth
-                && acidity > minAcidity && acidity < maxAcidity)
-                //&& pollution > minPollution && pollution < maxPollution)
+                && acidity > minAcidity && acidity < maxAcidity
+                && pollution > minPollution && pollution < maxPollution)
             {
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
