@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using LitJson;
 using TMPro;
@@ -16,6 +17,12 @@ public class FishManager : MonoBehaviour
     public TextMeshProUGUI currentFishText;
     public float depth;
     public float temp;
+
+    public float acidity = 8.0f;
+    public float acidityRate = 0.0f;
+    public float pollution;
+    public float time;
+
 
     //Declare a list to hold fish prefabs
     public List<GameObject> FishPrefabs = new List<GameObject>();
@@ -38,7 +45,8 @@ public class FishManager : MonoBehaviour
         itemData = JsonMapper.ToObject(json);
     }
 
-    private void Update() {
+    private void Update() 
+    {
         string text = "\n";
 
         text += CalculateFish();
@@ -51,6 +59,7 @@ public class FishManager : MonoBehaviour
             SpawnFish();
         }*/
     }
+
     // observe fish button
 
     // change status UI to double circle based on fish's status
@@ -59,7 +68,8 @@ public class FishManager : MonoBehaviour
     /**
      * Spawn the fish prefabs using vector 3 in specific range
      */
-    public void SpawnFish(){
+    public void SpawnFish()
+    {
 
         //Despawn and remove all the existing fishes
         foreach(GameObject agent in currentAgents){ 
@@ -70,7 +80,8 @@ public class FishManager : MonoBehaviour
         currentAgents.Clear();
 
         //Loop through spawnindex vector2
-        foreach(Vector2Int x in SpawnIndex){
+        foreach(Vector2Int x in SpawnIndex)
+        {
             for (int i = 0; i < x[1]; i++)
             {
                 GameObject agentPrefab = FishPrefabs[x[0]];
@@ -100,12 +111,17 @@ public class FishManager : MonoBehaviour
 
     }
 
+    public void accountForTime() 
+    {
+        acidity = acidity + (acidityRate * time);
+    }
+
     /**
      * Calculate the fishes that can be spawned 
      * using the current slider value range
      * add them to the list and display them
      */
-    private string CalculateFish()
+    public string CalculateFish()
     {
         string text = "Fish valid: \n";
         
@@ -119,8 +135,25 @@ public class FishManager : MonoBehaviour
             float minDepth = float.Parse(itemData["fish"][index: id]["minDepth"].ToString());
             float maxDepth = float.Parse(itemData["fish"][index: id]["maxDepth"].ToString());
 
-            if(temp > minTemp && temp < maxTemp 
-                && depth > minDepth && depth < maxDepth){
+            float minAcidity = float.Parse(itemData["fish"][index: id]["minAcidity"].ToString());
+            float maxAcidity = float.Parse(itemData["fish"][index: id]["maxAcidity"].ToString());
+
+
+            //float minPollution = float.Parse(itemData["fish"][index: id]["minPollution"].ToString());
+            //float maxPollution = float.Parse(itemData["fish"][index: id]["maxPollution"].ToString());
+
+
+
+            if (SceneManager.GetActiveScene().name == "ConservationScene") {
+                //accountForTime();
+            }
+
+
+            if (temp > minTemp && temp < maxTemp 
+                && depth > minDepth && depth < maxDepth
+                && acidity > minAcidity && acidity < maxAcidity)
+                //&& pollution > minPollution && pollution < maxPollution)
+            {
                 text += itemData["fish"][index: id]["name"].ToString();
                 text += "\n";
 
