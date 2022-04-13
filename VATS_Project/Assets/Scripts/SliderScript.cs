@@ -104,7 +104,6 @@ public class SliderScript : MonoBehaviour
         acidValue = newValue;
         acidSlider.value = acidValue;
         acidText.text = acidValue.ToString();
-        fishManager.acidity = acidValue;
     }
 
     /**
