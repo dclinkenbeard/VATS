@@ -6,3 +6,7 @@ main {
 input { 
     text-align: center; 
 }
+
+#form-container {
+    width: 40rem;
+}
