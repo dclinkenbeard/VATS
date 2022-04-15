@@ -14,110 +14,114 @@
 
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom JS -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <main>
-        <div class="card text-center" style="width: 40rem;">
+        <div class="card text-center" id="form-container">
             <div class="card-body">
-                <h5 class="card-title">Create your FEV</h5>
+                <h5 class="card-title display-1">Create your FEV</h5>
 
-                <section class="card-text">
+                <form class="card-text">
                     <!-- Type number -->
                     <div class="mb-3">
-                        <label for="neighborRadius" class="form-label">Neighbor Radius</label>
-                        <input type="number" class="form-control form-control-lg" id="neighborRadius" placeholder="0">
+                        <label for="neighborRadius" class="form-label h2">Neighbor Radius</label>
+                        <input type="number" class="form-control form-control-lg" id="neighborRadius" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="avoidRadius" class="form-label">Avoid Radius</label>
-                        <input type="number" class="form-control form-control-lg" id="avoidRadius" placeholder="0">
+                        <label for="avoidRadius" class="form-label h2">Avoid Radius</label>
+                        <input type="number" class="form-control form-control-lg" id="avoidRadius" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="collisionLength" class="form-label">Collision Length</label>
-                        <input type="number" class="form-control form-control-lg" id="collisionLength" placeholder="0">
+                        <label for="collisionLength" class="form-label h2">Collision Length</label>
+                        <input type="number" class="form-control form-control-lg" id="collisionLength" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="minSpeed" class="form-label">Minimum Speed</label>
-                        <input type="number" class="form-control form-control-lg" id="minSpeed" placeholder="0">
+                        <label for="minSpeed" class="form-label h2">Minimum Speed</label>
+                        <input type="number" class="form-control form-control-lg" id="minSpeed" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="maxSpeed" class="form-label">Maximum Speed</label>
-                        <input type="number" class="form-control form-control-lg" id="maxSpeed" placeholder="0">
+                        <label for="maxSpeed" class="form-label h2">Maximum Speed</label>
+                        <input type="number" class="form-control form-control-lg" id="maxSpeed" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="id" class="form-label">ID</label>
+                        <label for="id" class="form-label h2">ID</label>
                         <input type="text" readonly class="form-control-plaintext form-control-lg" id="id" placeholder="-1">
                     </div>
                     <div class="mb-3">
-                        <label for="minSize" class="form-label">Minimum Size</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="minSize" placeholder="5">
+                        <label for="minSize" class="form-label h2">Minimum Size</label>
+                        <input type="number" class="form-control form-control-lg" id="minSize" placeholder="5" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="maxSize" class="form-label">Maximum Size</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="maxSize" placeholder="10">
+                        <label for="maxSize" class="form-label h2">Maximum Size</label>
+                        <input type="number" class="form-control form-control-lg" id="maxSize" placeholder="10" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="minTemp" class="form-label">Minumum Temperature</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="minTemp" placeholder="50">
+                        <label for="minTemp" class="form-label h2">Minumum Temperature</label>
+                        <input type="number" class="form-control form-control-lg" id="minTemp" placeholder="50" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="maxTemp" class="form-label">Maximum Temperature</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="maxTemp" placeholder="80">
+                        <label for="maxTemp" class="form-label h2">Maximum Temperature</label>
+                        <input type="number" class="form-control form-control-lg" id="maxTemp" placeholder="80" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="minDepth" class="form-label">Minumum Depth</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="minDepth" placeholder="5">
+                        <label for="minDepth" class="form-label h2">Minumum Depth</label>
+                        <input type="number" class="form-control form-control-lg" id="minDepth" placeholder="5" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="maxDepth" class="form-label">Maximum Depth</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="maxDepth" placeholder="30">
+                        <label for="maxDepth" class="form-label h2">Maximum Depth</label>
+                        <input type="number" class="form-control form-control-lg" id="maxDepth" placeholder="30" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="lowerLimit" class="form-label">Lower Limit</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="lowerLimit" placeholder="1">
+                        <label for="lowerLimit" class="form-label h2">Lower Limit</label>
+                        <input type="number" class="form-control form-control-lg" id="lowerLimit" placeholder="1" min="1">
                     </div>
                     <div class="mb-3">
-                        <label for="upperLimit" class="form-label">Upper Limit</label>
-                        <input type="text" readonly class="form-control form-control-lg" id="upperLimit" placeholder="5">
+                        <label for="upperLimit" class="form-label h2">Upper Limit</label>
+                        <input type="number" class="form-control form-control-lg" id="upperLimit" placeholder="5" min="1">
                     </div>
 
                     <!-- Type text -->
                     <div class="mb-3">
-                        <label for="fishType" class="form-label">Fish type</label>
+                        <label for="fishType" class="form-label h2">Fish type</label>
                         <input type="text" class="form-control form-control-lg" id="fishType" placeholder="Eel">
                     </div>
                     <div class="mb-3">
-                        <label for="modelUrl" class="form-label">Model URL</label>
+                        <label for="modelUrl" class="form-label h2">Model URL</label>
                         <input type="text" class="form-control form-control-lg" id="modelUrl" placeholder="e">
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label h2">Name</label>
                         <input type="text" class="form-control form-control-lg" id="name" placeholder="Eel">
                     </div>
                     <div class="mb-3">
-                        <label for="scientificName" class="form-label">Scientific Name</label>
+                        <label for="scientificName" class="form-label h2">Scientific Name</label>
                         <input type="text" class="form-control form-control-lg" id="scientificName" placeholder="Anguilla japonica">
                     </div>
                     <div class="mb-3">
-                        <label for="type" class="form-label">Type</label>
+                        <label for="type" class="form-label h2">Type</label>
                         <input type="text" class="form-control form-control-lg" id="type" placeholder="Eel">
                     </div>
                     <div class="mb-3">
-                        <label for="diet" class="form-label">Diet</label>
+                        <label for="diet" class="form-label h2">Diet</label>
                         <input type="text" class="form-control form-control-lg" id="diet" placeholder="Fish, crustaceans, mollusks">
                     </div>
                     <div class="mb-3">
-                        <label for="habitat" class="form-label">Habitat</label>
+                        <label for="habitat" class="form-label h2">Habitat</label>
                         <input type="text" class="form-control form-control-lg" id="habitat" placeholder="Shallow waters">
                     </div>
                     <div class="mb-3">
-                        <label for="range" class="form-label">Range</label>
+                        <label for="range" class="form-label h2">Range</label>
                         <input type="text" class="form-control form-control-lg" id="range" placeholder="Oceans around the world">
                     </div>
                     <div class="mb-3">
-                        <label for="status" class="form-label">Status</label>
+                        <label for="status" class="form-label h2">Status</label>
                         <input type="text" class="form-control form-control-lg" id="status" placeholder="Endangered">
                     </div>
-                </section>
+                    <button type="button" class="btn btn-primary btn-lg" id="submitButton">Create Fish</button>
+                </form>
             </div>
         </div>
     </main>
