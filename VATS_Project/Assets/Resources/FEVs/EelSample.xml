@@ -5,11 +5,12 @@
     <collisionLength>7</collisionLength>
     <minSpeed>8</minSpeed>
     <maxSpeed>10</maxSpeed>
+    <maxTurnSpd>5</maxTurnSpd>
     <fishType>Eel</fishType>
-    <id>-1</id>
+    <id>24</id>
     <modelUrl>e</modelUrl>
     <name>Eel</name>
-    <scientificName>Anguilla japonica</scientificName>
+    <sci>Anguilla japonica</sci>
     <type>Eel</type>
     <diet>Fish, crustaceans, mollusks</diet>
     <habitat>Shallow waters</habitat>
@@ -21,6 +22,6 @@
     <maxDepth>30</maxDepth>
     <range>Oceans around the world</range>
     <status>Endangered</status>
-    <lowerLimit>1</lowerLimit>
-    <upperLimit>5</upperLimit>
+    <lowLimit>1</lowLimit>
+    <uppLimit>5</uppLimit>
 </FEV>

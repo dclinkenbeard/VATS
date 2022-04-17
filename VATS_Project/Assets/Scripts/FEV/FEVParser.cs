@@ -12,6 +12,8 @@ public class FEVParser : MonoBehaviour
 {
     string assetPath = "Assets/Scripts/Boids/BoidObjects/";
 
+    public string fevName = "Eel";
+
     void Start()
     {
         loadData();
@@ -20,7 +22,7 @@ public class FEVParser : MonoBehaviour
 
     void loadData()
     {
-        TextAsset fevFile = Resources.Load<TextAsset>("FEVs/EelSample");
+        TextAsset fevFile = Resources.Load<TextAsset>("FEVs/" + fevName);
         XmlSerializer fevSerializer = new XmlSerializer(typeof(FEV));
         using (StringReader fevReader = new StringReader(fevFile.text))
         {
@@ -53,8 +55,6 @@ public class FEVParser : MonoBehaviour
         MeshFilter filter = newFish.AddComponent<MeshFilter>() as MeshFilter;
         BoxCollider collider = newFish.AddComponent<BoxCollider>() as BoxCollider;
         BoidAgent newAgent = newFish.AddComponent<BoidAgent>() as BoidAgent;
-        
-        
 
         
 
@@ -68,21 +68,31 @@ public class FEVParser : MonoBehaviour
         newAgent.fishType = fev.fishType;
         newAgent.id = fev.id;
 
-        BoidBehavior behavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
+        BoidBehavior avoidBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAvoidance.asset", typeof(BoidBehavior));
+        BoidBehavior alignBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
+        BoidBehavior cohesionBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidCohesion.asset", typeof(BoidBehavior));
 
         newAgent.boidBehaviors = new List<BoidBehavior>();
-        newAgent.boidBehaviors.Add(behavior);
+        newAgent.boidBehaviors.Add(avoidBehavior);
+        newAgent.boidBehaviors.Add(alignBehavior);
+        newAgent.boidBehaviors.Add(cohesionBehavior);
 
         newAgent.behaviorWeights = new List<float>();
         newAgent.behaviorWeights.Add(3);
+        newAgent.behaviorWeights.Add(2.5f);
+        newAgent.behaviorWeights.Add(2);
 
-        GameObject.Instantiate(newFish, this.transform);
+        newAgent.fishLayerMask = LayerMask.GetMask("Fish");
+        newAgent.obstacleMask = LayerMask.GetMask("Obstacle");
+
+        // GameObject.Instantiate(newFish, this.transform);
 
         // TODO: Get actual model from AssetBundle URL provided by FEV
-        GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject tempModel = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
         tempModel.transform.parent = newFish.transform;
 
-        PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/Eel.prefab", InteractionMode.UserAction);
+        PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/" + fevName + ".prefab", InteractionMode.UserAction);
     }
 
 
