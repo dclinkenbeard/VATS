@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEditor;
 using LitJson;
 
@@ -11,7 +12,7 @@ using LitJson;
 public class FEVParser : MonoBehaviour
 {
     string assetPath = "Assets/Scripts/Boids/BoidObjects/";
-
+    AssetBundle bundle;
     public string fevName = "Eel";
 
     void Start()
@@ -95,7 +96,21 @@ public class FEVParser : MonoBehaviour
         PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/" + fevName + ".prefab", InteractionMode.UserAction);
     }
 
+    void GetAssetBundleFromUrl(string url){
+        StartCoroutine(GetAssetBundle(url));
+    }
 
+    IEnumerator GetAssetBundle(string url){
+        UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(url);
+        yield return www.SendWebRequest();
+
+        if(www.error != null){
+            Debug.Log("www error: Could not get AssetBundle from url " + url + "\n" + www.error);
+        }
+        else{
+            bundle = DownloadHandlerAssetBundle.GetContent(www);
+        }
+    }
 
     
 }
