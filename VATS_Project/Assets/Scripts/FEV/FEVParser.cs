@@ -112,5 +112,9 @@ public class FEVParser : MonoBehaviour
         }
     }
 
+    GameObject GetModelFromAssetBundle(AssetBundle bundle, string name){
+        GameObject loadedModel = (GameObject) bundle.LoadAsset(name);
+        return loadedModel;
+    }
     
 }
