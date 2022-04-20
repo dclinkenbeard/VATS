@@ -25,29 +25,63 @@ submitButton.addEventListener('click', () => {
     const habitat = document.getElementById('habitat')
     const range = document.getElementById('range')
     const status = document.getElementById('status')
+
     
     // Creating strings from user input and formatting according to VATS_Project/Assets/Resources/FEVs/EelSample.xml
-    const xmlNeighborRadius = `<neighborRadius>${neighborRadius.innerHTML}</neighborRadius>`
-    const xmlAvoidRadius = `<avoidRadius>${avoidRadius.innerHTML}</avoidRadius>`
-    const xmlCollisionLength = `<collisionLength>${collisionLength.innerHTML}</collisionLength>`
-    const xmlMinSpeed = `<minSpeed>${minSpeed.innerHTML}</minSpeed>`
-    const xmlMaxSpeed = `<maxSpeed>${maxSpeed.innerHTML}</maxSpeed>`
+    const xmlNeighborRadius = `<neighborRadius>${neighborRadius.value}</neighborRadius>`
+    const xmlAvoidRadius = `<avoidRadius>${avoidRadius.value}</avoidRadius>`
+    const xmlCollisionLength = `<collisionLength>${collisionLength.value}</collisionLength>`
+    const xmlMinSpeed = `<minSpeed>${minSpeed.value}</minSpeed>`
+    const xmlMaxSpeed = `<maxSpeed>${maxSpeed.value}</maxSpeed>`
         // skipping id since that will be generated from the number of files in FEVs folder
-    const xmlMinSize = `<minSize>${minSize.innerHTML}</minSize>`
-    const xmlMaxSize = `<maxSize>${maxSize.innerHTML}</maxSize>`
-    const xmlMinTemp = `<minTemp>${minTemp.innerHTML}</minTemp>`
-    const xmlMaxTemp = `<maxTemp>${maxTemp.innerHTML}</maxTemp>`
-    const xmlMinDepth = `<minDepth>${minDepth.innerHTML}</minDepth>`
-    const xmlMaxDepth = `<maxDepth>${maxDepth.innerHTML}</maxDepth>`
-    const xmlLowerLimit = `<lowerLimit>${lowerLimit.innerHTML}</lowerLimit>`
-    const xmlUpperLimit = `<upperLimit>${upperLimit.innerHTML}</upperLimit>`
-    const xmlFishType = `<fishType>${fishType.innerHTML}</fishType>`
-    const xmlModelUrl = `<modelUrl>${modelUrl.innerHTML}</modelUrl>`
-    const xmlName = `<name>${name.innerHTML}</name>`
-    const xmlScientificName = `<scientificName>${scientificName.innerHTML}</scientificName>`
-    const xmlType = `<type>${type.innerHTML}</type>`
-    const xmlDiet = `<diet>${diet.innerHTML}</diet>`
-    const xmlHabitat = `<habitat>${habitat.innerHTML}</habitat>`
-    const xmlRange = `<range>${range.innerHTML}</range>`
-    const xmlStatus = `<status>${status.innerHTML}</status>`
- })
+    const xmlMinSize = `<minSize>${minSize.value}</minSize>`
+    const xmlMaxSize = `<maxSize>${maxSize.value}</maxSize>`
+    const xmlMinTemp = `<minTemp>${minTemp.value}</minTemp>`
+    const xmlMaxTemp = `<maxTemp>${maxTemp.value}</maxTemp>`
+    const xmlMinDepth = `<minDepth>${minDepth.value}</minDepth>`
+    const xmlMaxDepth = `<maxDepth>${maxDepth.value}</maxDepth>`
+    const xmlLowerLimit = `<lowerLimit>${lowerLimit.value}</lowerLimit>`
+    const xmlUpperLimit = `<upperLimit>${upperLimit.value}</upperLimit>`
+    const xmlFishType = `<fishType>${fishType.value}</fishType>`
+    const xmlModelUrl = `<modelUrl>${modelUrl.value}</modelUrl>`
+    const xmlName = `<name>${name.value}</name>`
+    const xmlScientificName = `<scientificName>${scientificName.value}</scientificName>`
+    const xmlType = `<type>${type.value}</type>`
+    const xmlDiet = `<diet>${diet.value}</diet>`
+    const xmlHabitat = `<habitat>${habitat.value}</habitat>`
+    const xmlRange = `<range>${range.value}</range>`
+    const xmlStatus = `<status>${status.value}</status>`
+
+
+    // Creating XML file
+    let parser = new DOMParser();
+    let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
+    xml += '<FEV>'
+    xml += xmlNeighborRadius
+    xml += xmlAvoidRadius
+    xml += xmlCollisionLength
+    xml += xmlMinSpeed
+    xml += xmlMaxSpeed
+    xml += xmlMinSize
+    xml += xmlMaxSize
+    xml += xmlMinTemp
+    xml += xmlMaxTemp
+    xml += xmlMinDepth
+    xml += xmlMaxDepth
+    xml += xmlLowerLimit
+    xml += xmlUpperLimit
+    xml += xmlFishType
+    xml += xmlModelUrl
+    xml += xmlName
+    xml += xmlScientificName
+    xml += xmlType
+    xml += xmlDiet
+    xml += xmlHabitat
+    xml += xmlRange
+    xml += xmlStatus
+    xml += '</FEV>'
+    const xmlDoc = parser.parseFromString(xml, 'application/xml')
+
+    
+    return xmlDoc
+})
