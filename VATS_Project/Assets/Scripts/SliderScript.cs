@@ -29,7 +29,7 @@ public class SliderScript : MonoBehaviour
     public float acidityValue = 8.0f;
     public float acidityRateValue = 0.0f;
     public float timeValue;
-    public float pollutionValue = 0.0f;
+    public float pollutionValue = 593.0f;
     public float pollutionRateValue = 0.0f;
 
     //Declare input field text values
@@ -50,9 +50,9 @@ public class SliderScript : MonoBehaviour
             || presSlider == null 
             || aciditySlider == null 
             || acidityRateSlider == null 
-            || timeSlider == null) 
-            //|| pollutionSlider == null
-            //|| pollutionRateSlider == null)
+            || timeSlider == null 
+            || pollutionSlider == null
+            || pollutionRateSlider == null)
         {
             Debug.Log("ERROR: MISSING SLIDER GAME OBJECT IN SLIDERSCRIPT");
         }
@@ -63,8 +63,8 @@ public class SliderScript : MonoBehaviour
             acidityText.text = acidityValue.ToString();
             acidityRateText.text = acidityRateValue.ToString();
             timeText.text = timeValue.ToString();
-            //pollutionText.text = pollutionValue.ToString();
-            //pollutionRateText.text = pollutionValue.ToString();
+            pollutionText.text = pollutionValue.ToString();
+            pollutionRateText.text = pollutionRateValue.ToString();
         }
     }
 
@@ -170,51 +170,51 @@ public class SliderScript : MonoBehaviour
 
 
     // Pollution Slider & Input Field
-    // public void PollutionSlider(float newValue)
-    // {
-    //     pollutionValue = newValue;
-    //     pollutionSlider.value = pollutionValue;
-    //     pollutionText.text = pollutionValue.ToString();
-    //     fishManager.pollution = pollutionValue;
-    // }
+    public void PollutionSlider(float newValue)
+    {
+        pollutionValue = newValue;
+        pollutionSlider.value = pollutionValue;
+        pollutionText.text = pollutionValue.ToString();
+        fishManager.pollution = pollutionValue;
+    }
 
     /**
      * On Pollution slider value change, this function is called
      * parse float from string and set it as new value
      * --- NOT IMPLEMENTED YET ---
      */
-    // public void PollutionInput(string text)
-    // {
-    //    if (text == null)
-    //     {
-    //         text = "0";
-    //     }
-    //     float newValue = float.Parse(text);
-    //     newValue = CheckNewValue(pollutionSlider, newValue);
-    //     PollutionSlider(newValue);
-    // }
+    public void PollutionInput(string text)
+    {
+       if (text == null)
+        {
+            text = "0";
+        }
+        float newValue = float.Parse(text);
+        newValue = CheckNewValue(pollutionSlider, newValue);
+        PollutionSlider(newValue);
+    }
 
-    // Pollution Slider & Input Field
-    // public void PollutionRateSlider(float newValue)
-    // {
-    //     // rate of change in ...
-    //     pollutionRateValue = newValue;
-    //     pollutionRateSlider.value = pollutionRateValue;
-    //     pollutionRateText.text = pollutionRateValue.ToString();
-    //     fishManager.pollutionRate = pollutionRateValue;
-    //     //Debug.Log(fishManager.pollutionRate);
-    // }
+    // Pollution Rate Slider & Input Field
+    public void PollutionRateSlider(float newValue)
+    {
+        // rate of change in ...
+        pollutionRateValue = newValue;
+        pollutionRateSlider.value = pollutionRateValue;
+        pollutionRateText.text = pollutionRateValue.ToString();
+        fishManager.pollutionRate = pollutionRateValue;
+        //Debug.Log(fishManager.pollutionRate);
+    }
 
-    // public void PollutionRateInput(string text)
-    // {
-    //     if (text == null)
-    //     {
-    //         text = "0";
-    //     }
-    //     float newValue = float.Parse(text);
-    //     newValue = CheckNewValue(pollutionRateSlider, newValue);
-    //     PollutionRateSlider(newValue);
-    // }
+    public void PollutionRateInput(string text)
+    {
+        if (text == null)
+        {
+            text = "0";
+        }
+        float newValue = float.Parse(text);
+        newValue = CheckNewValue(pollutionRateSlider, newValue);
+        PollutionRateSlider(newValue);
+    }
 
 
     // Time Slider & Input Field
@@ -234,16 +234,16 @@ public class SliderScript : MonoBehaviour
      * parse float from string and set it as new value
      * --- NOT IMPLEMENTED YET ---
      */
-    // public void TimeInput(string text)
-    // {
-    //     if (text == null)
-    //     {
-    //         text = "0";
-    //     }
-    //     float newValue = float.Parse(text);
-    //     newValue = CheckNewValue(timeSlider, newValue);
-    //     TimeSlider(newValue);
-    // }
+    public void TimeInput(string text)
+    {
+        if (text == null)
+        {
+            text = "0";
+        }
+        float newValue = float.Parse(text);
+        newValue = CheckNewValue(timeSlider, newValue);
+        TimeSlider(newValue);
+    }
 
     // On Apply Button
     public void OnApply()
@@ -252,8 +252,8 @@ public class SliderScript : MonoBehaviour
         fishManager.accountForTime();
         AciditySlider(fishManager.acidity);
         AcidityInput(fishManager.acidity.ToString());
-        //PollutionSlider(fishManager.pollution);
-        //PollutionInput(fishManager.pollution.ToString());
+        PollutionSlider(fishManager.pollution);
+        PollutionInput(fishManager.pollution.ToString());
 
         fishManager.CalculateFish();
         fishManager.SpawnFish();
