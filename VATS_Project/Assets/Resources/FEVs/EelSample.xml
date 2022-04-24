@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FEV>
+    <neighborRadius>5</neighborRadius>
+    <avoidRadius>6</avoidRadius>
+    <collisionLength>7</collisionLength>
+    <minSpeed>8</minSpeed>
+    <maxSpeed>10</maxSpeed>
+    <maxTurnSpd>5</maxTurnSpd>
+    <fishType>Eel</fishType>
+    <id>24</id>
+    <modelUrl>e</modelUrl>
+    <name>Eel</name>
+    <sci>Anguilla japonica</sci>
+    <type>Eel</type>
+    <diet>Fish, crustaceans, mollusks</diet>
+    <habitat>Shallow waters</habitat>
+    <minSize>5</minSize>
+    <maxSize>10</maxSize>
+    <minTemp>50</minTemp>
+    <maxTemp>80</maxTemp>
+    <minDepth>5</minDepth>
+    <maxDepth>30</maxDepth>
+    <range>Oceans around the world</range>
+    <status>Endangered</status>
+    <lowLimit>1</lowLimit>
+    <uppLimit>5</uppLimit>
+</FEV>

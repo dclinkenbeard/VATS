@@ -1,0 +1,35 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FEV
+{
+
+
+    // Values for creating boid agents
+    public int id;
+    public double neighborRadius;
+    public double avoidRadius;
+    public double collisionLength;
+    public double minSpeed;
+    public double maxSpeed;
+    public double maxTurnSpd;
+    public string fishType;
+    public string modelUrl;
+
+    // Values for JSON encyclopedia
+    public string name;
+    public string sci;
+    public string type;
+    public string diet;
+    public string habitat;
+    public double minSize, maxSize;
+    public double minTemp, maxTemp;
+    public double minDepth, maxDepth;
+    public string range;
+    public string status;
+    public int lowLimit, uppLimit;
+
+    
+    //change fish spawn on parameter change
+}
