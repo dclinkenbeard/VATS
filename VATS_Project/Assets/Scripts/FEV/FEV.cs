@@ -26,6 +26,8 @@ public class FEV
     public double minSize, maxSize;
     public double minTemp, maxTemp;
     public double minDepth, maxDepth;
+    public double minAcidity, maxAcidity;
+    public double minPollution, maxPollution;
     public string range;
     public string status;
     public int lowLimit, uppLimit;

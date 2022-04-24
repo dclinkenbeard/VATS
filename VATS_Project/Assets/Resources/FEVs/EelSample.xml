@@ -18,6 +18,10 @@
     <maxSize>10</maxSize>
     <minTemp>50</minTemp>
     <maxTemp>80</maxTemp>
+    <minPollution>0</minPollution>
+    <maxPollution>950</maxPollution>
+    <minAcidity>6</minAcidity>
+    <maxAcidity>8</maxAcidity>
     <minDepth>5</minDepth>
     <maxDepth>30</maxDepth>
     <range>Oceans around the world</range>
