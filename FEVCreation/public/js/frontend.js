@@ -1,5 +1,7 @@
 const submitButton = document.getElementById('submitButton')
 
+
+
 submitButton.addEventListener('click', () => {
     // Inputs from form
     const neighborRadius = document.getElementById('neighborRadius')
@@ -7,7 +9,6 @@ submitButton.addEventListener('click', () => {
     const collisionLength = document.getElementById('collisionLength')
     const minSpeed = document.getElementById('minSpeed')
     const maxSpeed = document.getElementById('maxSpeed')
-    const id = document.getElementById('id')
     const minSize = document.getElementById('minSize')
     const maxSize = document.getElementById('maxSize')
     const minTemp = document.getElementById('minTemp')
@@ -52,7 +53,6 @@ submitButton.addEventListener('click', () => {
     const xmlRange = `<range>${range.value}</range>`
     const xmlStatus = `<status>${status.value}</status>`
 
-
     // Creating XML file
     let parser = new DOMParser();
     let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
@@ -62,6 +62,7 @@ submitButton.addEventListener('click', () => {
     xml += xmlCollisionLength
     xml += xmlMinSpeed
     xml += xmlMaxSpeed
+    xml += xmlId
     xml += xmlMinSize
     xml += xmlMaxSize
     xml += xmlMinTemp
@@ -79,9 +80,13 @@ submitButton.addEventListener('click', () => {
     xml += xmlHabitat
     xml += xmlRange
     xml += xmlStatus
-    xml += '</FEV>'
-    const xmlDoc = parser.parseFromString(xml, 'application/xml')
-
     
-    return xmlDoc
+    // const xmlDoc = parser.parseFromString(xml, 'application/xml')
+    const xmlInput = doucment.getElementById('xml')
+    xmlInput.value = xml
 })
+
+// Generate id in index.js file and send data to fronend.js 
+
+// store id in xmlDoc
+
