@@ -18,9 +18,34 @@ app.get("/", async function(req, res) {
 });//Root
 
 app.post("/", async function(req, res) {
-  await new Promise(resolve => setTimeout(resolve, 5000))
   
-  let xml = req.body.xml
+  
+  // Creating XML file
+  let parser = new DOMParser();
+  let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
+  xml += '<FEV>'
+  xml += `<neighborRadius>${neighborRadius.value}</neighborRadius>`
+  xml += `<avoidRadius>${avoidRadius.value}</avoidRadius>`
+  xml += `<collisionLength>${collisionLength.value}</collisionLength>`
+  xml += `<minSpeed>${minSpeed.value}</minSpeed>`
+  xml += `<maxSpeed>${maxSpeed.value}</maxSpeed>`
+  xml += `<minSize>${minSize.value}</minSize>`
+  xml += `<maxSize>${maxSize.value}</maxSize>`
+  xml += xmlMinTemp
+  xml += xmlMaxTemp
+  xml += xmlMinDepth
+  xml += xmlMaxDepth
+  xml += xmlLowerLimit
+  xml += xmlUpperLimit
+  xml += xmlFishType
+  xml += xmlModelUrl
+  xml += xmlName
+  xml += xmlScientificName
+  xml += xmlType
+  xml += xmlDiet
+  xml += xmlHabitat
+  xml += xmlRange
+  xml += xmlStatus
   let id = await generateId(dir)
   xml += `<id>${id}</id>`
   xml += "</FEV>"
