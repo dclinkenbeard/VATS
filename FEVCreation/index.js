@@ -18,9 +18,10 @@ app.get("/", async function(req, res) {
 });//Root
 
 app.post("/", async function(req, res) {
+  await new Promise(resolve => setTimeout(resolve, 5000))
+  
   let xml = req.body.xml
-  console.log("-------" + xml)
-  let id  = await generateId(dir)
+  let id = await generateId(dir)
   xml += `<id>${id}</id>`
   xml += "</FEV>"
   const xmlDoc = parser.parseFromString(xml, 'application/xml')

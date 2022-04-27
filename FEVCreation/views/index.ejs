@@ -20,11 +20,12 @@
 </head>
 <body>
     <main>
+        <form method="POST" action="/">
             <div class="card text-center" id="form-container">
                 <div class="card-body">
                     <h5 class="card-title display-1">Create your FEV</h5>
 
-                    <form class="card-text" method="POST" action="/">
+                    <div class="card-text">
                         <!-- Type number -->
                         <div class="mb-3">
                             <label for="neighborRadius" class="form-label h2">Neighbor Radius</label>
@@ -120,12 +121,12 @@
                             <label for="status" class="form-label h2">Status</label>
                             <input type="text" class="form-control form-control-lg" id="status" placeholder="Endangered">
                         </div>
-                        <input type="hidden" id="xml">
-                        <button type="button" class="btn btn-primary btn-lg" id="submitButton">Create Fish</button>
-                    </form>
+                        <input type="hidden" id="xml" name="xml">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitButton">Create Fish</button>
+                    </div>
                 </div>
             </div>
-            
+        </form>
     </main>
 </body>
 </html>
