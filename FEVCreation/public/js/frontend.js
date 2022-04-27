@@ -29,14 +29,7 @@ submitButton.addEventListener('click', () => {
 
     
     // Creating strings from user input and formatting according to VATS_Project/Assets/Resources/FEVs/EelSample.xml
-    const xmlNeighborRadius = `<neighborRadius>${neighborRadius.value}</neighborRadius>`
-    const xmlAvoidRadius = `<avoidRadius>${avoidRadius.value}</avoidRadius>`
-    const xmlCollisionLength = `<collisionLength>${collisionLength.value}</collisionLength>`
-    const xmlMinSpeed = `<minSpeed>${minSpeed.value}</minSpeed>`
-    const xmlMaxSpeed = `<maxSpeed>${maxSpeed.value}</maxSpeed>`
-        // skipping id since that will be generated from the number of files in FEVs folder
-    const xmlMinSize = `<minSize>${minSize.value}</minSize>`
-    const xmlMaxSize = `<maxSize>${maxSize.value}</maxSize>`
+    
     const xmlMinTemp = `<minTemp>${minTemp.value}</minTemp>`
     const xmlMaxTemp = `<maxTemp>${maxTemp.value}</maxTemp>`
     const xmlMinDepth = `<minDepth>${minDepth.value}</minDepth>`
@@ -53,36 +46,11 @@ submitButton.addEventListener('click', () => {
     const xmlRange = `<range>${range.value}</range>`
     const xmlStatus = `<status>${status.value}</status>`
 
-    // Creating XML file
-    let parser = new DOMParser();
-    let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
-    xml += '<FEV>'
-    xml += xmlNeighborRadius
-    xml += xmlAvoidRadius
-    xml += xmlCollisionLength
-    xml += xmlMinSpeed
-    xml += xmlMaxSpeed
-    xml += xmlId
-    xml += xmlMinSize
-    xml += xmlMaxSize
-    xml += xmlMinTemp
-    xml += xmlMaxTemp
-    xml += xmlMinDepth
-    xml += xmlMaxDepth
-    xml += xmlLowerLimit
-    xml += xmlUpperLimit
-    xml += xmlFishType
-    xml += xmlModelUrl
-    xml += xmlName
-    xml += xmlScientificName
-    xml += xmlType
-    xml += xmlDiet
-    xml += xmlHabitat
-    xml += xmlRange
-    xml += xmlStatus
+
+    
     
     // const xmlDoc = parser.parseFromString(xml, 'application/xml')
-    const xmlInput = doucment.getElementById('xml')
+    const xmlInput = document.getElementById('xml')
     xmlInput.value = xml
 })
 
