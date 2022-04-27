@@ -1,0 +1,28 @@
+{
+  "name": "fevcreation",
+  "version": "1.0.0",
+  "description": "back end for fev creation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dclinkenbeard/VATS.git"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dclinkenbeard/VATS/issues"
+  },
+  "homepage": "https://github.com/dclinkenbeard/VATS#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "fs": "0.0.1-security"
+  }
+}
