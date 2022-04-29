@@ -1,91 +1,73 @@
-const express = require("express");
-// const bodyParser = require("body-parser")
-const { promises: fs } = require('fs');
-const dir = '../VATS_PROJECT/Assets/Resources/FEVs/';
+/*
+Run 'npm start' in terminal then open localhost:3000
+Enter values into each input and click 'Create Fish'
+app.post should then execute and create an xml file in /VATS_PROJECT/Assets/Resources/FEVs/
+Values that were entered by user should be in correct tags in the new file
 
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+STRETCH GOALS:
+Create Unity scene with a button that will start the node server open localhost:3000
+*/
 
+// Installed modules from node
+const express = require('express')
+const { promises: fs } = require('fs')
 
-const app = express();
+// Custom functions
+const createXmlString = require('./createXmlString')
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
-app.use(express.urlencoded({extended:true}));
+// Where the FEVs are located
+const dir = '../VATS_PROJECT/Assets/Resources/FEVs/'
 
-const generateId = async (dir) => {
-  const files = await fs.readdir(dir) 
-  var id = (Math.floor(files.length / 2)) + 1
-  return id 
-}
+// Misc
+const app = express()
 
-app.get("/", async function(req, res) {
-  res.render("index");
+// Allows us to use EJS
+app.set("view engine", "ejs")
+app.use(express.static("public"))
+
+// Allows us to use app.post
+app.use(express.urlencoded({extended:true}))
+
+app.get('/', async function(req, res) {
+  res.render('index')
 });//Root
 
-app.post("/", async function(req, res) {
-  let neighborRadius = req.body.neighborRadius
-  let avoidRadius = req.body.avoidRadius
-  let collisionLength = req.body.collisionLength
-  let minSpeed = req.body.minSpeed
-  let maxSpeed = req.body.maxSpeed
-  let minSize = req.body.minSize
-  let maxSize = req.body.maxSize
-  let minTemp = req.body.minTemp
-  let maxTemp = req.body.maxTemp
-  let minDepth = req.body.minDepth
-  let maxDepth = req.body.maxDepth
-  let lowerLimit = req.body.lowerLimit
-  let upperLimit = req.body.upperLimit
-  let fishType = req.body.fishType
-  let modeUrl = req.body.modeUrl
-  let name = req.body.name
-  let scientificName = req.body.scientificName
-  let type = req.body.type
-  let diet =  req.body.diet 
-  let habitat = req.body.habitat
-  let range = req.body.range
-  let status = req.body.status
-  
-  // Creating XML file
-  var DOMParser = require('xmldom').DOMParser;
-  let parser = new DOMParser();
+app.post('/', async function(req, res) {
+  // Grabbing each value that user entered from views/index.ejs
+  let userEntries = [
+    'neighborRadius',
+    'avoidRadius',
+    'collisionLength',
+    'minSpeed',
+    'maxSpeed',
+    'minSize',
+    'maxSize',
+    'minTemp',
+    'maxTemp',
+    'minDepth',
+    'maxDepth',
+    'lowerLimit',
+    'upperLimit',
+    'fishType',
+    'modelUrl',
+    'name',
+    'scientificName',
+    'type',
+    'diet',
+    'habitat',
+    'range',
+    'status',
+  ]
 
-  let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'
-  xml += '<FEV>'
-  xml += `<neighborRadius>${neighborRadius}</neighborRadius>`
-  xml += `<avoidRadius>${avoidRadius}</avoidRadius>`
-  xml += `<collisionLength>${collisionLength}</collisionLength>`
-  xml += `<minSpeed>${minSpeed}</minSpeed>`
-  xml += `<maxSpeed>${maxSpeed}</maxSpeed>`
-  xml += `<minSize>${minSize}</minSize>`
-  xml += `<maxSize>${maxSize}</maxSize>`
-  xml += `<minTemp>${minTemp}</minTemp>`
-  xml += `<maxTemp>${maxTemp}</maxTemp>`
-  xml += `<minDepth>${minDepth}</minDepth>`
-  xml += `<maxDepth>${maxDepth}</maxDepth>`
-  xml += `<lowerLimit>${lowerLimit}</lowerLimit>`
-  xml += `<upperLimit>${upperLimit}</upperLimit>`
-  xml += `<fishType>${fishType}</fishType>`
-  xml += `<modeUrl>${modeUrl}</modeUrl>`
-  xml += `<name>${name}</name>`
-  xml += `<scientificName>${scientificName}</scientificNames>`
-  xml += `<type>${type}</type>`
-  xml += `<diet>${diet}</diet>`
-  xml += `<habitat>${habitat}</habitat>`
-  xml += `<range>${range}</range>`
-  xml += `<status>${status}</status>`
-  let id = await generateId(dir)
-  xml += `<id>${id}</id>`
-  xml += "</FEV>"
-  const xmlDoc = parser.parseFromString(xml, 'application/xml')
-  console.log(xml)
+  let xml = await createXmlString(req, userEntries, dir)
+  let indexOfName = userEntries.indexOf('name')
 
   // XML file is now created in correct directory with correct contents
-  fs.writeFile(`../VATS_PROJECT/Assets/Resources/FEVs/${name}.txt`, xml);
+  fs.writeFile(`${dir}${req.body[userEntries[indexOfName]]}.xml`, xml)
   
-  console.log(id)
+  res.render('index')
 })
 
 app.listen(3000, () => {
-    console.log("Expresss server running...");
-  })
+  console.log('Expresss server running...')
+})
