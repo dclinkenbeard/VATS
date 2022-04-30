@@ -6,9 +6,6 @@ Values that were entered by user should be in correct tags in the new file
 
 If you  waant to add new xml tags just add the input fields in index.js following the
 same convention as the others and add the name of the input to userEntries.
-
-STRETCH GOALS:
-Create Unity scene with a button that will start the node server open localhost:3000
 */
 
 // Installed modules from node
