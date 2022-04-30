@@ -4,6 +4,9 @@ Enter values into each input and click 'Create Fish'
 app.post should then execute and create an xml file in /VATS_PROJECT/Assets/Resources/FEVs/
 Values that were entered by user should be in correct tags in the new file
 
+If you  waant to add new xml tags just add the input fields in index.js following the
+same convention as the others and add the name of the input to userEntries.
+
 STRETCH GOALS:
 Create Unity scene with a button that will start the node server open localhost:3000
 */
@@ -13,7 +16,7 @@ const express = require('express')
 const { promises: fs } = require('fs')
 
 // Custom functions
-const createXmlString = require('./createXmlString')
+const createXmlString = require('./helperFunctions/createXmlString')
 
 // Where the FEVs are located
 const dir = '../VATS_PROJECT/Assets/Resources/FEVs/'
@@ -30,7 +33,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.get('/', async function(req, res) {
   res.render('index')
-});//Root
+})//Root
 
 app.post('/', async function(req, res) {
   // Grabbing each value that user entered from views/index.ejs

@@ -7,7 +7,7 @@ const generateId = async (dir) => {
   const files = await fs.readdir(dir)
   let id = 0
 
-  // returns the number of files that end in .xml
+  // counts the number of files that end in .xml
   for (file of files) {
     // https://www.geeksforgeeks.org/node-js-fs-readdir-method/
     if (path.extname(file) == ".xml")
