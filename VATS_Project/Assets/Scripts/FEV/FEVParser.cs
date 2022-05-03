@@ -77,19 +77,31 @@ public class FEVParser : MonoBehaviour
         newAgent.fishType = fev.fishType;
         newAgent.id = fev.id;
 
-        BoidBehavior avoidBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAvoidance.asset", typeof(BoidBehavior));
-        BoidBehavior alignBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
-        BoidBehavior cohesionBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidCohesion.asset", typeof(BoidBehavior));
+        
+        
+       
 
         newAgent.boidBehaviors = new List<BoidBehavior>();
-        newAgent.boidBehaviors.Add(avoidBehavior);
-        newAgent.boidBehaviors.Add(alignBehavior);
-        newAgent.boidBehaviors.Add(cohesionBehavior);
 
         newAgent.behaviorWeights = new List<float>();
-        newAgent.behaviorWeights.Add(3);
-        newAgent.behaviorWeights.Add(2.5f);
-        newAgent.behaviorWeights.Add(2);
+        if (fev.hasAlignment)
+        {
+            BoidBehavior alignBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(alignBehavior);
+            newAgent.behaviorWeights.Add((float)fev.alignmentWeight);
+        }
+        if (fev.hasAvoidance)
+        {
+            BoidBehavior avoidBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAvoidance.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(avoidBehavior);
+            newAgent.behaviorWeights.Add((float)fev.avoidanceWeight);
+        }
+        if (fev.hasAlignment)
+        {
+             BoidBehavior cohesionBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidCohesion.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(cohesionBehavior);
+            newAgent.behaviorWeights.Add((float)fev.cohesionWeight);
+        }
 
         newAgent.fishLayerMask = LayerMask.GetMask("Fish");
         newAgent.obstacleMask = LayerMask.GetMask("Obstacle");

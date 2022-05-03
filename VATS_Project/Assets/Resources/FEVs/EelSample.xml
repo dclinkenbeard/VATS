@@ -18,6 +18,12 @@
     <maxSize>10</maxSize>
     <minTemp>50</minTemp>
     <maxTemp>80</maxTemp>
+    <hasCohesion>true</hasCohesion>
+    <hasAlignment>true</hasAlignment>
+    <hasAvoidance>true</hasAvoidance>
+    <avoidanceWeight>2.5</avoidanceWeight>
+    <cohesionWeight>2</cohesionWeight>
+    <alignmentWeight>1</alignmentWeight>
     <minPollution>0</minPollution>
     <maxPollution>950</maxPollution>
     <minAcidity>6</minAcidity>
