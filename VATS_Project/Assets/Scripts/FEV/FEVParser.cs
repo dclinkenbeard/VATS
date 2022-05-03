@@ -13,7 +13,7 @@ public class FEVParser : MonoBehaviour
 {
     string assetPath = "Assets/Scripts/Boids/BoidObjects/";
     AssetBundle bundle;
-    public string fevName = "Eel";
+    public string fevName = "EelSample";
 
     void Start()
     {
@@ -42,7 +42,15 @@ public class FEVParser : MonoBehaviour
         itemData = JsonMapper.ToObject(json);
         string newJson = JsonMapper.ToJson(fev);
 
-        itemData["fish"].Add(JsonMapper.ToObject(newJson));
+        
+        // Create or update fish
+        if (itemData["fish"][fev.id] != null) {
+            itemData["fish"][fev.id] = JsonMapper.ToObject(newJson);
+            fevName = GetFishByID(fev.id);
+        } else {
+            itemData["fish"].Add(JsonMapper.ToObject(newJson));
+        }
+        
 
 
         // Writes data to JSON file in a readable format
@@ -89,9 +97,10 @@ public class FEVParser : MonoBehaviour
         // GameObject.Instantiate(newFish, this.transform);
 
         // TODO: Get actual model from AssetBundle URL provided by FEV
-        //GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        GameObject tempModel = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
-        tempModel.transform.parent = newFish.transform;
+        //GameObject model = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject model = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
+        // GameObject model = GetModelFromAssetBundle(bundle, "model"));
+        model.transform.parent = newFish.transform;
 
         PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/" + fevName + ".prefab", InteractionMode.UserAction);
     }
@@ -115,6 +124,20 @@ public class FEVParser : MonoBehaviour
     GameObject GetModelFromAssetBundle(AssetBundle bundle, string name){
         GameObject loadedModel = (GameObject) bundle.LoadAsset(name);
         return loadedModel;
+    }
+
+    string GetFishByID(int id)
+    {
+        var fishList = Resources.LoadAll<GameObject>("Fish");
+
+        foreach (GameObject fish in fishList)
+        {
+            if (fish.GetComponent<BoidAgent>().id == id)
+            {
+                return fish.name;
+            }
+        }
+        return fevName;
     }
     
 }
