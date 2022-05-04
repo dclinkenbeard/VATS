@@ -1,5 +1,8 @@
 # VATS
 
+Documentation:
+- https://docs.google.com/document/d/1ACdDBcB1jKn-kjF3oXwrgaEAw5-eLJSwZD55f1Axfcc/edit?usp=sharing
+
 used crest for ocean: 
 - https://github.com/crest-ocean/crest
 
