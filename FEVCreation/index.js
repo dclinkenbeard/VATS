@@ -1,11 +1,13 @@
 /*
 Run 'npm start' in terminal then open localhost:3000
-Enter values into each input and click 'Create Fish'
-app.post should then execute and create an xml file in /VATS_PROJECT/Assets/Resources/FEVs/
+
+Enter values into each field and click 'Create Fish'
+app.post should then create an xml file in /VATS_PROJECT/Assets/Resources/FEVs/
 Values that were entered by user should be in correct tags in the new file
 
-If you  waant to add new xml tags just add the input fields in index.js following the
+If you want to add new xml tags just add the input fields in views/index.ejs following the
 same convention as the others and add the name of the input to userEntries.
+(name attribute in <input> tag is how this file gets the value from the form)
 */
 
 // Installed modules from node
