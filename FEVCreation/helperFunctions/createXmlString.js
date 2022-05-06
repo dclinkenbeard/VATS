@@ -18,11 +18,11 @@ const generateId = async (dir) => {
 }
 
 module.exports = createXmlString = async (req, entries, dir) => {
-  // Formatting xml tags with appropriate values
+  // xml boilerplate code
   let xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n'
   xml += '<FEV>\n'
 
-  // Generating tags
+  // Formatting xml tags with appropriate values
   for (entry of entries)
     xml += `\t<${entry}>${req.body[entry]}</${entry}>\n`
 

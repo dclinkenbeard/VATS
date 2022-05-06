@@ -18,7 +18,7 @@ const { promises: fs } = require('fs')
 const createXmlString = require('./helperFunctions/createXmlString')
 
 // Where the FEVs are located
-const dir = '../VATS_PROJECT/Assets/Resources/FEVs/'
+const FEV_DIR = '../VATS_PROJECT/Assets/Resources/FEVs/'
 
 // Misc
 const app = express()
@@ -52,20 +52,19 @@ app.post('/', async function(req, res) {
     'upperLimit',
     'fishType',
     'modelUrl',
-    'name',
+    'name', //This determines xml file name
     'scientificName',
     'type',
     'diet',
     'habitat',
     'range',
-    'status',
+    'status'
   ]
 
-  let xml = await createXmlString(req, userEntries, dir)
-  let indexOfName = userEntries.indexOf('name')
+  let xml = await createXmlString(req, userEntries, FEV_DIR)
 
   // XML file is now created in correct directory with correct contents
-  fs.writeFile(`${dir}${req.body[userEntries[indexOfName]]}.xml`, xml)
+  fs.writeFile(`${FEV_DIR}${req.body.name}.xml`, xml)
   
   res.render('index')
 })
