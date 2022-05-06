@@ -70,4 +70,5 @@ app.post('/', async function(req, res) {
 
 app.listen(3000, () => {
   console.log('Expresss server running...')
+  console.log('Open http://localhost:3000')
 })
