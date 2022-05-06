@@ -49,15 +49,28 @@ Virtual Aquarium Tank System is a unity based game that allows user to explore s
 ### Models
 
 **FEVs**
-| Property   | Type   | Description                                                          |
-|------------|--------|----------------------------------------------------------------------|
-| ...        | ...    | ...                                                                  |
-| ...        | ...    | ...                                                                  |
-| ...        | ...    | ...                                                                  |
-| ...        | ...    | ...                                                                  |
-| ...        | ...    | ...                                                                  |
-
-
+| Property      | Type      | Description                                                      |
+|---------------|-----------|------------------------------------------------------------------|
+| id            | int       | Unique id for marine life                                        |
+| name          | String    | Marine life name                                                 |
+| sci           | String    | Scientific name                                                  |
+| type          | String    | Marine life type                                                 |
+| diet          | String    | Marine life diet description                                     |
+| habitat       | String    | Marine life habitat                                              |
+| minSize       | Int       | Minimum size for marine life                                     |
+| maxSize       | Int       | Maximum size for marine life                                     |
+| minTemp       | Int       | Minimum living temperature                                       |
+| maxTemp       | Int       | Maximum living temperature                                       |
+| minDepth      | Int       | Minimum living depth                                             |
+| maxDepth      | Int       | Maximum living depth                                             |
+| minAcidity    | Int       | Minimum living acidity                                           |
+| maxAcidity    | Int       | Maximum living acidity                                           |
+| minPollution  | Int       | Minimum living pollution                                         |
+| maxPollution  | Int       | Maximum living pollution                                         |
+| range         | String    | Description of marine life living situations                     |
+| status        | String    | Marine life extinction status                                    |
+| lowerLimit    | Int       | minimum spawning height                                          |
+| upperLimit    | Int       | maximum spawning height                                          |
 
 ## Dependencies
 ### used crest for ocean: 

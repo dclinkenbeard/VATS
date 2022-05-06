@@ -22,7 +22,11 @@ public class FishManager : MonoBehaviour
     public float acidityRate = 0.0f;
     public float pollution = 593.0f;
     public float pollutionRate = 0.0f;
+    public float startTime = 0.0f;
+    public float endTime = 0.0f;
     public float time;
+    public bool intervalIsEnabled = false;
+
 
 
     //Declare a list to hold fish prefabs
@@ -35,6 +39,7 @@ public class FishManager : MonoBehaviour
     List<GameObject> currentAgents = new List<GameObject>();
     
 
+
     /**
      * On Start, link the JSON database filepath 
      * and load it onto a variable 
@@ -45,6 +50,8 @@ public class FishManager : MonoBehaviour
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
     }
+
+
 
     private void Update() 
     {
@@ -61,9 +68,6 @@ public class FishManager : MonoBehaviour
         }*/
     }
 
-    // observe fish button
-
-    // change status UI to double circle based on fish's status
 
 
     /**
@@ -77,7 +81,7 @@ public class FishManager : MonoBehaviour
             agent.GetComponent<BoidAgent>().despawning = true;
         }
 
-        //Clear the current fishes list
+        //Clear the current fish list
         currentAgents.Clear();
 
         //Loop through spawnindex vector2
@@ -96,6 +100,7 @@ public class FishManager : MonoBehaviour
             }
         }
 
+        // The following 12 lines were written by a previous team; unsure of the purpose, so leaving it as is for now
         //////////////// remove this later
         for (int i = 0; i < 400; i++)
         {
@@ -109,19 +114,33 @@ public class FishManager : MonoBehaviour
             currentAgents.Add(agent);
         }
         /////////////////
-
     }
 
+
+
+    // Updates the non-rate variables in 1 year increments.
+    // (SliderScript.cs/OnApply currently executes this on a 5 second interval)
+    public void accountForTimeOnInterval()
+    {
+        acidity = acidity + acidityRate;
+        pollution = pollution + pollutionRate;
+        time = time + 1.0f;
+    }
+
+
+
+    // Updates the non-rate variables using the time and rates set by the user, instantly (without interval)
     public void accountForTime() 
     {
         acidity = acidity + (acidityRate * time);
         pollution = pollution + (pollutionRate * time);
     }
 
+
+
     /**
-     * Calculate the fishes that can be spawned 
-     * using the current slider value range
-     * add them to the list and display them
+     * Calculates the fish that can be spawned using the current slider values,
+     * adds them to the SpawnIndex, and displays them in the "Valid Fish" box in-game.
      */
     public string CalculateFish()
     {
@@ -162,5 +181,4 @@ public class FishManager : MonoBehaviour
 
         return text;
     }
-
 }
