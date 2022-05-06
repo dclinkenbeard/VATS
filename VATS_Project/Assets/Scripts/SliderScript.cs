@@ -2,7 +2,7 @@
  * SliderScript.cs
  * Description: This script connects the UI Slider of Conservation Mode with
  *              FEV to see the effect of different values on the sea life
- * Last updated: 02/25/2022
+ * Last updated: 05/06/2022
  */
 
 using System.Collections;
@@ -22,6 +22,7 @@ public class SliderScript : MonoBehaviour
     public UnityEngine.UI.Slider timeSlider;
     public UnityEngine.UI.Slider pollutionSlider;
     public UnityEngine.UI.Slider pollutionRateSlider;
+    public UnityEngine.UI.Toggle intervalToggle;
 
     //Declare float variables
     public float tempValue;
@@ -44,8 +45,11 @@ public class SliderScript : MonoBehaviour
     //Import and declare fishManager class
     public FishManager fishManager;
 
+
+
     private void Start()
     {
+        // first make sure all sliders have been properly linked to this script in Unity
         if(tempSlider == null 
             || presSlider == null 
             || aciditySlider == null 
@@ -68,6 +72,8 @@ public class SliderScript : MonoBehaviour
         }
     }
 
+
+
     // Temperature Slider & Input Field
     public void TemperatureSlider(float newValue)
     {
@@ -77,9 +83,12 @@ public class SliderScript : MonoBehaviour
         fishManager.temp = tempValue;
     }
 
+
+
     /**
-     * On Temperature slider value change, this function is called
-     * parsse float from string and set it as new value
+     * On Temperature slider value change, this function is called.
+     * Parse float from string and set it as new value.
+     * Modifies the value in the input field next to the slider.
      */
     public void TempInput(string text)
     {
@@ -92,6 +101,8 @@ public class SliderScript : MonoBehaviour
         TemperatureSlider(newValue);
     }
 
+
+
     // Pressure Slider & Input Field
     public void PressureSlider(float newValue)
     {
@@ -101,9 +112,12 @@ public class SliderScript : MonoBehaviour
         fishManager.depth = presValue;
     }
 
+
+
     /**
-     * On Pressure slider value change, this function is called
-     * parse float from string and set it as new value
+     * On Pressure (depth) slider value change, this function is called.
+     * Parse float from string and set it as new value.
+     * Modifies the value in the input field next to the slider.
      */
     public void PresInput(string text)
     {
@@ -116,22 +130,25 @@ public class SliderScript : MonoBehaviour
         PressureSlider(newValue);
     }
 
+
+
     // Acidity Slider & Input Field
     public void AciditySlider(float newValue)
     {
-        // rate of change in pH
+        // currently represented in-game as pH
         acidityValue = newValue;
         aciditySlider.value = acidityValue;
         acidityText.text = acidityValue.ToString();
         fishManager.acidity = acidityValue;
-        //Debug.Log(fishManager.acidity);
     }
 
+
+
     /**
-     * On Acidity slider value change, this function is called
-     * parse float from string and set it as new value
+     * On Acidity slider value change, this function is called.
+     * Parse float from string and set it as new value.
+     * Modifies the value in the input field next to the slider.
      */
-     // modifies the value in the input field next to the slider
     public void AcidityInput(string text)
     {
         if (text == null)
@@ -145,7 +162,7 @@ public class SliderScript : MonoBehaviour
 
 
 
-    // Acidity Slider & Input Field
+    // Acidity Rate Slider & Input Field
     public void AcidityRateSlider(float newValue)
     {
         // rate of change in pH
@@ -153,9 +170,11 @@ public class SliderScript : MonoBehaviour
         acidityRateSlider.value = acidityRateValue;
         acidityRateText.text = acidityRateValue.ToString();
         fishManager.acidityRate = acidityRateValue;
-        //Debug.Log(fishManager.acidityRate);
     }
 
+
+    // Functions the same way as the inputs for static (non-rate) variables,
+    // but is not updated when apply button is clicked.
     public void AcidityRateInput(string text)
     {
         if (text == null)
@@ -178,10 +197,12 @@ public class SliderScript : MonoBehaviour
         fishManager.pollution = pollutionValue;
     }
 
+
+
     /**
-     * On Pollution slider value change, this function is called
-     * parse float from string and set it as new value
-     * --- NOT IMPLEMENTED YET ---
+     * On Pollution slider value change, this function is called.
+     * Parse float from string and set it as new value.
+     * Modifies the value in the input field next to the slider.
      */
     public void PollutionInput(string text)
     {
@@ -194,17 +215,22 @@ public class SliderScript : MonoBehaviour
         PollutionSlider(newValue);
     }
 
+
+
     // Pollution Rate Slider & Input Field
     public void PollutionRateSlider(float newValue)
     {
-        // rate of change in ...
+        // rate of change in pollution (plastics, as a starting point)
         pollutionRateValue = newValue;
         pollutionRateSlider.value = pollutionRateValue;
         pollutionRateText.text = pollutionRateValue.ToString();
         fishManager.pollutionRate = pollutionRateValue;
-        //Debug.Log(fishManager.pollutionRate);
     }
 
+
+
+    // Functions the same way as the inputs for static (non-rate) variables,
+    // but is not updated when apply button is clicked.
     public void PollutionRateInput(string text)
     {
         if (text == null)
@@ -217,6 +243,7 @@ public class SliderScript : MonoBehaviour
     }
 
 
+
     // Time Slider & Input Field
     public void TimeSlider(float newValue)
     {
@@ -224,15 +251,13 @@ public class SliderScript : MonoBehaviour
         timeSlider.value = timeValue;
         timeText.text = timeValue.ToString();
         fishManager.time = timeValue;
-        
-        
     }
+
 
 
     /**
      * On time slider value change, this function is called
      * parse float from string and set it as new value
-     * --- NOT IMPLEMENTED YET ---
      */
     public void TimeInput(string text)
     {
@@ -245,25 +270,81 @@ public class SliderScript : MonoBehaviour
         TimeSlider(newValue);
     }
 
-    // On Apply Button
-    public void OnApply()
-    {
 
-        fishManager.accountForTime();
+
+    // Determines whether changes over time will be applied on one year intervals.
+    // Controlled by a checkbox in the in-game slider menu.
+    public void ToggleInterval()
+    {
+        fishManager.intervalIsEnabled = fishManager.intervalIsEnabled ? false : true;
+    }
+
+
+
+    // Applies values differently depending on whether the interval toggle box was checked.
+    public void ApplyValues()
+    {
+        if (fishManager.intervalIsEnabled)
+        {
+            // Values will be applied in 1 year increments
+            fishManager.accountForTimeOnInterval();
+
+            // Once the original specified time value has been reached, stop incrementing
+            if (fishManager.time >= fishManager.endTime)
+            {
+                CancelInvoke("ApplyValues");
+            }
+        }
+        else
+        {
+            // Values will be applied instantly for the amount of time specified
+            fishManager.accountForTime();
+        }
+
+        // All sliders that are affected by rate of change must be updated regardless of whether
+        // interval has been enabled
         AciditySlider(fishManager.acidity);
         AcidityInput(fishManager.acidity.ToString());
         PollutionSlider(fishManager.pollution);
         PollutionInput(fishManager.pollution.ToString());
+        TimeSlider(fishManager.time);
+        TimeInput(fishManager.time.ToString());
 
+        // Use the new values to determine which fish can exist, as directed by the fish dictionary,
+        // then spawn the fish
         fishManager.CalculateFish();
         fishManager.SpawnFish();
-
-        // Debug.Log("SENDING VALUES TO SCRIPT");
-        // Debug.Log(fishManager.acidity);
     }
 
+
+
+    // Executes ApplyValues when "Apply" button is clicked.
+    public void OnApply()
+    {
+        // If interval is enabled, then ApplyValues must be invoked more than once
+        if (fishManager.intervalIsEnabled)
+        {
+            // Starting, end, and current times must be reset every time "Apply" button has been clicked
+            // if interval is enabled
+            fishManager.startTime = 0;
+            fishManager.endTime = fishManager.time;
+            fishManager.time = fishManager.startTime;
+
+            // New values are applied every 5 seconds, starting immediately 
+            // (consider allowing the user to set the interval in the future)
+            InvokeRepeating("ApplyValues", 0.0f, 5.0f);
+        }
+        else
+        {
+            ApplyValues();
+        }
+    }
+
+
+
     /**
-     * Check for current value of the slider and set it accordingly
+     * Checks for current value of the slider and sets it accordingly.
+     * Ensures the value set by the user cannot exceed the maximum and minimum boundaries for each slider.
      */
     private float CheckNewValue(UnityEngine.UI.Slider slider, float newValue)
     {
@@ -281,6 +362,7 @@ public class SliderScript : MonoBehaviour
         {
             returnValue = newValue;
         }
+
         return returnValue;
     }
 }
