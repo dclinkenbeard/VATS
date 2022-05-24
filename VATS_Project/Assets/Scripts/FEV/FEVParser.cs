@@ -13,7 +13,7 @@ public class FEVParser : MonoBehaviour
 {
     string assetPath = "Assets/Scripts/Boids/BoidObjects/";
     AssetBundle bundle;
-    public string fevName = "Eel";
+    public string fevName = "EelSample";
 
     void Start()
     {
@@ -42,7 +42,15 @@ public class FEVParser : MonoBehaviour
         itemData = JsonMapper.ToObject(json);
         string newJson = JsonMapper.ToJson(fev);
 
-        itemData["fish"].Add(JsonMapper.ToObject(newJson));
+        
+        // Create or update fish
+        if (itemData["fish"][fev.id] != null) {
+            itemData["fish"][fev.id] = JsonMapper.ToObject(newJson);
+            fevName = GetFishByID(fev.id);
+        } else {
+            itemData["fish"].Add(JsonMapper.ToObject(newJson));
+        }
+        
 
 
         // Writes data to JSON file in a readable format
@@ -69,19 +77,31 @@ public class FEVParser : MonoBehaviour
         newAgent.fishType = fev.fishType;
         newAgent.id = fev.id;
 
-        BoidBehavior avoidBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAvoidance.asset", typeof(BoidBehavior));
-        BoidBehavior alignBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
-        BoidBehavior cohesionBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidCohesion.asset", typeof(BoidBehavior));
+        
+        
+       
 
         newAgent.boidBehaviors = new List<BoidBehavior>();
-        newAgent.boidBehaviors.Add(avoidBehavior);
-        newAgent.boidBehaviors.Add(alignBehavior);
-        newAgent.boidBehaviors.Add(cohesionBehavior);
 
         newAgent.behaviorWeights = new List<float>();
-        newAgent.behaviorWeights.Add(3);
-        newAgent.behaviorWeights.Add(2.5f);
-        newAgent.behaviorWeights.Add(2);
+        if (fev.hasAlignment)
+        {
+            BoidBehavior alignBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAlignment.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(alignBehavior);
+            newAgent.behaviorWeights.Add((float)fev.alignmentWeight);
+        }
+        if (fev.hasAvoidance)
+        {
+            BoidBehavior avoidBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidAvoidance.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(avoidBehavior);
+            newAgent.behaviorWeights.Add((float)fev.avoidanceWeight);
+        }
+        if (fev.hasAlignment)
+        {
+             BoidBehavior cohesionBehavior = (BoidBehavior)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Boids/BoidObjects/BoidCohesion.asset", typeof(BoidBehavior));
+            newAgent.boidBehaviors.Add(cohesionBehavior);
+            newAgent.behaviorWeights.Add((float)fev.cohesionWeight);
+        }
 
         newAgent.fishLayerMask = LayerMask.GetMask("Fish");
         newAgent.obstacleMask = LayerMask.GetMask("Obstacle");
@@ -89,9 +109,10 @@ public class FEVParser : MonoBehaviour
         // GameObject.Instantiate(newFish, this.transform);
 
         // TODO: Get actual model from AssetBundle URL provided by FEV
-        //GameObject tempModel = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        GameObject tempModel = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
-        tempModel.transform.parent = newFish.transform;
+        //GameObject model = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject model = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
+        // GameObject model = GetModelFromAssetBundle(bundle, "model"));
+        model.transform.parent = newFish.transform;
 
         PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/" + fevName + ".prefab", InteractionMode.UserAction);
     }
@@ -115,6 +136,20 @@ public class FEVParser : MonoBehaviour
     GameObject GetModelFromAssetBundle(AssetBundle bundle, string name){
         GameObject loadedModel = (GameObject) bundle.LoadAsset(name);
         return loadedModel;
+    }
+
+    string GetFishByID(int id)
+    {
+        var fishList = Resources.LoadAll<GameObject>("Fish");
+
+        foreach (GameObject fish in fishList)
+        {
+            if (fish.GetComponent<BoidAgent>().id == id)
+            {
+                return fish.name;
+            }
+        }
+        return fevName;
     }
     
 }

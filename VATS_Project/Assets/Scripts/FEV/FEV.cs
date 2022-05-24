@@ -16,6 +16,12 @@ public class FEV
     public double maxTurnSpd;
     public string fishType;
     public string modelUrl;
+    public bool hasCohesion;
+    public bool hasAlignment;
+    public bool hasAvoidance;
+    public double cohesionWeight;
+    public double alignmentWeight;
+    public double avoidanceWeight;
 
     // Values for JSON encyclopedia
     public string name;
@@ -26,6 +32,8 @@ public class FEV
     public double minSize, maxSize;
     public double minTemp, maxTemp;
     public double minDepth, maxDepth;
+    public double minAcidity, maxAcidity;
+    public double minPollution, maxPollution;
     public string range;
     public string status;
     public int lowLimit, uppLimit;
