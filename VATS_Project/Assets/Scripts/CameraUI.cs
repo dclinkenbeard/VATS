@@ -169,18 +169,18 @@ public class CameraUI : MonoBehaviour
         {
             case 0:
                 fishViewText.text = "";
-                fishExitText.text = "";
+                fishExitText.text = "M for Menu";
                 fishExamText.text = "";
                 break;
             case 1:
                 fishViewText.text = "Click to Follow";
-                fishExitText.text = "";
+                fishExitText.text = "M for Menu";
                 fishExamText.text = "";
                 break;
             case 2:
                 fishViewText.text = "";
                 fishExitText.text = "Q to Stop Following";
-                fishExamText.text = "E to Examine";
+                fishExamText.text = "";
                 break;
             case 3:
                 fishViewText.text = "";

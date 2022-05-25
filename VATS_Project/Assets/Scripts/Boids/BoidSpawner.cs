@@ -12,15 +12,8 @@ public class BoidSpawner : MonoBehaviour
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            /*
             GameObject agent = Instantiate(agentPrefab,
                 transform.position + Random.insideUnitSphere * 30f,
-                Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
-                transform
-                );
-            */
-            GameObject agent = Instantiate(agentPrefab,
-                transform.position,
                 Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
                 transform
                 );

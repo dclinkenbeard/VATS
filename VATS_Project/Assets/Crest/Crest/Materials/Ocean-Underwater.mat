@@ -114,7 +114,7 @@ Material:
     - _Foam3DLighting: 1
     - _FoamBubbleParallax: 0.14
     - _FoamScale: 10
-    - _ForceUnderwater: 1
+    - _ForceUnderwater: 0
     - _FresnelPower: 5
     - _Invert: 1
     - _MipBias: 0
@@ -168,7 +168,7 @@ Material:
     - _WaveFoamStart: 0
     - _WaveFoamStrength: 1
     m_Colors:
-    - _DepthFogDensity: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+    - _DepthFogDensity: {r: 0.015, g: 0.01, b: 0.015, a: 1}
     - _Diffuse: {r: 0, g: 0.012440592, b: 0.5660378, a: 1}
     - _DiffuseGrazing: {r: 0.06345675, g: 0.10691091, b: 0.5849056, a: 1}
     - _DiffuseShadow: {r: 0, g: 0.3560004, b: 0.5647059, a: 1}
