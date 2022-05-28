@@ -784,7 +784,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: TimeInput
         m_Mode: 0
         m_Arguments:
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: AciditySlider
         m_Mode: 0
         m_Arguments:
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: TimeSlider
         m_Mode: 0
         m_Arguments:
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: TemperatureSlider
         m_Mode: 0
         m_Arguments:
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: TempInput
         m_Mode: 0
         m_Arguments:
@@ -1648,6 +1648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721561228}
+  - component: {fileID: 721561229}
   m_Layer: 5
   m_Name: Slider Interface
   m_TagString: Untagged
@@ -1680,6 +1681,30 @@ RectTransform:
   m_AnchoredPosition: {x: 8, y: -20}
   m_SizeDelta: {x: 160, y: 200}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &721561229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721561227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6035c9914c1d4da498938b9a8861fd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempSlider: {fileID: 532001337}
+  presSlider: {fileID: 2108364834}
+  acidSlider: {fileID: 281938611}
+  timeSlider: {fileID: 462873939}
+  tempValue: 0
+  presValue: 0
+  acidValue: 0
+  timeValue: 0
+  tempText: {fileID: 550932897}
+  presText: {fileID: 1276702737}
+  acidText: {fileID: 810542694}
+  timeText: {fileID: 206368395}
 --- !u!1 &753656091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +2014,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: AcidInput
         m_Mode: 0
         m_Arguments:
@@ -2438,7 +2463,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: PresInput
         m_Mode: 0
         m_Arguments:
@@ -3919,7 +3944,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: PressureSlider
         m_Mode: 0
         m_Arguments:
@@ -4049,7 +4074,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 721561229}
         m_MethodName: OnApply
         m_Mode: 1
         m_Arguments:

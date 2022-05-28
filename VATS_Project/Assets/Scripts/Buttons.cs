@@ -28,7 +28,7 @@ public class Buttons : MonoBehaviour
     {
         fishTag = gh.fishID;
         //prefab = GameObject.FindWithTag(fishTag.ToString());
-        //string path = "Prefabs/fish" + gh.fishID.ToString() + ".prefab";
+        string path = "Prefabs/fish" + gh.fishID.ToString() + ".prefab";
 
 
         //prefab = (GameObject)Resources.Load(path, typeof(GameObject));
@@ -39,9 +39,7 @@ public class Buttons : MonoBehaviour
         sf.Increase();
 
         sf.RBSuperposition();
-
-        gameHandler.instance.updateUI();
-        //mh.fishID++;
+        //gh.fishID++;
         //sf.activateFish = true;
 
         /*        if (sf.activateFish)
@@ -69,9 +67,7 @@ public class Buttons : MonoBehaviour
         sf.Decrease();
 
         sf.LBSuperposition();
-
-        gameHandler.instance.updateUI();
-        //mh.fishID--;
+        //gh.fishID--;
         //sf.activateFish = true;
 
         /*        if (sf.activateFish)

@@ -7,19 +7,19 @@ public class LightingManager : MonoBehaviour
 {
     // References
     [SerializeField] private Light DirectionalLight;
-/*    [SerializeField] private LightingPreset Preset;
-*/    // Variables
+    [SerializeField] private LightingPreset Preset;
+    // Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
-/*    [SerializeField] private float TimeSpeed;
-*/    public bool RunDay;
+    [SerializeField] private float TimeSpeed;
+    public bool RunDay;
     public bool ActualTime;
 
     private void Update()
     {
-/*        if(Preset == null)
+        if(Preset == null)
         {
             return;
-        }*/
+        }
 
         if(ActualTime)
         {
@@ -36,8 +36,8 @@ public class LightingManager : MonoBehaviour
                 }
                 else
                 {
-/*                    TimeOfDay += (Time.deltaTime / TimeSpeed);
-*/                    TimeOfDay %= 24; // Clamp between 0-24
+                    TimeOfDay += (Time.deltaTime / TimeSpeed);
+                    TimeOfDay %= 24; // Clamp between 0-24
                 }
             }
             else
@@ -49,8 +49,8 @@ public class LightingManager : MonoBehaviour
             }
         }
 
-/*        UpdateLighting(TimeOfDay / 24.0f);
-*/    }
+        UpdateLighting(TimeOfDay / 24.0f);
+    }
 
     private float RealTimeCalculation()
     {
@@ -62,7 +62,7 @@ public class LightingManager : MonoBehaviour
         return TimeOfDay_;   
     }
 
-/*    private void UpdateLighting(float timePercentage)
+    private void UpdateLighting(float timePercentage)
     {
         RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercentage);
         RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercentage);
@@ -72,7 +72,7 @@ public class LightingManager : MonoBehaviour
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercentage);
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercentage * 360.0f) - 90.0f, 270, 0));
         }
-    }*/
+    }
 
     private void OnValidate()
     {

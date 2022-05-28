@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Isaac_Scenes/TitleScene.unity
     guid: 2d755fc2189b3394db096fb96119cc84
   - enabled: 1
-    path: Assets/Scenes/Isaac_Scenes/Isaac_Scene.unity
+    path: Assets/Scenes/Isaac_Scenes/ExplorationScene.unity
     guid: f0fb511ae4631f94793098fc10f47dd7
-  - enabled: 1
-    path: Assets/Scenes/Derek_Scene/FEV.unity
-    guid: e7f383fc3a9028049b89b5f29d171c33
-  - enabled: 1
-    path: Assets/Scenes/Derek_Scene/GridView.unity
-    guid: 76b7eb2e5422eda41af39ea6398d13d5
   m_configObjects: {}
