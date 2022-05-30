@@ -21,6 +21,7 @@ public class FEVParser : MonoBehaviour
     }
 
 
+    // Creates an FEV object from the XML data
     void loadData()
     {
         TextAsset fevFile = Resources.Load<TextAsset>("FEVs/" + fevName);
@@ -32,7 +33,7 @@ public class FEVParser : MonoBehaviour
         }
     }
 
-    // Temp function for turning FEV data into fish. Will be part of a loader class in the future 
+    // Uses data from the FEV object to create a new fish GameObject
     public void SubmitFEV(FEV fev)
     {
         string path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
@@ -106,12 +107,10 @@ public class FEVParser : MonoBehaviour
         newAgent.fishLayerMask = LayerMask.GetMask("Fish");
         newAgent.obstacleMask = LayerMask.GetMask("Obstacle");
 
-        // GameObject.Instantiate(newFish, this.transform);
+        GameObject.Instantiate(newFish, this.transform);
 
-        // TODO: Get actual model from AssetBundle URL provided by FEV
-        //GameObject model = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        GameObject model = GameObject.Instantiate(Resources.Load<GameObject>("EelTemp/EelModel"));
-        // GameObject model = GetModelFromAssetBundle(bundle, "model"));
+        GetAssetBundleFromUrl(fev.modelUrl);
+        GameObject model = GetModelFromAssetBundle(bundle, "model");
         model.transform.parent = newFish.transform;
 
         PrefabUtility.SaveAsPrefabAssetAndConnect(newFish, "Assets/Prefabs/Boids/" + fevName + ".prefab", InteractionMode.UserAction);

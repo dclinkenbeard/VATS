@@ -49,6 +49,7 @@ public class FishManager : MonoBehaviour
         path = Application.dataPath + "/JSON/Fish_Encyclopedia.JSON.txt";
         json = File.ReadAllText(path);
         itemData = JsonMapper.ToObject(json);
+        FishPrefabs.AddRange(Resources.LoadAll<GameObject>("Fish"));
     }
 
 
@@ -101,18 +102,19 @@ public class FishManager : MonoBehaviour
         }
 
         // The following 12 lines were written by a previous team; unsure of the purpose, so leaving it as is for now
+        // (Spawns 400 sardines to make the simulation appear more populated) Commenting it out as the hardcoded index no longer works with the new dynamic loading
         //////////////// remove this later
-        for (int i = 0; i < 400; i++)
-        {
-            GameObject agentPrefab = FishPrefabs[7];
-            GameObject agent = Instantiate(agentPrefab,
-                transform.position + Random.insideUnitSphere * 30f,
-                Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
-                transform
-                );
+        // for (int i = 0; i < 400; i++)
+        // {
+        //     GameObject agentPrefab = FishPrefabs[7];
+        //     GameObject agent = Instantiate(agentPrefab,
+        //         transform.position + Random.insideUnitSphere * 30f,
+        //         Quaternion.Euler(new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f))),
+        //         transform
+        //         );
 
-            currentAgents.Add(agent);
-        }
+        //     currentAgents.Add(agent);
+        // }
         /////////////////
     }
 
